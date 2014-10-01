@@ -1105,3 +1105,33 @@ ul.faq li > div h3 {
 .fotos_mencion{
   height: 300px !important;
 }
+
+.tabla_asignaturas td{
+  vertical-align: top;
+}
+
+@media screen and (min-width: 768px) {
+  
+  #myModal .modal-dialog  {width:900px;}
+
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
