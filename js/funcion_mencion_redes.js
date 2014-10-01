@@ -6,7 +6,7 @@ $( document ).ready(function() {
 		async: true,
 		data: 'mencion=redes',
 		success: function(datos_recibidos) {
-			alert(datos_recibidos);
+			
 		}
 	});
 

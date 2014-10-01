@@ -20,8 +20,7 @@ switch ($mencion) {
 
 
 function getAsigRedes(){
-	$tmp = "hola";
-	return $tmp;
+
 }
 
 function getAsigSw(){

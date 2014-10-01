@@ -58,9 +58,9 @@
                             <li data-target="#main-slider" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner">
-                            <div class="item active fotos_mencion" style="background-image: url(../images/baltica.jpg)"></div><!--/.item-->
-                            <div class="item fotos_mencion" style="background-image: url(../images/baltica.jpg)"></div><!--/.item-->
-                            <div class="item fotos_mencion" style="background-image: url(../images/baltica.jpg)"></div><!--/.item-->
+                            <div class="item active fotos_mencion" style="background-image: url(../images/mencion/redes1.png)"></div><!--/.item-->
+                            <div class="item fotos_mencion" style="background-image: url(../images/mencion/redes2.png)"></div><!--/.item-->
+                            <div class="item fotos_mencion" style="background-image: url(../images/mencion/redes3.png)"></div><!--/.item-->
                         </div><!--/.carousel-inner-->
                     </div><!--/.carousel-->
         <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
@@ -81,7 +81,7 @@
         <div id="meet-the-team" class="row">
             <div class="col-md-3 col-xs-6">
                 <div class="center">
-                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/libro.jpg" alt="" ></p>
+                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/mencion/libro.jpg" alt="" ></p>
                     <h5>David J. Robbins<small class="designation muted">Senior Vice President</small></h5>
                     <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
                     
@@ -90,7 +90,7 @@
 
             <div class="col-md-3 col-xs-6">
                 <div class="center">
-                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/libro.jpg" alt="" ></p>
+                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/mencion/libro.jpg" alt="" ></p>
                     <h5>David J. Robbins<small class="designation muted">Senior Vice President</small></h5>
                     <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
                     
@@ -98,7 +98,7 @@
             </div>        
             <div class="col-md-3 col-xs-6">
                 <div class="center">
-                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/libro.jpg" alt="" ></p>
+                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/mencion/libro.jpg" alt="" ></p>
                     <h5>David J. Robbins<small class="designation muted">Senior Vice President</small></h5>
                     <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
                     
@@ -106,7 +106,7 @@
             </div>        
             <div class="col-md-3 col-xs-6">
                 <div class="center">
-                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/libro.jpg" alt="" ></p>
+                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/mencion/libro.jpg" alt="" ></p>
                     <h5>David J. Robbins<small class="designation muted">Senior Vice President</small></h5>
                     <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
                     
