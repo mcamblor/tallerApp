@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <h2>Redes y Telecomunicaciones</h2>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                <p style="text-align : justify;">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
             </div><!--/.col-sm-6-->
             <div class="col-sm-6">
                 <h2></h2>
@@ -79,41 +79,25 @@
         <div class="gap"></div>
 
         <div id="meet-the-team" class="row">
-            <div class="col-md-3 col-xs-6">
-                <div class="center">
-                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/mencion/libro.jpg" alt="" ></p>
-                    <h5>David J. Robbins<small class="designation muted">Senior Vice President</small></h5>
-                    <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
-                    
-                </div>
-            </div>
-
-            <div class="col-md-3 col-xs-6">
-                <div class="center">
-                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/mencion/libro.jpg" alt="" ></p>
-                    <h5>David J. Robbins<small class="designation muted">Senior Vice President</small></h5>
-                    <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
-                    
-                </div>
-            </div>        
-            <div class="col-md-3 col-xs-6">
-                <div class="center">
-                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/mencion/libro.jpg" alt="" ></p>
-                    <h5>David J. Robbins<small class="designation muted">Senior Vice President</small></h5>
-                    <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
-                    
-                </div>
-            </div>        
-            <div class="col-md-3 col-xs-6">
-                <div class="center">
-                    <p><img class="img-responsive img-thumbnail img-circle" src="../images/mencion/libro.jpg" alt="" ></p>
-                    <h5>David J. Robbins<small class="designation muted">Senior Vice President</small></h5>
-                    <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor.</p>
-                    
-                </div>
-            </div>
         </div><!--/#meet-the-team-->
     </section><!--/#about-us-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="myModalLabel"></h3>
+      </div>
+      <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <?php include("../includes/footer_html.php");?>
 
