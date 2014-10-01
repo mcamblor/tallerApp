@@ -74,7 +74,7 @@
         </div><!--/.row-->
 
         <div class="gap"></div>
-        <h1 class="center">Asignaturas de mención - Año 2014</h1>
+        <h1 class="center">Asignaturas de mención - Año <?php echo date("Y"); ?></h1>
         <p class="lead center">Haz clic para ver la informacion de una asignatura.</p>
         <div class="gap"></div>
 
