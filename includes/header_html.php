@@ -1,5 +1,5 @@
 <?php
-    $script_ejecutandose = explode("/taller_app2/html/", $_SERVER["PHP_SELF"]);
+    $script_ejecutandose = explode("/tallerApp/html/", $_SERVER["PHP_SELF"]);
 ?>
 <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
         <div class="container">
