@@ -51,18 +51,18 @@
             <div class="col-sm-6">
                 <h2>Our Skills</h2>
                 <section id="main-slider" class="no-margin">
-        <div class="carousel slide wet-asphalt">
-            <ol class="carousel-indicators">
-                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#main-slider" data-slide-to="1"></li>
-                <li data-target="#main-slider" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active fotos_mencion" style="background-image: url(../images/baltica.jpg)"></div><!--/.item-->
-                <div class="item fotos_mencion" style="background-image: url(../images/baltica.jpg)"></div><!--/.item-->
-                <div class="item fotos_mencion" style="background-image: url(../images/baltica.jpg)"></div><!--/.item-->
-            </div><!--/.carousel-inner-->
-        </div><!--/.carousel-->
+                    <div class="carousel slide wet-asphalt">
+                        <ol class="carousel-indicators">
+                            <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                            <li data-target="#main-slider" data-slide-to="1"></li>
+                            <li data-target="#main-slider" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active fotos_mencion" style="background-image: url(../images/baltica.jpg)"></div><!--/.item-->
+                            <div class="item fotos_mencion" style="background-image: url(../images/baltica.jpg)"></div><!--/.item-->
+                            <div class="item fotos_mencion" style="background-image: url(../images/baltica.jpg)"></div><!--/.item-->
+                        </div><!--/.carousel-inner-->
+                    </div><!--/.carousel-->
         <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
             <i class="icon-angle-left"></i>
         </a>
