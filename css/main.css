@@ -1119,3 +1119,16 @@ ul.faq li > div h3 {
 #boton_cargar_archivo, #boton_upload_doc{
   margin-top: 5%;
 }
+
+#caja_asignatura_upload{
+  margin-top: 1% !important;
+  padding-left: 0 !important;
+}
+
+.form_upload_doc{
+  margin-top: 6%;
+}
+
+#boton_upload{
+  margin: 0 !important;
+}
