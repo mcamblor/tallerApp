@@ -224,5 +224,6 @@
     <script src="../js/jquery.prettyPhoto.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/funcion_descargas.js"></script>
+    <script src="../js/bootstrap.file-input.js"></script>
 </body>
 </html>
