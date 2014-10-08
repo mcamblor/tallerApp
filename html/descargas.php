@@ -53,20 +53,20 @@
                 <tr>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC100">Algebra Elemental</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC101">Cálculo Diferencial</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC102">Fundamentos de Programación</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC103">Historia General de las ciencias y tecnologías</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC104">Formación Valórica Personal</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_100">Algebra Elemental</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_101">Cálculo Diferencial</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_102">Fundamentos de Programación</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_103">Historia General de las ciencias y tecnologías</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_104">Formación Valórica Personal</a></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC110">Física</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC111">Cálculo Integral</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC112">Programación I</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC113">Introducción al Hardware</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC114">Filosofía de las Ciencias</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_110">Física</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_111">Cálculo Integral</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_112">Programación I</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_113">Introducción al Hardware</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_114">Filosofía de las Ciencias</a></li>
                         </ul>
                     </td>
                 </tr>
@@ -77,20 +77,20 @@
                 <tr>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC200">Física Experimental</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC201">Cálculo Multivariable</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC202">Programación II</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC203">Sistemas Digitales</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC204">Estructuras Discretas</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_200">Física Experimental</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_201">Cálculo Multivariable</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_202">Programación II</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_203">Sistemas Digitales</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_204">Estructuras Discretas</a></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC210">Algebra Lineal</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC211">Estructura de Datos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC212">Arquitectura de Computadores</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC213">Teoría de Sistemas</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC214">Contabilidad</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_210">Algebra Lineal</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_211">Estructura de Datos</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_212">Arquitectura de Computadores</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_213">Teoría de Sistemas</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_214">Contabilidad</a></li>
                         </ul>
                     </td>
                 </tr>
@@ -115,42 +115,42 @@
                 <tr>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC300">Ecuaciones Diferenciales</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC301">Electro-magnetismo</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC302">Análisis y Diseño de Algoritmos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC303">Teoría de Sistemas Operativos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC304">Fundamentos de Ingeniería de Software</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC305">Ingles I</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_300">Ecuaciones Diferenciales</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_301">Electro-magnetismo</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_302">Análisis y Diseño de Algoritmos</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_303">Teoría de Sistemas Operativos</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_304">Fundamentos de Ingeniería de Software</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_305">Ingles I</a></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC310">Probabilidad y Estadística</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC311">Lenguajes y Automatas</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC312">Redes de Computadores</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC313">Metodologías de Análisis</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC314">Administración en Informática</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC315">Ingles II</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_310">Probabilidad y Estadística</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_311">Lenguajes y Automatas</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_312">Redes de Computadores</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_313">Metodologías de Análisis</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_314">Administración en Informática</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_315">Ingles II</a></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC400">Física Contemporanea</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC401">Interfaz Hombre-Máquina</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC402">Modelos de Datos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC403">Taller de Sistemas Operativos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC404">Metodologías de Diseño</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC405">Ingles III</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_400">Física Contemporanea</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_401">Interfaz Hombre-Máquina</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_402">Modelos de Datos</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_403">Taller de Sistemas Operativos</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_404">Metodologías de Diseño</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_405">Ingles III</a></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC410">Biología</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC411">Desarrollo Web</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC412">Sistemas de Bases de Datos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC413">Arquitectura de Software</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC414">Evaluación de Proyectos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC415">Lenguajes de Programación</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_410">Biología</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_411">Desarrollo Web</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_412">Sistemas de Bases de Datos</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_413">Arquitectura de Software</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_414">Evaluación de Proyectos</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_415">Lenguajes de Programación</a></li>
                         </ul>
                     </td>
                 </tr>
@@ -163,35 +163,35 @@
                 <tr>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC500">Pruebas de Software</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC501">Seminario de Especialidad I</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC502">Asignatura Electiva de Especialidad I</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC503">Sistemas de Telecomunicaciones</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC504">Gestion de Proyectos Informáticos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC505">Investigacíon de Operaciones</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_500">Pruebas de Software</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_501">Seminario de Especialidad I</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_502">Asignatura Electiva de Especialidad I</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_503">Sistemas de Telecomunicaciones</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_504">Gestion de Proyectos Informáticos</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_505">Investigacíon de Operaciones</a></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC510">Economía</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC511">Seminario de Especialidad II</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC512">Asignatura Electiva de Especialidad II</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC513">Fundamentos de Inteligencia Artificial</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC514">Taller de Aplicaciones</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC515">Simulación</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_510">Economía</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_511">Seminario de Especialidad II</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_512">Asignatura Electiva de Especialidad II</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_513">Fundamentos de Inteligencia Artificial</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_514">Taller de Aplicaciones</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_515">Simulación</a></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC600">Asignatura Electiva de Especialidad III</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC601">Seminario de Título I</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC602">Etica y Legislación</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_600">Asignatura Electiva de Especialidad III</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_601">Seminario de Título I</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_602">Etica y Legislación</a></li>
                         </ul>
                     </td>
                     <td>
                         <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC610">Seminario de Tecnología de Información y Comunicación</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC611">Seminario de Título II</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_610">Seminario de Tecnología de Información y Comunicación</a></li>
+                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_611">Seminario de Título II</a></li>
                         </ul>
                     </td>
                 </tr>

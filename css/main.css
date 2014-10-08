@@ -1132,3 +1132,7 @@ ul.faq li > div h3 {
 #boton_upload{
   margin: 0 !important;
 }
+
+.inactive_periodo{
+  display: none;
+}

@@ -1,10 +1,10 @@
 <option value="0" style="display:none;">Seleccione una Asignatura</option>
 <optgroup label="Semestre I">
-	<option>Algebra Elemental</option>
-    <option>Cálculo Diferencial</option>
-    <option>Fundamentos de Programación</option>
-    <option>Historia General de las ciencias y tecnologías</option>
-    <option>Formación Valórica Personal</option>
+	<option value="sem1_inc100">Algebra Elemental</option>
+    <option value="sem1_inc101">Cálculo Diferencial</option>
+    <option value="sem1_inc102">Fundamentos de Programación</option>
+    <option value="sem1_inc103">Historia General de las ciencias y tecnologías</option>
+    <option value="sem1_inc104">Formación Valórica Personal</option>
 </optgroup>
 <optgroup label="Semestre II">
 	<option>Física</option>
