@@ -1136,3 +1136,19 @@ ul.faq li > div h3 {
 .inactive_periodo{
   display: none;
 }
+
+.nombre_archivo{
+  width: 260px !important;
+}
+
+.comentario_archivo{
+  width: 300px !important;
+}
+
+.autor_archivo{
+  width: 100px !important;
+}
+
+.boton_descarga_archivo{
+  width: 50px !important;
+}

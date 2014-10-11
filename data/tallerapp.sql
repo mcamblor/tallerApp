@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-10-2014 a las 04:41:20
+-- Tiempo de generación: 11-10-2014 a las 19:12:20
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `mydb`
+-- Base de datos: `tallerapp`
 --
-CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `mydb`;
+CREATE DATABASE IF NOT EXISTS `tallerapp` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `tallerapp`;
 
 -- --------------------------------------------------------
 
@@ -44,7 +44,6 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 CREATE TABLE IF NOT EXISTS `asignatura` (
   `nombre` varchar(200) NOT NULL,
-  `codigo_malla` varchar(3) NOT NULL,
   `numero` int(11) NOT NULL,
   `descrip` text NOT NULL,
   `semestre_semestre` int(2) NOT NULL,
@@ -53,6 +52,13 @@ CREATE TABLE IF NOT EXISTS `asignatura` (
   KEY `fk_asignatura_semestre1_idx` (`semestre_semestre`),
   KEY `fk_asignatura_malla1_idx` (`malla_idMalla`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `asignatura`
+--
+
+INSERT INTO `asignatura` (`nombre`, `numero`, `descrip`, `semestre_semestre`, `malla_idMalla`) VALUES
+('Algebra Elemental', 100, 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.', 1, 'INC');
 
 -- --------------------------------------------------------
 
@@ -195,14 +201,23 @@ CREATE TABLE IF NOT EXISTS `descargas` (
   `idDescargas` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(200) NOT NULL,
   `url` varchar(300) NOT NULL,
-  `abstract` text NOT NULL,
-  `anio` date NOT NULL,
+  `abstract` text,
+  `anio` int(4) NOT NULL,
   `estado` int(11) NOT NULL,
-  `usuario_administrador_rut` varchar(45) NOT NULL,
-  `usuario_administrador_rut1` int(11) NOT NULL,
-  PRIMARY KEY (`idDescargas`),
-  KEY `fk_descargas_usuario_administrador1_idx` (`usuario_administrador_rut1`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `idCodigo` varchar(6) NOT NULL,
+  `autor` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`idDescargas`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+
+--
+-- Volcado de datos para la tabla `descargas`
+--
+
+INSERT INTO `descargas` (`idDescargas`, `titulo`, `url`, `abstract`, `anio`, `estado`, `idCodigo`, `autor`) VALUES
+(29, '59406824-RESUMEN-COMPLETO-MANKIW', '../static/sem1/inc100/2014/59406824-RESUMEN-COMPLETO-MANKIW.pdf', 'comentario 1', 2014, 1, 'inc100', 'autor 1'),
+(30, '114427', '../static/sem1/inc100/2014/114427.pdf', 'comentario 2', 2014, 1, 'inc100', 'autor 2'),
+(33, 'hola', '../static/sem1/inc100/2013/hola.pdf', 'comentario oj', 2013, 1, 'inc100', 'autor 4'),
+(34, 'hola', '../static/sem1/inc100/2013/hola.pdf', 'comentario oj', 2012, 1, 'inc100', 'autor 5');
 
 -- --------------------------------------------------------
 
@@ -327,6 +342,24 @@ CREATE TABLE IF NOT EXISTS `semestre` (
   PRIMARY KEY (`semestre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `semestre`
+--
+
+INSERT INTO `semestre` (`semestre`) VALUES
+(1),
+(2),
+(3),
+(4),
+(5),
+(6),
+(7),
+(8),
+(9),
+(10),
+(11),
+(12);
+
 -- --------------------------------------------------------
 
 --
@@ -344,33 +377,24 @@ CREATE TABLE IF NOT EXISTS `semestre_asig` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
-  `rut` varchar(12) NOT NULL,
-  `pass` varchar(45) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `asig_cursadas_json` text NOT NULL,
-  `malla` varchar(20) NOT NULL,
-  PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `usuario_administrador`
 --
 
 CREATE TABLE IF NOT EXISTS `usuario_administrador` (
-  `rut` int(11) NOT NULL,
+  `rut` int(10) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(20) NOT NULL,
-  `mail` varchar(25) NOT NULL,
+  `mail` varchar(50) NOT NULL,
   `contraseña` varchar(20) NOT NULL,
   PRIMARY KEY (`rut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario_administrador`
+--
+
+INSERT INTO `usuario_administrador` (`rut`, `nombre`, `apellido`, `mail`, `contraseña`) VALUES
+(16484897, 'Jorge', 'Garin', 'garan2sisisi@gmail.com', 'garinroman');
 
 -- --------------------------------------------------------
 
@@ -421,12 +445,6 @@ ALTER TABLE `asig_mencion`
 --
 ALTER TABLE `avance`
   ADD CONSTRAINT `fk_avance_usuario_alumno1` FOREIGN KEY (`usuario_alumno_rut`) REFERENCES `usuario_alumno` (`rut`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `descargas`
---
-ALTER TABLE `descargas`
-  ADD CONSTRAINT `fk_descargas_usuario_administrador1` FOREIGN KEY (`usuario_administrador_rut1`) REFERENCES `usuario_administrador` (`rut`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `descargas_has_usuario_alumno`

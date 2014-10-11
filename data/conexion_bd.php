@@ -7,7 +7,7 @@
     */
     public function consultar($sql)
     {
-        $basededatos = new PDO('mysql:host=localhost;dbname=mydb', 'root', '');
+        $basededatos = new PDO('mysql:host=localhost;dbname=tallerApp', 'root', '');
         $consulta = $basededatos->prepare($sql);
         $consulta->execute();
         return $consulta;

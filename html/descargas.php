@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1><span class="glyphicon glyphicon-download"></span> Descargas</h1>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                    <p>Contenido descargable de las asignaturas de la carrera de Ingenieria Civil Informatica</p>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
@@ -98,7 +98,8 @@
             </div><!--/.col-sm-6-->
             <div class="col-sm-6">
                 <br><br>
-                <p style="text-align : justify;">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                <p style="text-align : center; font-size:100px;"><span style="margin-right:16%;" class="glyphicon glyphicon-floppy-save"></span><span class="glyphicon glyphicon-floppy-open"></span></p>
+                <p style="text-align : justify;">Descarga todo el material complementario de las asignaturas que se imparten en la carrera. Si lo deseas, tambien puedes contribuir subiendo tus trabajos y/o material que consideres de ayuda.</p>
                 <br><div class="center"><a class="btn btn-lg btn-primary" id="subir_documento"><span class="glyphicon glyphicon-upload"></span> Cargar Nuevos Documentos</a></div>
             </div><!--/.col-sm-6-->
         </div><!--/.row-->
