@@ -31,6 +31,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link href="../../js/DataTables-1.10.3/media/css/jquery.dataTables.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -84,7 +86,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Documentos: <small>Gestión de Documentos de la asignatura</small>
+                            Documentos: <small>Administra los documentos que son cargados a la asignatura</small>
                         </h1>
                     </div>
                 </div>
@@ -96,59 +98,51 @@
                 </div>            
 
                 <div class="row">
-                    <div class="col-lg-12">
-                        <br>
-                        <form class="form-horizontal">
-                            <fieldset>
-                                <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['ramo'];?>">
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nombre_asigantura">Nombre</label>  
-                                  <div class="col-md-3">
-                                    <input id="nombre_asigantura" name="nombre_asigantura" type="text" class="form-control input-md">
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-success" id="boton_modifica_nombre" name="boton_modifica_nombre"><span class="glyphicon glyphicon-pencil"></span> Modificar Nombre</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="profesor_asignatura">Profesor</label>  
-                                  <div class="col-md-3">
-                                  <input id="profesor_asignatura" name="profesor_asignatura" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-primary" id="boton_modifica_profesor" name="boton_modifica_profesor"><span class="glyphicon glyphicon-pencil"></span> Modificar Profesor</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="ayudante1_asignatura">Ayudante nº1</label>  
-                                  <div class="col-md-3">
-                                  <input id="ayudante1_asignatura" name="ayudante1_asignatura" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-warning" id="boton_modifica_ayudante1" name="boton_modifica_ayudante1"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="ayudante2_asignatura">Ayudante nº2</label>  
-                                  <div class="col-md-3">
-                                  <input id="ayudante2_asignatura" name="ayudante2_asignatura" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-danger" id="boton_modifica_ayudante2" name="boton_modifica_ayudante2"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="comentario_asignarura">Comentarios</label>
-                                  <div class="col-md-3">                     
-                                    <textarea class="form-control devuelve_robot" id="comentario_asignatura" name="comentario_asignatura"></textarea>
-                                    <span class="help-block">Información acerca de la asignatura (comentarios)</span>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <a class="btn btn-default" id="boton_modifica_comentario" name="boton_modifica_comentario"><span class="glyphicon glyphicon-pencil"></span> Modificar Comenterio</a>
-                                  </div>
-                                </div>
-                            </fieldset>
-                        </form>
+                    <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['ramo'];?>">
+                    <div class="col-lg-12"> 
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span class="glyphicon glyphicon-time"></span> Documentos sin aprobar</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table id="tablaNoAprobado" class="display" cellspacing="0" width="100%">
+                                    <tbody id='tabla_doc_sin_aprobar'>
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Comentario</th>
+                                                <th>Autor</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">        
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span class="glyphicon glyphicon-ok"></span> Documentos aprobados</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table id="tablaAprobado" class="display" cellspacing="0" width="100%">
+                                    <tbody id='tabla_doc_aprobados'>
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Comentario</th>
+                                                <th>Autor</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>          
                     </div>
                 </div>
 
@@ -163,7 +157,9 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/funcion_admin_asignatura.js"></script>
+    <script src="../../js/DataTables-1.10.3/media/js/jquery.dataTables.min.js"></script>
+    <script src="js/funcion_admin_docs.js"></script>
+    
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 

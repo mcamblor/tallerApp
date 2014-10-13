@@ -237,3 +237,19 @@ ul.alert-dropdown {
     height: 100%;
     width: 100%;
 }
+
+.nombre_archivo{
+    width: 240px !important;
+}
+
+.comentario_archivo{
+    width: 400px !important;
+}
+
+.autor_archivo{
+    width: 100px !important;
+}
+
+.boton_eliminar, .boton_aprobar{
+    width: 57px !important;
+}
