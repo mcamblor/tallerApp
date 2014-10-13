@@ -30,9 +30,9 @@
                                 <a>Usuario</a>
                                 <input type="text" class="form-control" id="user" placeholder="Usuario">
                                 <a>Contraseña</a>
-                                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                                <input type="password" class="form-control" id="clave" placeholder="Contraseña">
                               </div>
-                              <button type="submit" class="btn btn-warning">Entrar</button>
+                              <a id="boton_login" class="btn btn-warning">Entrar</a>
                             </form>
                           </div>
                         </div>

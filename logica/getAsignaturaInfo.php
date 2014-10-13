@@ -2,21 +2,21 @@
 
 require_once('../data/conexion_bd.php');
 
-$mencion = $_POST['mencion'];
-$codigo = $_POST['codigo'];
+$asignatura = $_POST['asignatura'];
 
 $consulta = new conexionBD;
-$rs = $consulta->consultar("SELECT profesor,descripcion_corta,descripcion_larga,url_imagen,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='$mencion' AND idCodigo='$codigo'");
+$rs = $consulta->consultar("SELECT nombre,descrip,profesor,ayudante1,ayudante2,numero,foto FROM asignatura WHERE numero='$asignatura'");
 $count = $rs->rowCount();
 
 $record = $rs->fetch(PDO::FETCH_ASSOC);
 
-$resultado = $record['profesor']."||";
-$resultado = $resultado.$record['descripcion_corta']."||";
-$resultado = $resultado.$record['descripcion_larga']."||";
-$resultado = $resultado.$record['url_imagen']."||";
-$resultado = $resultado.$record['nombre']."||";
-$resultado = $resultado.$record['idCodigo'];
+$resultado = $record['nombre']."||";
+$resultado = $resultado.$record['profesor']."||";
+$resultado = $resultado.$record['ayudante1']."||";
+$resultado = $resultado.$record['ayudante2']."||";
+$resultado = $resultado.$record['numero']."||";
+$resultado = $resultado.$record['foto']."||";
+$resultado = $resultado.$record['descrip'];
 
 echo $resultado;
 

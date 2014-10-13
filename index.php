@@ -81,6 +81,23 @@
         </a>
     </section><!--/#main-slider-->
 
+        <!-- Modal -->
+<div class="modal fade" id="myModal_index" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="myModalLabel"></h3>
+      </div>
+      <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     
     <?php include("includes/footer.php");?>
 
@@ -88,5 +105,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/funcion_main_index.js"></script>
 </body>
 </html>
