@@ -250,6 +250,15 @@ ul.alert-dropdown {
     width: 100px !important;
 }
 
-.boton_eliminar, .boton_aprobar{
+.boton_eliminar, .boton_aprobar, .boton_modificar, .boton_visualizar{
     width: 57px !important;
+}
+
+#new_abstract{
+    resize: vertical;
+    height: 100px;   
+}
+
+#modificarDoc{
+    margin-right: 10px !important;
 }

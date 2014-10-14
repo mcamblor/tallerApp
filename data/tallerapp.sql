@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2014 a las 19:12:20
+-- Tiempo de generación: 14-10-2014 a las 17:14:24
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -48,6 +48,10 @@ CREATE TABLE IF NOT EXISTS `asignatura` (
   `descrip` text NOT NULL,
   `semestre_semestre` int(2) NOT NULL,
   `malla_idMalla` varchar(3) NOT NULL,
+  `profesor` varchar(30) NOT NULL,
+  `ayudante1` varchar(30) NOT NULL,
+  `ayudante2` varchar(30) NOT NULL,
+  `foto` varchar(200) NOT NULL,
   PRIMARY KEY (`nombre`),
   KEY `fk_asignatura_semestre1_idx` (`semestre_semestre`),
   KEY `fk_asignatura_malla1_idx` (`malla_idMalla`)
@@ -57,8 +61,8 @@ CREATE TABLE IF NOT EXISTS `asignatura` (
 -- Volcado de datos para la tabla `asignatura`
 --
 
-INSERT INTO `asignatura` (`nombre`, `numero`, `descrip`, `semestre_semestre`, `malla_idMalla`) VALUES
-('Algebra Elemental', 100, 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.', 1, 'INC');
+INSERT INTO `asignatura` (`nombre`, `numero`, `descrip`, `semestre_semestre`, `malla_idMalla`, `profesor`, `ayudante1`, `ayudante2`, `foto`) VALUES
+('Algebra Elemental', 100, 'Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.', 1, 'INC', 'profesor algebra', 'ayudante 1 algebra', 'ayudante 2 algebra', '../../images/asignaturas/sem1/inc100/inc100.jpg');
 
 -- --------------------------------------------------------
 
@@ -207,17 +211,21 @@ CREATE TABLE IF NOT EXISTS `descargas` (
   `idCodigo` varchar(6) NOT NULL,
   `autor` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idDescargas`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Volcado de datos para la tabla `descargas`
 --
 
 INSERT INTO `descargas` (`idDescargas`, `titulo`, `url`, `abstract`, `anio`, `estado`, `idCodigo`, `autor`) VALUES
-(29, '59406824-RESUMEN-COMPLETO-MANKIW', '../static/sem1/inc100/2014/59406824-RESUMEN-COMPLETO-MANKIW.pdf', 'comentario 1', 2014, 1, 'inc100', 'autor 1'),
-(30, '114427', '../static/sem1/inc100/2014/114427.pdf', 'comentario 2', 2014, 1, 'inc100', 'autor 2'),
-(33, 'hola', '../static/sem1/inc100/2013/hola.pdf', 'comentario oj', 2013, 1, 'inc100', 'autor 4'),
-(34, 'hola', '../static/sem1/inc100/2013/hola.pdf', 'comentario oj', 2012, 1, 'inc100', 'autor 5');
+(29, '59406824-RESUMEN-COMPLETO-MANKIW', '../static/documentos/2014/59406824-RESUMEN-COMPLETO-MANKIW.pdf', 'comentario 1', 2014, 1, 'inc100', 'autor 1'),
+(30, '114427', '../static/documentos/2014/114427.pdf', 'comentario 2', 2014, 1, 'inc100', 'autor 2'),
+(33, 'hola', '../static/documentos/2013/hola.pdf', 'comentario oj', 2013, 1, 'inc100', 'autor 4'),
+(34, 'hola', '../static/documentos/2013/hola.pdf', 'comentario oj', 2012, 1, 'inc100', 'autor 5'),
+(35, 'Aliens Colonial Marines pulento', '../static/documentos/2014/Aliens Colonial Marines.txt', 'comentario comentario comentario', 2014, 0, 'inc100', 'ola ke ase'),
+(37, 'entrega 3 - final', '../static/documentos/2014/entrega 3 - final.doc', 'pulento', 2014, 1, 'inc100', 'Es terrible pulento'),
+(38, 'Contactos Ayudantes', '../static/documentos/2014/Contactos Ayudantes.pdf', 'Sin Comentarios', 2014, 0, 'inc100', 'Sin Autor'),
+(39, 'CV - Jorge Garin Roman', '../static/documentos/2014/CV - Jorge Garin Roman.pdf', 'Sin Comentarios', 2014, 0, 'inc100', 'Sin Autor');
 
 -- --------------------------------------------------------
 
@@ -385,7 +393,10 @@ CREATE TABLE IF NOT EXISTS `usuario_administrador` (
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(20) NOT NULL,
   `mail` varchar(50) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `tipo` varchar(10) NOT NULL,
+  `asignatura` varchar(6) DEFAULT NULL,
+  `nickname` varchar(30) NOT NULL,
   PRIMARY KEY (`rut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -393,8 +404,9 @@ CREATE TABLE IF NOT EXISTS `usuario_administrador` (
 -- Volcado de datos para la tabla `usuario_administrador`
 --
 
-INSERT INTO `usuario_administrador` (`rut`, `nombre`, `apellido`, `mail`, `contraseña`) VALUES
-(16484897, 'Jorge', 'Garin', 'garan2sisisi@gmail.com', 'garinroman');
+INSERT INTO `usuario_administrador` (`rut`, `nombre`, `apellido`, `mail`, `password`, `tipo`, `asignatura`, `nickname`) VALUES
+(16484897, 'Jorge', 'Garin', 'garan2sisisi@gmail.com', 'garinroman', 'admin', NULL, 'jgarinr1'),
+(16484898, 'Jorge', 'Garin', 'jorge.garinr@alumnos.uv.cl', 'garinroman', 'ramo', '100', 'jgarinr2');
 
 -- --------------------------------------------------------
 

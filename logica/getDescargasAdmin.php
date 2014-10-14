@@ -5,7 +5,7 @@ require_once('../data/conexion_bd.php');
 $codigo = "inc".$_POST['asignatura'];
 
 $consulta = new conexionBD;
-$rs1 = $consulta->consultar("SELECT titulo,url,abstract,autor,estado,anio FROM descargas WHERE idCodigo='$codigo'");
+$rs1 = $consulta->consultar("SELECT titulo,url,abstract,autor,estado,anio,idDescargas FROM descargas WHERE idCodigo='$codigo'");
 $count1 = $rs1->rowCount();
 
 $aprobados = '';
@@ -16,6 +16,7 @@ while($record1 = $rs1->fetch(PDO::FETCH_ASSOC)){
 		$no_aprobados = $no_aprobados.$record1['url']."++";
 		$no_aprobados = $no_aprobados.$record1['autor']."++";
 		$no_aprobados = $no_aprobados.$record1['anio']."++";
+		$no_aprobados = $no_aprobados.$record1['idDescargas']."++";
 		$no_aprobados = $no_aprobados.$record1['abstract']."||";
 	}
 	if($record1['estado'] == 1){
@@ -23,6 +24,7 @@ while($record1 = $rs1->fetch(PDO::FETCH_ASSOC)){
 		$aprobados = $aprobados.$record1['url']."++";
 		$aprobados = $aprobados.$record1['autor']."++";
 		$aprobados = $aprobados.$record1['anio']."++";
+		$aprobados = $aprobados.$record1['idDescargas']."++";
 		$aprobados = $aprobados.$record1['abstract']."||";
 	}
 }

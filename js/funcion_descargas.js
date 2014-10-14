@@ -150,7 +150,7 @@ $( document ).ready(function() {
 					url: '../logica/setUrldownloadBD.php',
 					type: 'POST',
 					async: true,
-					data: 'sem='+datos_periodo[0]+'&ramo='+datos_periodo[1]+'&name='+nombres,
+					data: 'ramo='+datos_periodo[1]+'&name='+nombres,
 					success: function(datos_recibidos) {
 						}
 					});

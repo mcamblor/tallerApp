@@ -112,8 +112,10 @@
                                                 <th>Nombre</th>
                                                 <th>Comentario</th>
                                                 <th>Autor</th>
-                                                <th></th>
-                                                <th></th>
+                                                <th>Aprobar</th>
+                                                <th>Modificar</th>
+                                                <th>Visualizar</th>
+                                                <th>Eliminar</th>
                                             </tr>
                                         </thead>
                                     </tbody>
@@ -136,7 +138,9 @@
                                                 <th>Nombre</th>
                                                 <th>Comentario</th>
                                                 <th>Autor</th>
-                                                <th></th>
+                                                <th>Modificar</th>
+                                                <th>Visualizar</th>
+                                                <th>Eliminar</th>
                                             </tr>
                                         </thead>
                                     </tbody>
@@ -154,6 +158,39 @@
 
     </div>
     <!-- /#wrapper -->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="myModalLabel"></h3>
+      </div>
+      <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="myModalLabel"></h3>
+      </div>
+      <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="boton_aprobar_html"><span class="glyphicon glyphicon-ok"></span> Aprobar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="cerrar_boton_aprobar_html">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
