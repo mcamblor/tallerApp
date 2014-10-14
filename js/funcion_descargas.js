@@ -11,20 +11,21 @@ $( document ).ready(function() {
 			var tmp = datos_recibidos.split("||");
 			var periodos_download = tmp[2].split("++");
 			$(".modal-title").html("Semestre "+tmp[3]+" - "+tmp[0]);
-			$(".modal-body").html("<div class='row'><div class='col-sm-12'>"+tmp[1]+"</div></div><div class='row'><div class='col-sm-4'><h3>Selecciona el Periodo</h3><select id='periodo_descarga' name='periodo_descarga' class='form-control'></select></div></div><div class='row'><div class='col-sm-12' id='contenido_descargable'></div></div>");
+			$(".modal-body").html("<div class='row'><div class='col-sm-4'><h3>Selecciona el Periodo</h3><select id='periodo_descarga' name='periodo_descarga' class='form-control'></select></div></div><div class='row'><div class='col-sm-12' id='contenido_descargable'></div></div>");
 			
 			var descargas = tmp[4].split("|+|");
 
-			$("#contenido_descargable").html("<h3>Documentos - <span id='year_doc'></span></h3><table id='tablaDownload' class='display' cellspacing='0' width='100%'><tbody id='tabla_descargas'><thead><tr><th>Nombre</th><th>Comentario</th><th>Autor</th><th></th></tr></thead></tbody></table>");
+			$("#contenido_descargable").html("<div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'><h3>Documentos - <span id='year_doc'></span></h3></div><div class='panel-body'><table id='tablaDownload' class='display' cellspacing='0' width='100%'><tbody id='tabla_descargas'><thead><tr><th>Nombre</th><th>Comentario</th><th>Autor</th><th></th></tr></thead></tbody></table></div></div>");
 
 			for(var i=0;i<descargas.length-1;i++){
 				var datos_descargas = descargas[i].split("++");
-				$("#tabla_descargas").append("<tr class='template-upload fade in'><td class='nombre_archivo'>"+datos_descargas[0]+"</td><td class='comentario_archivo'>"+datos_descargas[2]+"</td><td class='class='autor_archivo>"+datos_descargas[3]+"</td><td class='boton_descarga_archivo'><a class='btn btn-md btn-success' href='"+datos_descargas[1]+"'><span class='glyphicon glyphicon-download'></span> Descargar</a></td></tr>");
+				$("#tabla_descargas").append("<tr><td class='nombre_archivo'>"+datos_descargas[0]+"</td><td class='comentario_archivo'>"+datos_descargas[2]+"</td><td class='class='autor_archivo>"+datos_descargas[3]+"</td><td class='boton_descarga_archivo'><a class='btn btn-md btn-success' href='"+datos_descargas[1]+"'><span class='glyphicon glyphicon-download'></span> Descargar</a></td></tr>");
 			}
 
 			$('#tablaDownload').dataTable({
                 "scrollY":        "auto",
                 "scrollCollapse": true,
+                "searching": false,
                 "paging":         false
             });
 
@@ -52,7 +53,7 @@ $( document ).ready(function() {
 						var atributos_descargas = datos_recibidos.split("||");
 						for (var i = 0; i < atributos_descargas.length-1 ; i++) {
 							var datas = atributos_descargas[i].split("++");
-							$("#tabla_descargas").append("<tr class='template-upload fade in'><td class='nombre_archivo'>"+datas[0]+"</td><td class='comentario_archivo'>"+datas[3]+"</td><td class='class='autor_archivo>"+datas[2]+"</td><td class='boton_descarga_archivo'><a class='btn btn-md btn-success' href='"+datas[1]+"'><span class='glyphicon glyphicon-download'></span> Descargar</a></td></tr>");
+							$("#tabla_descargas").append("<tr><td class='nombre_archivo'>"+datas[0]+"</td><td class='comentario_archivo'>"+datas[3]+"</td><td class='class='autor_archivo>"+datas[2]+"</td><td class='boton_descarga_archivo'><a class='btn btn-md btn-success' href='"+datas[1]+"'><span class='glyphicon glyphicon-download'></span> Descargar</a></td></tr>");
 						}
 
 					}

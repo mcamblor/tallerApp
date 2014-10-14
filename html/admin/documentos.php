@@ -184,7 +184,7 @@
       </div>
       <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" id="pie_de_modal">
         <button type="button" class="btn btn-success" id="boton_aprobar_html"><span class="glyphicon glyphicon-ok"></span> Aprobar</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal" id="cerrar_boton_aprobar_html">Cerrar</button>
       </div>

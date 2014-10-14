@@ -14,12 +14,12 @@ $( document ).ready(function() {
 
                 for(var i=0;i<no_aprobados.length-1;i++){
                     var datos = no_aprobados[i].split("++");
-                    $("#tabla_doc_sin_aprobar").append("<tr class='template-upload fade in' id='filaNoAprobada_"+i+"'><td class='nombre_archivo' id='nombreNoAprobado_"+i+"'>"+datos[0]+"</td><td class='comentario_archivo' id='comentarioNoAprobado_"+i+"'>"+datos[5]+"</td><td class='autor_archivo' id='autorNoAprobado_"+i+"'>"+datos[2]+"</td><td class='boton_aprobar'><a id='aprobarBoton_"+i+"_"+datos[4]+"' class='btn btn-success botonAprobar' title='Aprobar Documento'><span class='glyphicon glyphicon-ok'></span></a></td><td class='boton_modificar'><a id='modificar_"+datos[4]+"_"+i+"_"+0+"' class='btn btn-primary botonModificar' title='Modificar Documento'><span class='glyphicon glyphicon-pencil'></span></a></td><td class='boton_visualizar'><a href='../"+datos[1]+"' target='_blank' class='btn btn-warning' title='Visualizar Documento'><span class='glyphicon glyphicon-eye-open'></span></a></td><td class='boton_eliminar'><a href='#' class='btn btn-danger' title='Eliminar Documento'><span class='glyphicon glyphicon-remove'></span></a></td></tr>");
+                    $("#tabla_doc_sin_aprobar").append("<tr class='template-upload fade in' id='filaNoAprobada_"+i+"'><td class='nombre_archivo' id='nombreNoAprobado_"+i+"'>"+datos[0]+"</td><td class='comentario_archivo' id='comentarioNoAprobado_"+i+"'>"+datos[5]+"</td><td class='autor_archivo' id='autorNoAprobado_"+i+"'>"+datos[2]+"</td><td class='boton_aprobar'><a id='aprobarBoton_"+i+"_"+datos[4]+"' class='btn btn-success botonAprobar' title='Aprobar Documento'><span class='glyphicon glyphicon-ok'></span></a></td><td class='boton_modificar'><a id='modificar_"+datos[4]+"_"+i+"_"+0+"' class='btn btn-primary botonModificar' title='Modificar Documento'><span class='glyphicon glyphicon-pencil'></span></a></td><td class='boton_visualizar'><a href='../"+datos[1]+"' target='_blank' class='btn btn-warning' title='Visualizar Documento'><span class='glyphicon glyphicon-eye-open'></span></a></td><td class='boton_eliminar'><a id='EliminarBoton_"+i+"_"+datos[4]+"' class='btn btn-danger botonEliminar' title='Eliminar Documento'><span class='glyphicon glyphicon-remove'></span></a></td></tr>");
                 }
 
                 for(var i=0;i<aprobados.length-1;i++){
                     var datos = aprobados[i].split("++");
-                    $("#tabla_doc_aprobados").append("<tr class='template-upload fade in' id='filaAprobada_"+i+"'><td class='nombre_archivo' id='nombreAprobado_"+i+"'>"+datos[0]+"</td><td class='comentario_archivo' id='comentarioAprobado_"+i+"'>"+datos[5]+"</td><td class='autor_archivo' id='autorNoAprobado_"+i+"'>"+datos[2]+"</td><td class='boton_modificar'><a id='modificar_"+datos[4]+"_"+i+"_"+1+"' class='btn btn-primary botonModificar' title='Modificar Documento'><span class='glyphicon glyphicon-pencil'></span></a></td><td class='boton_visualizar'><a href='../"+datos[1]+"' target='_blank' class='btn btn-warning' title='Visualizar Documento'><span class='glyphicon glyphicon-eye-open'></span></a></td><td class='boton_eliminar'><a href='#' class='btn btn-danger' title='Eliminar Documento'><span class='glyphicon glyphicon-remove'></span></a></td></tr>");
+                    $("#tabla_doc_aprobados").append("<tr class='template-upload fade in' id='filaAprobada_"+i+"'><td class='nombre_archivo' id='nombreAprobado_"+i+"'>"+datos[0]+"</td><td class='comentario_archivo' id='comentarioAprobado_"+i+"'>"+datos[5]+"</td><td class='autor_archivo' id='autorNoAprobado_"+i+"'>"+datos[2]+"</td><td class='boton_modificar'><a id='modificar_"+datos[4]+"_"+i+"_"+1+"' class='btn btn-primary botonModificar' title='Modificar Documento'><span class='glyphicon glyphicon-pencil'></span></a></td><td class='boton_visualizar'><a href='../"+datos[1]+"' target='_blank' class='btn btn-warning' title='Visualizar Documento'><span class='glyphicon glyphicon-eye-open'></span></a></td><td class='boton_eliminar'><a id='EliminarBoton_"+i+"_"+datos[4]+"' class='btn btn-danger botonEliminar' title='Eliminar Documento'><span class='glyphicon glyphicon-remove'></span></a></td></tr>");
                 }
             
                 $('#tablaNoAprobado').dataTable({
@@ -44,6 +44,7 @@ $( document ).ready(function() {
                     var fila = tmp[1];
                     $(".modal-title").html("Aprobar Documento");
                     $(".modal-body").html('Esta seguro de aprobar el documento "<strong>'+$("#nombreNoAprobado_"+tmp[1]).text()+'</strong>"');
+                    $("#pie_de_modal").html("<button type='button' class='btn btn-success' id='boton_aprobar_html'><span class='glyphicon glyphicon-ok'></span> Aprobar</button><button type='button' class='btn btn-primary' data-dismiss='modal' id='cerrar_boton_aprobar_html'>Cerrar</button>");
                     $('#myModal2').modal({show:true});
 
                     $("#boton_aprobar_html").click(function(){
@@ -70,6 +71,40 @@ $( document ).ready(function() {
                             }
                         });
                     });
+                });
+
+                $(".botonEliminar").click(function(){
+                    var tmp = $(this).attr('id').split("_");
+                    $(".modal-title").html("Eliminar Documento");
+                    $(".modal-body").html('Esta seguro de eliminar el documento "<strong>'+$("#nombreNoAprobado_"+tmp[1]).text()+'</strong>"');
+                    $("#pie_de_modal").html("<button type='button' class='btn btn-danger' id='boton_eliminar_html'><span class='glyphicon glyphicon-remove'></span> Eliminar</button><button type='button' class='btn btn-primary' data-dismiss='modal' id='cerrar_boton_aprobar_html'>Cerrar</button>");
+                    $('#myModal2').modal({show:true});
+
+                    $("#boton_eliminar_html").click(function(){
+                       $.ajax({
+                        url: '../../logica/deleteDocumentos.php',
+                        type: 'POST',
+                        async: true,
+                        data: 'idEliminar='+tmp[2],
+                        success: function(datos_recibidos) {
+                            if(datos_recibidos == 1){
+                                $(".modal-body").html("<div class='alert alert-dismissible alert-success' role='alert' id='validar_aprobacion'><strong>EXITO</strong> - El documento '"+$("#nombreNoAprobado_"+tmp[1]).text()+"' ha sido eliminado con exito. En breve sera redirigido a la gestion de documentos.</div>");
+                                $("#validar_aprobacion").show("slow");
+                                setTimeout(function() {
+                                    location.reload();
+                                }, 3000);                               
+                            }else{
+                                $(".modal-body").html("<div class='alert alert-dismissible alert-danger' role='alert' id='validar_aprobacion'><strong>ERROR!</strong> - El documento '"+$("#nombreNoAprobado_"+tmp[1]).text()+"' no ha sido eliminado. Intente nuevamente</div>");                                
+                                $("#validar_aprobacion").show("slow");
+                                setTimeout(function() {
+                                    $('#validar_aprobacion').hide('slow');
+                                    $("#cerrar_boton_aprobar_html").click();
+                                }, 3000);
+                            }
+                            }
+                        });
+                    });
+
                 });
 
                 $(".botonModificar").click(function(){
