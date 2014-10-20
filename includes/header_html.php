@@ -40,7 +40,7 @@
                     <?php } if($script_ejecutandose[1] == "malla.php"){?>
                         <li class="active"><a href="malla.php">Malla Curricular</a></li>
                     <?php }else{ ?>
-                        <li><a href="malla.php">Malla Curricular</a></li>
+                        <li><a href="malla.php">Malla Curricular</a></li>  
                     <?php }?>
                 </ul>
             </div>
