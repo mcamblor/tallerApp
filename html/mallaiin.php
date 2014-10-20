@@ -53,7 +53,7 @@
     </section><!--/#title-->
     <table style="width:80%">
   <tr>
-    <td colspan="4" >Primer año</td>
+    <td colspan="3" >Primer año</td>
     <td colspan="4" >Segundo año</td>		
     <td colspan="4" >Tercer año</td>
     <td colspan="4" >Cuarto año</td>
