@@ -62,7 +62,7 @@ table {
    <tr>
     <td colspan="24" >Plan Ingenieria Civil en Informatica</td>
   </tr>
-  <tr>
+<tr>
     <td>1° Sem.</td>
     <td colspan="2">2° Sem.</td>		
     <td colspan="2">3° Sem.</td>
@@ -76,7 +76,81 @@ table {
     <td colspan="2">11° Sem.</td>
     <td colspan="2">12° Sem.</td>	
   </tr>
- <tr>
+  <?php
+		require_once('../data/conexion_bd.php');
+		$consulta = new conexionBD;
+		$s1 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '100' and '104'");
+		$s2 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '110' and '114'");
+		$s3 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '200' and '205'");
+		$s4 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '210' and '215'");
+		$s5 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '300' and '305'");
+		$s6 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '310' and '315'");
+		$s7 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '400' and '405'");
+		$s8 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '410' and '415'");
+		$s9 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '500' and '505'");
+		$s10 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '510' and '515'");
+		$s11 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '600' and '602'");
+		$s12 = $consulta->consultar("SELECT malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '610' and '611'");
+		//echo "<tr>";
+			//echo "<td>".$sem1['malla_idMalla'].$sem1['numero']." ".$sem1['nombre']."</td>";
+			//echo "<td>R: </td>\n";
+			//echo "<td>".$sem2['malla_idMalla'].$sem2['numero']." ".$sem2['nombre']."</td>";
+			while($sem3 = $s3->fetch(PDO::FETCH_ASSOC)) {
+				$sem4 = $s4->fetch(PDO::FETCH_ASSOC);
+				$sem5 = $s5->fetch(PDO::FETCH_ASSOC);
+				$sem6 = $s6->fetch(PDO::FETCH_ASSOC);
+				$sem7 = $s7->fetch(PDO::FETCH_ASSOC);
+				$sem8 = $s8->fetch(PDO::FETCH_ASSOC);
+				$sem9 = $s9->fetch(PDO::FETCH_ASSOC);
+				$sem10 = $s10->fetch(PDO::FETCH_ASSOC);
+				$sem1 = $s1->fetch(PDO::FETCH_ASSOC);
+				$sem2 = $s2->fetch(PDO::FETCH_ASSOC);
+				$sem11 = $s11->fetch(PDO::FETCH_ASSOC);
+				$sem12 = $s12->fetch(PDO::FETCH_ASSOC);
+				echo "<tr>";
+				if($sem1){
+					echo "<td>".$sem1['malla_idMalla'].$sem1['numero']." ".$sem1['nombre']."</td>";
+					echo "<td>R: </td>\n";
+					echo "<td>".$sem2['malla_idMalla'].$sem2['numero']." ".$sem2['nombre']."</td>";
+				}else {
+					echo "<td> </td>\n";
+					echo "<td> </td>\n";
+					echo "<td> </td>\n";
+				}
+				echo "<td>R: </td>\n";
+				echo "<td>".$sem3['malla_idMalla'].$sem3['numero']." ".$sem3['nombre']."</td>";
+				echo "<td>R: </td>\n";
+				echo "<td>".$sem4['malla_idMalla'].$sem4['numero']." ".$sem4['nombre']."</td>";
+				echo "<td>R: </td>\n";
+				echo "<td>".$sem5['malla_idMalla'].$sem5['numero']." ".$sem5['nombre']."</td>";
+				echo "<td>R: </td>\n";
+				echo "<td>".$sem6['malla_idMalla'].$sem6['numero']." ".$sem6['nombre']."</td>";
+				echo "<td>R: </td>\n";
+				echo "<td>".$sem7['malla_idMalla'].$sem7['numero']." ".$sem7['nombre']."</td>";
+				echo "<td>R: </td>\n";
+				echo "<td>".$sem8['malla_idMalla'].$sem8['numero']." ".$sem8['nombre']."</td>";
+				echo "<td>R: </td>\n";
+				echo "<td>".$sem9['malla_idMalla'].$sem9['numero']." ".$sem9['nombre']."</td>";
+				echo "<td>R: </td>\n";
+				echo "<td>".$sem10['malla_idMalla'].$sem10['numero']." ".$sem10['nombre']."</td>";
+				if($sem11){
+					echo "<td>R: </td>\n";
+					echo "<td>".$sem11['malla_idMalla'].$sem11['numero']." ".$sem11['nombre']."</td>";
+				}else {
+					echo "<td> </td>\n";
+					echo "<td> </td>\n";
+				}
+				if($sem12){
+					echo "<td>R: </td>\n";
+					echo "<td>".$sem12['malla_idMalla'].$sem12['numero']." ".$sem12['nombre']."</td>";
+				}else {
+					echo "<td> </td>\n";
+					echo "<td> </td>\n";
+				}
+				echo "</tr>";
+			}
+  ?>
+ <!--<tr>
     <td>INC100 Algebra Elemental</td>
     <td>R: 100 101</td>
     <td>INC110 Fisica</td>
@@ -125,7 +199,7 @@ table {
     <td></td>
     <td>R:</td>
     <td></td>
-  </tr>
+  </tr> -->
 </table>
 
 
