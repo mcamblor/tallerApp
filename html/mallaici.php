@@ -23,12 +23,13 @@
 	<style>
 table, th, td {
     align: center;
-    border: 3px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
 }
-table {
-    border-spacing: 3px;text-align: center;
-}
+<!--table {
+   
+	text-align: center;
+}-->
 </style>
 </head><!--/head-->
 <body>
@@ -137,69 +138,20 @@ table {
 					echo "<td>R: </td>\n";
 					echo "<td>".$sem11['malla_idMalla'].$sem11['numero']." ".$sem11['nombre']."</td>";
 				}else {
-					echo "<td> </td>\n";
-					echo "<td> </td>\n";
+					//echo "<td> </td>\n";
+					//echo "<td> </td>\n";
 				}
 				if($sem12){
 					echo "<td>R: </td>\n";
 					echo "<td>".$sem12['malla_idMalla'].$sem12['numero']." ".$sem12['nombre']."</td>";
 				}else {
-					echo "<td> </td>\n";
-					echo "<td> </td>\n";
+					//echo "<td> </td>\n";
+					//echo "<td> </td>\n";
 				}
 				echo "</tr>";
 			}
   ?>
- <!--<tr>
-    <td>INC100 Algebra Elemental</td>
-    <td>R: 100 101</td>
-    <td>INC110 Fisica</td>
-    <td>R: 110</td>
-    <td>INC200 Fisica Experimental</td>
-    <td>R: 100</td>
-    <td>INC210 Algebra Lineal</td>
-    <td>R: 201</td>
-    <td>INC300 Ecuaciones Diferenciales</td>
-    <td>R: 201</td>
-    <td>INC310 Probabilidades Y Estadicticas</td>
-    <td>R: 301</td>
-    <td>INC400 Fisica Contemporanea</td>
-    <td>R: 213</td>
-    <td>INC410 Biologia</td>
-    <td>R:404</td>
-    <td>INC500 Pruebas de Software</td>
-    <td>R: 314</td>
-    <td>INC510 Economia</td>
-    <td>R: AD HOC</td>
-    <td>INC600 Asignatura Electiva de Especialidad III</td>
-    <td>R: -</td>
-    <td>INC610 Seminario de Tecnologia de Informacion y Comunicacion</td>
-   </tr>
-   <tr>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-  </tr> -->
+
 </table>
 
 
