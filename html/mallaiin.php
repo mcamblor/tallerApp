@@ -24,7 +24,7 @@
 	<style>
 		table, th, td {
 			align: center;
-			border: 3px solid black;
+			border: 2px solid black;
 			border-collapse: collapse;
 		}
 		table {
@@ -74,48 +74,119 @@
     <td colspan="2">9° Sem.</td>
     <td colspan="2">10° Sem.</td>	    
    </tr>
- <tr>
-    <td>INC100 Algebra Elemental</td>
-    <td>R: 100 101</td>
-    <td>INC110 Fisica</td>
-    <td>R: 110</td>
-    <td>INC200 Fisica Experimental</td>
-    <td>R: 100</td>
-    <td>INC210 Algebra Lineal</td>
-    <td>R: 201</td>
-    <td>IIN300 Ecuaciones Diferenciales</td>
-    <td>R: 201</td>
-    <td>IIN310 Probabilidades Y Estadicticas</td>
-    <td>R: 304</td>
-    <td>IIN400 Interfaz Hombre-Maquina</td>
-    <td>R: 403</td>
-    <td>IIN410 Taller de Aplicaciones</td>
-    <td>R:311</td>
-    <td>IIN500 Taller de Redes</td>
-    <td>R: -</td>
-    <td>IIN510 Seminario de Tecnologia de Informacion y Comunicacion</td>
-   </tr>
-   <tr>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    <td>R:</td>
-    <td></td>
-    </tr>
+<?php
+		require_once('../data/conexion_bd.php');
+		$consulta = new conexionBD;
+		$consulta2 = new conexionBD;
+		$s1 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '100' and '104'");
+		$s2 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '110' and '114'");
+		$s3 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '200' and '205'");
+		$s4 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '210' and '215'");
+		$s5 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='IIN' and numero between '300' and '305'");
+		$s6 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='IIN' and numero between '310' and '314'");
+		$s7 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='IIN' and numero between '400' and '404'");
+		$s8 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='IIN' and numero between '410' and '414'");
+		$s9 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='IIN' and numero between '500' and '503'");
+		$s10 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='IIN' and numero between '510' and '511'");
+		//echo "<tr>";
+			//echo "<td>".$sem1['malla_idMalla'].$sem1['numero']." ".$sem1['nombre']."</td>";
+			//echo "<td>R: </td>\n";
+			//echo "<td>".$sem2['malla_idMalla'].$sem2['numero']." ".$sem2['nombre']."</td>";
+			while($sem3 = $s3->fetch(PDO::FETCH_ASSOC)) {
+				$sem4 = $s4->fetch(PDO::FETCH_ASSOC);
+				$sem5 = $s5->fetch(PDO::FETCH_ASSOC);
+				$sem6 = $s6->fetch(PDO::FETCH_ASSOC);
+				$sem7 = $s7->fetch(PDO::FETCH_ASSOC);
+				$sem8 = $s8->fetch(PDO::FETCH_ASSOC);
+				$sem9 = $s9->fetch(PDO::FETCH_ASSOC);
+				$sem10 = $s10->fetch(PDO::FETCH_ASSOC);
+				$sem1 = $s1->fetch(PDO::FETCH_ASSOC);
+				$sem2 = $s2->fetch(PDO::FETCH_ASSOC);
+				echo "<tr>";
+				if($sem1){
+					echo "<td>".$sem1['malla_idMalla'].$sem1['numero']." ".$sem1['nombre']."</td>";
+					$r2 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem2[id]'"); 
+					echo "<td>R:";
+					while($rr2 = $r2->fetch(PDO::FETCH_ASSOC)){
+						echo "\n".$rr2['numero']."\n";
+					}echo "</td>\n";
+					echo "<td>".$sem2['malla_idMalla'].$sem2['numero']." ".$sem2['nombre']."</td>";
+				}else {
+					echo "<td> </td>\n";
+					echo "<td> </td>\n";
+					echo "<td> </td>\n";
+				}
+				$r3 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem3[id]'"); 
+				echo "<td>R:";
+				while($rr3 = $r3->fetch(PDO::FETCH_ASSOC)){
+					echo "\n".$rr3['numero']."\n";
+				}echo "</td>\n";
+				echo "<td>".$sem3['malla_idMalla'].$sem3['numero']." ".$sem3['nombre']."</td>";
+				$r4 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem4[id]'"); 
+				echo "<td>R:";
+				while($rr4 = $r4->fetch(PDO::FETCH_ASSOC)){
+					echo "\n".$rr4['numero']."\n";
+				}echo "</td>\n";
+				echo "<td>".$sem4['malla_idMalla'].$sem4['numero']." ".$sem4['nombre']."</td>";
+				$r5 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem5[id]'"); 
+					echo "<td>R:";
+					while($rr5 = $r5->fetch(PDO::FETCH_ASSOC)){
+						echo "\n".$rr5['numero']."\n";
+					}echo "</td>\n";
+				echo "<td>".$sem5['malla_idMalla'].$sem5['numero']." ".$sem5['nombre']."</td>";
+				
+				if($sem6){
+					$r6 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem6[id]'"); 
+					echo "<td>R:";
+					while($rr6 = $r6->fetch(PDO::FETCH_ASSOC)){
+						echo "\n".$rr6['numero']."\n";
+					}echo "</td>\n";
+					echo "<td>".$sem6['malla_idMalla'].$sem6['numero']." ".$sem6['nombre']."</td>";
+					$r7 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem7[id]'"); 
+					echo "<td>R:";
+					while($rr7 = $r7->fetch(PDO::FETCH_ASSOC)){
+						echo "\n".$rr7['numero']."\n";
+					}echo "</td>\n";
+					echo "<td>".$sem7['malla_idMalla'].$sem7['numero']." ".$sem7['nombre']."</td>";
+					$r8 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem8[id]'"); 
+					echo "<td>R:";
+					while($rr8 = $r8->fetch(PDO::FETCH_ASSOC)){
+						echo "\n".$rr8['numero']."\n";
+					}echo "</td>\n";
+					echo "<td>".$sem8['malla_idMalla'].$sem8['numero']." ".$sem8['nombre']."</td>";
+				}else {
+					
+				}
+				if($sem9){
+					$r9 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem9[id]'"); 
+					echo "<td>R:";
+					$count = $r9->rowCount();
+					if($count > 1){
+						echo "\n4°\nAÑO\nAPR\n";
+					}else {
+						while($rr9 = $r9->fetch(PDO::FETCH_ASSOC)){
+							echo "\n".$rr9['numero']."\n";
+						}
+					}
+					echo "</td>\n";
+					echo "<td>".$sem9['malla_idMalla'].$sem9['numero']." ".$sem9['nombre']."</td>";
+				}else {
+					
+				}
+				if($sem10){
+					$r10 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem10[id]'"); 
+					echo "<td>R:";
+					$count = $r10->rowCount();
+					while($rr10 = $r10->fetch(PDO::FETCH_ASSOC)){
+						echo "\n".$rr10['numero']."\n";
+					}
+					echo "</td>\n";
+					echo "<td>".$sem10['malla_idMalla'].$sem10['numero']." ".$sem10['nombre']."</td>";
+				}else {}
+					
+				echo "</tr>";
+			}
+  ?>
 </table>
 
 
