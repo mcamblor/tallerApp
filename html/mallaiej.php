@@ -38,7 +38,6 @@ table {
             <div class="row">
                 <div class="col-sm-6">
                     <h1><span class="glyphicon glyphicon-th"></span> Malla Ingenieria de Ejecucion en Informatica</h1>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
