@@ -200,26 +200,26 @@ function mallaIIN(){
 			//echo "<td>".$sem1['malla_idMalla'].$sem1['numero']." ".$sem1['nombre']."</td>";
 			//echo "<td>R: </td>\n";
 			//echo "<td>".$sem2['malla_idMalla'].$sem2['numero']." ".$sem2['nombre']."</td>";
-			$resultado = "<table style='width:80%' class='tabla_malla'>
-						  <tr>
-						    <td colspan='3' >Primer año</td>
-						    <td colspan='4' >Segundo año</td>		
-						    <td colspan='4' >Tercer año</td>
-						    <td colspan='4' >Cuarto año</td>
-						    <td colspan='4' >Quinto año</td>
-						    </tr>
-						  <tr>
-						    <td>1° Sem.</td>
-						    <td colspan='2'>2° Sem.</td>		
-						    <td colspan='2'>3° Sem.</td>
-						    <td colspan='2'>4° Sem.</td>	    
-						    <td colspan='2'>5° Sem.</td>
-						    <td colspan='2'>6° Sem.</td>	    
-						    <td colspan='2'>7° Sem.</td>
-						    <td colspan='2'>8° Sem.</td>	    
-						    <td colspan='2'>9° Sem.</td>
-						    <td colspan='2'>10° Sem.</td>	    
-						   </tr>";
+			$resultado = " <table style='width:80%' class='tabla_malla'>
+				  	<tr>
+				    <th colspan='3'><a id='year_1' class='btn btn-primary btn-block btn-warning boton_year'>Primer Año</a></th>
+				    <th colspan='4'><a id='year_2' class='btn btn-primary btn-block btn-warning boton_year'>Segundo Año</a></th>		
+				    <th colspan='4'><a id='year_3' class='btn btn-primary btn-block btn-warning boton_year'>Tercer Año</a></th>
+				    <th colspan='4'><a id='year_4' class='btn btn-primary btn-block btn-warning boton_year'>Cuarto Año</a></th>
+				    <th colspan='4'><a id='year_5' class='btn btn-primary btn-block btn-warning boton_year'>Quinto Año</a></th>
+				  </tr>
+				  <tr>
+				    <td><a id='sem_1' class='btn btn-primary btn-block btn-danger boton_semestre'>1º Semestre</a></td>
+				    <td colspan='2'><a id='sem_2' class='btn btn-primary btn-block btn-danger boton_semestre'>2º Semestre</a></td>		
+				    <td colspan='2'><a id='sem_3' class='btn btn-primary btn-block btn-danger boton_semestre'>3º Semestre</a></td>
+				    <td colspan='2'><a id='sem_4' class='btn btn-primary btn-block btn-danger boton_semestre'>4º Semestre</a></td>	    
+				    <td colspan='2'><a id='sem_5' class='btn btn-primary btn-block btn-danger boton_semestre'>5º Semestre</a></td>
+				    <td colspan='2'><a id='sem_6' class='btn btn-primary btn-block btn-danger boton_semestre'>6º Semestre</a></td>	    
+				    <td colspan='2'><a id='sem_7' class='btn btn-primary btn-block btn-danger boton_semestre'>7º Semestre</a></td>
+				    <td colspan='2'><a id='sem_8' class='btn btn-primary btn-block btn-danger boton_semestre'>8º Semestre</a></td>	    
+				    <td colspan='2'><a id='sem_9' class='btn btn-primary btn-block btn-danger boton_semestre'>9º Semestre</a></td>
+				    <td colspan='2'><a id='sem_10' class='btn btn-primary btn-block btn-danger boton_semestre'>10º Semestre</a></td>	    
+				  </tr>";
 
 			while($sem3 = $s3->fetch(PDO::FETCH_ASSOC)) {
 				$sem4 = $s4->fetch(PDO::FETCH_ASSOC);
@@ -233,13 +233,13 @@ function mallaIIN(){
 				$sem2 = $s2->fetch(PDO::FETCH_ASSOC);
 				$resultado = $resultado."<tr>";
 				if($sem1){
-					$resultado = $resultado."<td>".$sem1['malla_idMalla'].$sem1['numero']." ".$sem1['nombre']."</td>";
+					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_1 sem_1' id='celda_".$sem1['malla_idMalla'].$sem1['numero']."'>".$sem1['malla_idMalla'].$sem1['numero']."<br>".$sem1['nombre']."</div></td>";
 					$r2 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem2[id]'"); 
 					$resultado = $resultado."<td>R:";
 					while($rr2 = $r2->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr2['numero']."\n";
 					}$resultado = $resultado."</td>\n";
-					$resultado = $resultado."<td>".$sem2['malla_idMalla'].$sem2['numero']." ".$sem2['nombre']."</td>";
+					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_1 sem_2' id='celda_".$sem2['malla_idMalla'].$sem2['numero']."'>".$sem2['malla_idMalla'].$sem2['numero']."<br>".$sem2['nombre']."</div></td>";
 				}else {
 					$resultado = $resultado."<td> </td>\n";
 					$resultado = $resultado."<td> </td>\n";
@@ -250,19 +250,19 @@ function mallaIIN(){
 				while($rr3 = $r3->fetch(PDO::FETCH_ASSOC)){
 					$resultado = $resultado."\n".$rr3['numero']."\n";
 				}$resultado = $resultado."</td>\n";
-				$resultado = $resultado."<td>".$sem3['malla_idMalla'].$sem3['numero']." ".$sem3['nombre']."</td>";
+				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_2 sem_3' id='celda_".$sem3['malla_idMalla'].$sem3['numero']."'>".$sem3['malla_idMalla'].$sem3['numero']."<br>".$sem3['nombre']."</div></td>";
 				$r4 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem4[id]'"); 
 				$resultado = $resultado."<td>R:";
 				while($rr4 = $r4->fetch(PDO::FETCH_ASSOC)){
 					$resultado = $resultado."\n".$rr4['numero']."\n";
 				}$resultado = $resultado."</td>\n";
-				$resultado = $resultado."<td>".$sem4['malla_idMalla'].$sem4['numero']." ".$sem4['nombre']."</td>";
+				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_2 sem_4' id='celda_".$sem4['malla_idMalla'].$sem4['numero']."'>".$sem4['malla_idMalla'].$sem4['numero']."<br>".$sem4['nombre']."</div></td>";
 				$r5 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem5[id]'"); 
 					$resultado = $resultado."<td>R:";
 					while($rr5 = $r5->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr5['numero']."\n";
 					}$resultado = $resultado."</td>\n";
-				$resultado = $resultado."<td>".$sem5['malla_idMalla'].$sem5['numero']." ".$sem5['nombre']."</td>";
+				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_3 sem_5' id='celda_".$sem5['malla_idMalla'].$sem5['numero']."'>".$sem5['malla_idMalla'].$sem5['numero']."<br>".$sem5['nombre']."</div></td>";
 				
 				if($sem6){
 					$r6 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem6[id]'"); 
@@ -270,19 +270,19 @@ function mallaIIN(){
 					while($rr6 = $r6->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr6['numero']."\n";
 					}$resultado = $resultado."</td>\n";
-					$resultado = $resultado."<td>".$sem6['malla_idMalla'].$sem6['numero']." ".$sem6['nombre']."</td>";
+					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_3 sem_6' id='celda_".$sem6['malla_idMalla'].$sem6['numero']."'>".$sem6['malla_idMalla'].$sem6['numero']."<br>".$sem6['nombre']."</div></td>";
 					$r7 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem7[id]'"); 
 					$resultado = $resultado."<td>R:";
 					while($rr7 = $r7->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr7['numero']."\n";
 					}$resultado = $resultado."</td>\n";
-					$resultado = $resultado."<td>".$sem7['malla_idMalla'].$sem7['numero']." ".$sem7['nombre']."</td>";
+					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_4 sem_7' id='celda_".$sem7['malla_idMalla'].$sem7['numero']."'>".$sem7['malla_idMalla'].$sem7['numero']."<br>".$sem7['nombre']."</div></td>";
 					$r8 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem8[id]'"); 
 					$resultado = $resultado."<td>R:";
 					while($rr8 = $r8->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr8['numero']."\n";
 					}$resultado = $resultado."</td>\n";
-					$resultado = $resultado."<td>".$sem8['malla_idMalla'].$sem8['numero']." ".$sem8['nombre']."</td>";
+					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_4 sem_8' id='celda_".$sem8['malla_idMalla'].$sem8['numero']."'>".$sem8['malla_idMalla'].$sem8['numero']."<br>".$sem8['nombre']."</div></td>";
 				}else {
 					
 				}
@@ -298,7 +298,7 @@ function mallaIIN(){
 						}
 					}
 					$resultado = $resultado."</td>\n";
-					$resultado = $resultado."<td>".$sem9['malla_idMalla'].$sem9['numero']." ".$sem9['nombre']."</td>";
+					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_5 sem_9' id='celda_".$sem9['malla_idMalla'].$sem9['numero']."'>".$sem9['malla_idMalla'].$sem9['numero']."<br>".$sem9['nombre']."</div></td>";
 				}else {
 					
 				}
@@ -310,7 +310,7 @@ function mallaIIN(){
 						$resultado = $resultado."\n".$rr10['numero']."\n";
 					}
 					$resultado = $resultado."</td>\n";
-					$resultado = $resultado."<td>".$sem10['malla_idMalla'].$sem10['numero']." ".$sem10['nombre']."</td>";
+					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_5 sem_10' id='celda_".$sem10['malla_idMalla'].$sem10['numero']."'>".$sem10['malla_idMalla'].$sem10['numero']."<br>".$sem10['nombre']."</div></td>";
 				}else {}
 					
 				$resultado = $resultado."</tr>";
