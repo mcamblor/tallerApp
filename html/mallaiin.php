@@ -40,6 +40,10 @@
         </div>
     </section><!--/#title-->
     <section class="container">
+        <div class="center gap">
+                <h2><span class="glyphicon glyphicon-flag"></span> Marca los ramos aprobados</h2>
+                <p>Si quieres marcar todo un periodo academico, haz click en el semestre (viceversa).<br>Si quieres marcar un año academico, haz click en el año.(viceversa)<p>
+        </div>
 	    <div class="row">
 	        <div class="col-sm-12" style="overflow-x:scroll;" id="mallaIIN">
 			</div>
