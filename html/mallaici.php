@@ -50,8 +50,7 @@
 	    </div>
 	</section>
 
-
-    <?php include("../includes/footer_html.php");?>
+	<?php include("../includes/footer_html.php");?>
 
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
