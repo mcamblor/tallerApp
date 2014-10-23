@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tallerapp`
 --
-
+CREATE DATABASE IF NOT EXISTS `tallerapp` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `tallerapp`;
 -- --------------------------------------------------------
 
 --

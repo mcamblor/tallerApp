@@ -50,6 +50,9 @@ table {
             </div>
         </div>
     </section><!--/#title-->
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12" style="overflow-x:scroll;">
     <table style="width:80%">
   <tr>
     <td colspan="3" >Primer año</td>
@@ -105,7 +108,9 @@ table {
     <td></td>
    </tr>
 </table>
-
+</div>
+        </div>
+        </section>
 
     <?php include("../includes/footer_html.php");?>
 

@@ -32,8 +32,7 @@ $( document ).ready(function() {
                 $('#tablaAprobado').dataTable({
                     "scrollY":        "210px",
                     "scrollCollapse": true,
-                    "searching": false,
-                    
+                    "searching": false, 
                     "paging": false
                 });
 
