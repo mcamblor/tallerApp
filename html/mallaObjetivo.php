@@ -34,7 +34,6 @@
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
                         <li><a href="../index.php">Inicio</a></li>
-                        <li><a href="malla.php">Malla Curricular</a></li>
                         <li class="active">Objetivos Academicos</li>
                     </ul>
                 </div>

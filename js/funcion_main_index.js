@@ -4,11 +4,15 @@ $( document ).ready(function() {
 
 	$("#boton_login").click(function(){
 		if($("#user").val() == ''){
-			alert("INICIO DE SESION\n\nDebe ingresar su usuario");
+			$(".modal-title").html("Inicio de Sesión")
+			$(".modal-body").html("No ha ingresado su cuenta. Por favor ingrese el nombre de su cuenta");
+			$('#myModal_index').modal({show:true});
 			return false;
 		}
 		if($("#clave").val() == ''){
-			alert("INICIO DE SESION\n\nDebe ingresar su contraseña");
+			$(".modal-title").html("Inicio de Sesión")
+			$(".modal-body").html("No ha ingresado una contraseña. Por favor ingrese la contraseña de su cuenta");
+			$('#myModal_index').modal({show:true});
 			return false;
 		}
 

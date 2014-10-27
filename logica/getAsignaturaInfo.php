@@ -5,7 +5,13 @@ require_once('../data/conexion_bd.php');
 $asignatura = $_POST['asignatura'];
 
 $consulta = new conexionBD;
-$rs = $consulta->consultar("SELECT nombre,descrip,profesor,ayudante1,ayudante2,numero,foto FROM asignatura WHERE numero='$asignatura'");
+if(!isset($_POST['malla'])){
+	$rs = $consulta->consultar("SELECT nombre,descrip,profesor,ayudante1,ayudante2,numero,foto FROM asignatura WHERE numero='$asignatura'");
+}else{
+	$malla = $_POST['malla'];
+	$rs = $consulta->consultar("SELECT nombre,descrip,profesor,ayudante1,ayudante2,numero,foto FROM asignatura WHERE numero='$asignatura' AND malla_idMalla='$malla'");
+}
+
 $count = $rs->rowCount();
 
 $record = $rs->fetch(PDO::FETCH_ASSOC);

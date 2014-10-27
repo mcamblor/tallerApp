@@ -33,15 +33,27 @@
                                 <li><a href="database.php">Gestion y Diseño de Base de Datos</a></li>
                             </ul>
                         </li>
+                    <?php } if($script_ejecutandose[1] == "mallaObjetivo.php" || $script_ejecutandose[1] == "mallaAvance.php"){?>
+                        <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Malla Curricular <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mallaAvance.php">Simulacion de Avance Academico</a></li>
+                            <li><a href="mallaObjetivo.php">Objetivos en Comun</a></li>
+                        </ul>
+                        </li>
+                    <?php }else{ ?>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Malla Curricular <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mallaAvance.php">Simulacion de Avance Academico</a></li>
+                            <li><a href="mallaObjetivo.php">Objetivos en Comun</a></li>
+                        </ul>
+                        </li>  
                     <?php } if($script_ejecutandose[1] == "descargas.php"){?>
                         <li class="active"><a href="descargas.php">Descargas</a></li>
                     <?php }else{ ?> 
                         <li><a href="descargas.php">Descargas</a></li>
-                    <?php } if($script_ejecutandose[1] == "malla.php"){?>
-                        <li class="active"><a href="malla.php">Malla Curricular</a></li>
-                    <?php }else{ ?>
-                        <li><a href="malla.php">Malla Curricular</a></li>  
-                    <?php }?>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

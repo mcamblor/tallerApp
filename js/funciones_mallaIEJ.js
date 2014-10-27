@@ -6,6 +6,21 @@ $( document ).ready(function() {
 	    data: 'malla=IEJ',
 	    success: function(datos_recibidos) {
 				$("#mallaIEJ").html(datos_recibidos);
+
+			$(".boton_ver_info_asignatura").click(function(){
+					var datos = $(this).attr("id").split("_");
+					$.ajax({
+					    url: '../logica/getAsignaturaInfo.php',
+					    type: 'POST',
+					    async: true,
+					    data: 'malla='+datos[0]+'&asignatura='+datos[1],
+					    success: function(datos_recibidos) {
+					    		var from = datos_recibidos.split("||");
+					    		$(".modal-title").html(from[0]);
+					    		$('#myModal_malla').modal({show:true});
+					    	}
+					});
+				});
 	        
 			//PINTAR RAMO EN ESPECIFICO
 				$(".caja_celda").click(function() {

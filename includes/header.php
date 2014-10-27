@@ -19,9 +19,15 @@
                             <li><a href="html/software.php">Gestion de Proyectos de Software</a></li>
                             <li><a href="html/database.php">Gestion y Diseño de Base de Datos</a></li>
                         </ul>
+                    </li> 
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Malla Curricular <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="html/mallaAvance.php">Simulacion de Avance Academico</a></li>
+                            <li><a href="html/mallaObjetivo.php">Objetivos en Comun</a></li>
+                        </ul>
                     </li>
-                    <li><a href="html/descargas.php">Descargas</a></li> 
-                    <li><a href="html/malla.php">Malla Curricular</a></li>
+                    <li><a href="html/descargas.php">Descargas</a></li>
                     <li><div class="dropdown">
                           <button type="button" class="btn btn-success btn-sm" data-toggle="dropdown">Login</button>
                           <div class="dropdown-menu" style="padding: 10px;">
