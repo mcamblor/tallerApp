@@ -8,6 +8,10 @@ $( document ).ready(function() {
 	    		//RECIBIR MALLA CURRICULAR
 				$("#mallaICI").html(datos_recibidos);
 
+				$("#boton_descargar_simulacion").click(function(){
+
+				});
+
 				//PINTAR RAMO EN ESPECIFICO
 				$(".caja_celda").click(function() {
 					var tmp = $(this).hasClass("caja_no_pintada");

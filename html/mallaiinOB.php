@@ -27,14 +27,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1><span class="glyphicon glyphicon-th"></span> Malla Ingenieria de Ejecucion en Informatica</h1>
+                    <h1><span class="glyphicon glyphicon-th"></span> Malla Ingenieria en Informatica</h1>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
                         <li><a href="../index.php">Inicio</a></li>
                         <li><a href="malla.php">Malla Curricular</a></li>
-                        <li><a href="mallaAvance.php">Simulador de Avance Academico</a></li>
-						<li class="active">Malla IEJ</li>
+                        <li><a href="mallaObjetivo.php">Objetivos Academicos</a></li>
+                        <li class="active">Malla IIN</li>
                     </ul>
                 </div>
             </div>
@@ -42,18 +42,14 @@
     </section><!--/#title-->
     <section class="container">
         <div class="center gap">
-                <h2><span class="glyphicon glyphicon-flag"></span> Marca los ramos aprobados</h2>
-                <p>Si quieres marcar todo un periodo academico, haz click en el semestre (viceversa).<br>Si quieres marcar un año academico, haz click en el año.(viceversa)<p>
+                <h2><span class="glyphicon glyphicon-hand-up"></span> Asignaturas y sus Objetivos</h2>
+                <p>Las asignaturas tienen objetivos que sirven para otras asignaturas.<br>Haz click en una asignatura para ver con que otras asignaturas se relaciona segun sus objetivos<p>
         </div>
-        <div class="row" style='margin-bottom:2%;'>
-            <div class="col-sm-6 center"><a class="btn btn-lg btn-success" id="boton_simular"><span class="glyphicon glyphicon-tasks"></span> Simular Avance Academico</a></div>
-            <div class="col-sm-6 center"><a class="btn btn-lg btn-primary" id="boton_descargar_simulacion"><span class="glyphicon glyphicon-picture"></span> Descargar Simulacion PDF</a></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12" style="overflow-x:scroll;" id="mallaIEJ">
+	    <div class="row">
+	        <div class="col-sm-12" style="overflow-x:scroll;" id="mallaIIN">
 			</div>
-        </div>
-    </section>
+	    </div>
+	</section>
 
     <?php include("../includes/footer_html.php");?>
 
@@ -61,6 +57,6 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.prettyPhoto.js"></script>
     <script src="../js/main.js"></script>
-	<script src="../js/funciones_mallaIEJ.js"></script>
+    <script src="../js/funciones_mallaIINOB.js"></script>
 </body>
 </html>

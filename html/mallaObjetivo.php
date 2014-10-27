@@ -23,37 +23,41 @@
 </head><!--/head-->
 <body>
     <?php include("../includes/header_html.php");?>
- <section id="title" class="emerald">
+
+    <section id="title" class="emerald">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1><span class="glyphicon glyphicon-th"></span> Malla Ingenieria de Ejecucion en Informatica</h1>
+                    <h1><span class="glyphicon glyphicon-screenshot"></span> Objetivos Academicos</h1>
+                    <p>Informate sobre los objetivos que se comparten entre las asignaturas</p>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
                         <li><a href="../index.php">Inicio</a></li>
                         <li><a href="malla.php">Malla Curricular</a></li>
-                        <li><a href="mallaAvance.php">Simulador de Avance Academico</a></li>
-						<li class="active">Malla IEJ</li>
+                        <li class="active">Objetivos Academicos</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section><!--/#title-->
-    <section class="container">
-        <div class="center gap">
-                <h2><span class="glyphicon glyphicon-flag"></span> Marca los ramos aprobados</h2>
-                <p>Si quieres marcar todo un periodo academico, haz click en el semestre (viceversa).<br>Si quieres marcar un año academico, haz click en el año.(viceversa)<p>
-        </div>
-        <div class="row" style='margin-bottom:2%;'>
-            <div class="col-sm-6 center"><a class="btn btn-lg btn-success" id="boton_simular"><span class="glyphicon glyphicon-tasks"></span> Simular Avance Academico</a></div>
-            <div class="col-sm-6 center"><a class="btn btn-lg btn-primary" id="boton_descargar_simulacion"><span class="glyphicon glyphicon-picture"></span> Descargar Simulacion PDF</a></div>
+
+    <section id="about-us" class="container">
+        <div class='center gap'>
+                <h2><span class="glyphicon glyphicon-eye-open"></span> Selecciona la malla que deseas ver sus objetivos</h2>
         </div>
         <div class="row">
-            <div class="col-sm-12" style="overflow-x:scroll;" id="mallaIEJ">
-			</div>
+            <div class="col-sm-4">
+                <a href="mallaiciOB.php" class="enlace_malla"><img src="../images/mencion/planici.png" class="foto_malla"></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="mallaiinOB.php" class="enlace_malla"><img src="../images/mencion/planiin.png" class="foto_malla"></a>
+            </div>
+            <div class="col-sm-4">
+                <a href="mallaiejOB.php" class="enlace_malla"><img src="../images/mencion/planiej.png" class="foto_malla"></a>
+            </div>
         </div>
-    </section>
+    </section><!--/#about-us-->
 
     <?php include("../includes/footer_html.php");?>
 
@@ -61,6 +65,5 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.prettyPhoto.js"></script>
     <script src="../js/main.js"></script>
-	<script src="../js/funciones_mallaIEJ.js"></script>
 </body>
 </html>

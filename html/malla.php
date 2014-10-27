@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1><span class="glyphicon glyphicon-th"></span> Malla Curricular</h1>
-                    <p>Simula tu avance academico segun tu situacion actual</p>
+                    <p>Ve como esta estructurada nuestra malla curricular e informate sobre sus componentes</p>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
@@ -43,17 +43,15 @@
 
     <section id="about-us" class="container">
         <div class='center gap'>
-                <h2><span class="glyphicon glyphicon-eye-open"></span> Selecciona la malla que deseas ver</h2>
+                <h2><span class="glyphicon glyphicon-th"></span> Malla curricular</h2>
+                <p>Simula tu avance academico e informate sobre los ramos que cursas o cursaras.<br>Tambien podras ver que objetivos se aportan entre si las asignaturas</p>
         </div>
         <div class="row">
-            <div class="col-sm-4">
-                <a href="mallaici.php" class="enlace_malla"><img src="../images/mencion/planici.png" class="foto_malla"></a>
+            <div class="col-sm-6 center">
+                <a href="mallaAvance.php" class="enlace_malla"><img src="../images/mencion/malla_avance.png" class="foto_malla_main"></a>
             </div>
-            <div class="col-sm-4">
-                <a href="mallaiin.php" class="enlace_malla"><img src="../images/mencion/planiin.png" class="foto_malla"></a>
-            </div>
-            <div class="col-sm-4">
-                <a href="mallaiej.php" class="enlace_malla"><img src="../images/mencion/planiej.png" class="foto_malla"></a>
+            <div class="col-sm-6 center">
+                <a href="mallaObjetivo.php" class="enlace_malla"><img src="../images/mencion/malla_objetivo.png" class="foto_malla_main"></a>
             </div>
         </div>
     </section><!--/#about-us-->
