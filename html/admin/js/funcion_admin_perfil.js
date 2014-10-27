@@ -14,6 +14,15 @@ $( document ).ready(function() {
 
     $("#validar_descarga").hide();
 
+       $("#boton_salir_admin").click(function(){
+        $(".modal-title").html("Cierre de Sesion");
+        $(".modal-body").html("Esta seguro de que desea cerrar la sesion");
+        $('#myModal').modal({show:true});
+        $("#boton_aprobar_cierre").click(function(){
+            $(location).attr('href','../../logica/cierra_sesion.php');
+        });
+    });
+
     $.ajax({
         url: '../../logica/getDatosUsuario.php',
         type: 'POST',

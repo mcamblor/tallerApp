@@ -2,6 +2,15 @@ $( document ).ready(function() {
     
     $("#validar_descarga").hide();
 
+       $("#boton_salir_admin").click(function(){
+        $(".modal-title").html("Cierre de Sesion");
+        $(".modal-body").html("Esta seguro de que desea cerrar la sesion");
+        $('#myModal3').modal({show:true});
+        $("#boton_aprobar_cierre").click(function(){
+            $(location).attr('href','../../logica/cierra_sesion.php');
+        });
+    });
+
     $.ajax({
         url: '../../logica/getDescargasAdmin.php',
         type: 'POST',
@@ -137,12 +146,12 @@ $( document ).ready(function() {
 
                                                     if(tmp[3] == 0){
                                                         $("#nombreNoAprobado_"+tmp[2]).text($("#new_titulo").val());
-                                                        $("#autorNoAprobado_"+tmp[2]).text($("#new_abstract").val());
-                                                        $("#comentarioNoAprobado_"+tmp[2]).text($("#new_autor").val());
+                                                        $("#autorNoAprobado_"+tmp[2]).text($("#new_autor").val());
+                                                        $("#comentarioNoAprobado_"+tmp[2]).text($("#new_abstract").val());
                                                     }else{
                                                         $("#nombreAprobado_"+tmp[2]).text($("#new_titulo").val());
-                                                        $("#autorAprobado_"+tmp[2]).text($("#new_abstract").val());
-                                                        $("#comentarioAprobado_"+tmp[2]).text($("#new_autor").val());
+                                                        $("#autorAprobado_"+tmp[2]).text($("#new_autor").val());
+                                                        $("#comentarioAprobado_"+tmp[2]).text($("#new_abstract").val());
                                                     }
                                                     titulo_backup = $("#new_titulo").val();
                                                     autor_backup = $("#new_autor").val();
