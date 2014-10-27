@@ -2,8 +2,8 @@ jQuery(function($) {
 
 	//#main-slider
 	$(function(){
-		$('#main-slider.carousel').carousel({
-			interval: 3000
+		$('#main-slider').carousel({
+			interval: 4000
 		});
 	});
 
