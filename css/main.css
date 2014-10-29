@@ -1192,3 +1192,12 @@ ul.faq li > div h3 {
   background-color: #2ecc71;
   color: #f5f5f5;
 }
+
+.caja_click{
+  color: #fff;
+  background-color: #f0ad4e;
+}
+
+.caja_avance{
+  background-color: #81DAF5;
+}
