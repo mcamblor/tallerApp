@@ -30,6 +30,18 @@ $( document ).ready(function() {
 				//PINTAR RAMO EN ESPECIFICO
 				$(".caja_celda").click(function() {
 					var tmp = $(this).hasClass("caja_no_pintada");
+					var idCaja = $(this).attr("id");
+					if(tmp == true){
+						//$(".caja_celda").click(function() {
+							pintarRamo(idCaja);
+							$(this).removeClass("caja_no_pintada");
+						$(this).addClass("caja_pintada");
+						//});
+					}else{
+						$(this).removeClass("caja_pintada");
+						$(this).addClass("caja_no_pintada");
+					}
+					/*var tmp = $(this).hasClass("caja_no_pintada");
 					var data = $(this).attr("id").split("||");
 					var tmp2 = data[1].split("++");
 					var requisitos = new Array();
@@ -49,14 +61,51 @@ $( document ).ready(function() {
 								var req = tmp3[1].split("++");
 								for (var i = 0; i < req.length-1; i++) {
 									requisitos.push(req[i]);
-								}	
-							}	
+									alert(requisitos);
+								}
+							}
 						});
 					}else{
 						$(this).removeClass("caja_pintada");
 						$(this).addClass("caja_no_pintada");
-					}
+					}*/
 				});
+
+				function pintarRamo(idCaja){
+					var tmp = $(this).hasClass("caja_no_pintada");
+					//alert("req: " + idCaja);
+					var id = idCaja.split("||");
+					var idReq = id[1].split("++");
+					var idRamo = id[0].split("celda_INC"); 
+					var requisitos = new Array();
+					//requisitos.push(idRamo[1]);
+					for (var i = 0; i < idReq.length-1; i++) {
+					 	requisitos.push(idReq[i]);					 		
+					 	//alert(idReq);
+					};
+
+					
+					if (requisitos.indexOf(idRamo[1]) != -1) {	
+						return 0;
+					}else{
+						$(this).removeClass("caja_no_pintada");
+						$(this).addClass("caja_pintada");
+						//alert(idRamo[1],requisitos);
+						$(".caja_celda").each(function(){
+					 		var tmpIdCaja = $(this).attr("id");
+					 		var tmpId = tmpIdCaja.split("||");
+					 		var tmpIdRamo = tmpId[0].split("celda_INC"); 
+						 	//alert(tmpIdRamo[1]);
+						 	if(requisitos.indexOf(tmpIdRamo[1]) != -1){
+						 		//alert("encontrado: "+tmpIdRamo[1]);
+						 		$(this).removeClass("caja_no_pintada");
+								$(this).addClass("caja_pintada");
+						 		return pintarRamo(tmpIdCaja);
+						 	}					 	
+						});
+					}
+
+				}
 
 				//PINTAR SEMESTRE EN ESPECIFICO
 				$(".boton_semestre").click(function(){
