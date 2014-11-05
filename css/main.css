@@ -1201,3 +1201,11 @@ ul.faq li > div h3 {
 .caja_avance{
   background-color: #81DAF5;
 }
+
+.caja_req_cumplido{
+  background-color: #F4FA58;
+}
+
+.boton_year{
+  cursor: default;
+}
