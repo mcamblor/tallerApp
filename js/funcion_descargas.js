@@ -1,7 +1,44 @@
 $( document ).ready(function() {
 
-	$(".enlace_descarga").click(function() {
-		var variables = $(this).attr("id").split("_");
+	$.ajax({
+		url: '../logica/getAsignaturaDescargas.php',
+		type: 'POST',
+		async: true,
+		data: 'malla=comun',
+		success: function(datos_recibidos) {
+			$("#planComun_select").html(datos_recibidos);
+			}
+	});
+	$.ajax({
+		url: '../logica/getAsignaturaDescargas.php',
+		type: 'POST',
+		async: true,
+		data: 'malla=ICI',
+		success: function(datos_recibidos) {
+			$("#planICI_select").html(datos_recibidos);
+			}
+	});
+	$.ajax({
+		url: '../logica/getAsignaturaDescargas.php',
+		type: 'POST',
+		async: true,
+		data: 'malla=IIN',
+		success: function(datos_recibidos) {
+			$("#planIIN_select").html(datos_recibidos);
+			}
+	});
+	$.ajax({
+		url: '../logica/getAsignaturaDescargas.php',
+		type: 'POST',
+		async: true,
+		data: 'malla=IEJ',
+		success: function(datos_recibidos) {
+			$("#planIEJ_select").html(datos_recibidos);
+			}
+	});
+	$(".enlace_descarga").change(function() {
+		var variables = $(this).val().split("_");
+		$("#"+$(this).attr("id")+" option[value='0']").attr("selected",true);
 		$.ajax({
 		url: '../logica/getAsignaturaGral.php',
 		type: 'POST',
@@ -10,24 +47,17 @@ $( document ).ready(function() {
 		success: function(datos_recibidos) {
 			var tmp = datos_recibidos.split("||");
 			var periodos_download = tmp[2].split("++");
-			$(".modal-title").html("Semestre "+tmp[3]+" - "+tmp[0]);
+			$(".modal-title").html("Semestre "+tmp[3]+" - "+tmp[0]+" ("+variables[0]+")");
 			$(".modal-body").html("<div class='row'><div class='col-sm-4'><h3>Selecciona el Periodo</h3><select id='periodo_descarga' name='periodo_descarga' class='form-control'></select></div></div><div class='row'><div class='col-sm-12' id='contenido_descargable'></div></div>");
 			
 			var descargas = tmp[4].split("|+|");
 
-			$("#contenido_descargable").html("<div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'><h3>Documentos - <span id='year_doc'></span></h3></div><div class='panel-body'><table id='tablaDownload' class='display' cellspacing='0' width='100%'><tbody id='tabla_descargas'><thead><tr><th>Nombre</th><th>Comentario</th><th>Autor</th><th></th></tr></thead></tbody></table></div></div>");
+			$("#contenido_descargable").html("<div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'>Documentos - <span id='year_doc'></span></h3></div><div class='panel-body'><table id='tablaDownload' class='display'><tbody id='tabla_descargas'><thead><tr><th>Nombre</th><th>Comentario</th><th>Autor</th><th></th></tr></thead></tbody></table></div></div>");
 
 			for(var i=0;i<descargas.length-1;i++){
 				var datos_descargas = descargas[i].split("++");
 				$("#tabla_descargas").append("<tr><td class='nombre_archivo'>"+datos_descargas[0]+"</td><td class='comentario_archivo'>"+datos_descargas[2]+"</td><td class='class='autor_archivo>"+datos_descargas[3]+"</td><td class='boton_descarga_archivo'><a class='btn btn-md btn-success' href='"+datos_descargas[1]+"'><span class='glyphicon glyphicon-download'></span> Descargar</a></td></tr>");
 			}
-
-			$('#tablaDownload').dataTable({
-                "scrollY":        "auto",
-                "scrollCollapse": true,
-                "searching": false,
-                "paging":         false
-            });
 
 			var fecha = new Date();
 			var anio = fecha.getFullYear();
@@ -39,6 +69,13 @@ $( document ).ready(function() {
 					$("#periodo_descarga").append("<option value='"+periodos_download[i]+"_"+variables[0].toLowerCase()+variables[1]+"'>"+periodos_download[i]+"</option>");
 				}
 			};
+
+			$('#tablaDownload').dataTable({
+                "scrollCollapse": true,
+                "searching": false,
+                "info": false,
+                "paging": false
+            });
 
 			$("#periodo_descarga").change(function(){
 				var atributos_seleccion = $(this).val().split("_"); 

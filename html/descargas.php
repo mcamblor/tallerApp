@@ -44,162 +44,70 @@
 
     <section id="about-us" class="container">
         <div class="row">
-            <div class="col-sm-6">
-                <h2>Plan común de Informática</h2>
-            <table class="tabla_asignaturas">
-                <tr>
-                    <th>Semestre I</th>
-                    <th>Semestre II</th>                    
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_100">Algebra Elemental</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_101">Cálculo Diferencial</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_102">Fundamentos de Programación</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_103">Historia General de las ciencias y tecnologías</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_104">Formación Valórica Personal</a></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_110">Física</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_111">Cálculo Integral</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_112">Programación I</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_113">Introducción al Hardware</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_114">Filosofía de las Ciencias</a></li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Semestre III</th>
-                    <th>Semestre IV</th>                    
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_200">Física Experimental</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_201">Cálculo Multivariable</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_202">Programación II</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_203">Sistemas Digitales</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_204">Estructuras Discretas</a></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_210">Algebra Lineal</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_211">Estructura de Datos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_212">Arquitectura de Computadores</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_213">Teoría de Sistemas</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_214">Contabilidad</a></li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>    
+            <h2><span class="glyphicon glyphicon-floppy-save"></span> Descargar Contenido</h2>
+            <p style="text-align : justify;">Descarga todo el material complementario de las asignaturas que se imparten en la carrera</p>
+            <legend></legend>
+            <div class="col-sm-3">
+                <form class="form-horizontal">
+                    <fieldset>                    
+                    <div class="form-group">
+                      <label class="col-md-3 control-label" for="planComun_select">Comun</label>
+                      <div class="col-md-9">
+                        <select id="planComun_select" name="planComun_select" class="form-control enlace_descarga">
+                        </select>
+                      </div>
+                    </div>
+                    </fieldset>
+                </form>
             </div><!--/.col-sm-6-->
-            <div class="col-sm-6">
-                <br><br>
-                <p style="text-align : center; font-size:100px;"><span style="margin-right:16%;" class="glyphicon glyphicon-floppy-save"></span><span class="glyphicon glyphicon-floppy-open"></span></p>
-                <p style="text-align : justify;">Descarga todo el material complementario de las asignaturas que se imparten en la carrera. Si lo deseas, tambien puedes contribuir subiendo tus trabajos y/o material que consideres de ayuda.</p>
-                <br><div class="center"><a class="btn btn-lg btn-primary" id="subir_documento"><span class="glyphicon glyphicon-upload"></span> Cargar Nuevos Documentos</a></div>
+            <div class="col-sm-3">
+                <form class="form-horizontal">
+                    <fieldset>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label" for="planICI_select">ICI</label>
+                      <div class="col-md-10">
+                        <select id="planICI_select" name="planICI_select" class="form-control enlace_descarga">
+                        </select>
+                      </div>
+                    </div>
+                    </fieldset>
+                </form>
             </div><!--/.col-sm-6-->
-        </div><!--/.row-->
+            <div class="col-sm-3">
+                <form class="form-horizontal">
+                    <fieldset>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label" for="planIIN_select">IIN</label>
+                      <div class="col-md-10">
+                        <select id="planIIN_select" name="planIIN_select" class="form-control enlace_descarga">
+                        </select>
+                      </div>
+                    </div>
+                    </fieldset>
+                </form>
+            </div><!--/.col-sm-6-->
+            <div class="col-sm-3">
+                <form class="form-horizontal">
+                    <fieldset>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label" for="planIEJ_select">IEJ</label>
+                      <div class="col-md-10">
+                        <select id="planIEJ_select" name="planIEJ_select" class="form-control enlace_descarga">
+                        </select>
+                      </div>
+                    </div>
+                    </fieldset>
+                </form>
+            </div><!--/.col-sm-6-->
+        </div>
         <div class="row">
+            <h2><span class="glyphicon glyphicon-floppy-open"></span> Subir Contenido</h2>
+            <p style="text-align : justify;">Si lo deseas, tambien puedes contribuir subiendo tus trabajos y/o material que consideres de ayuda.</p>
+            <legend></legend>
             <div class="col-sm-12">
-                <h2>Plan Ingeniería Civil en Informática</h2>
-                <table class="tabla_asignaturas">
-                <tr>
-                    <th>Semestre V</th>
-                    <th>Semestre VI</th>
-                    <th>Semestre VII</th>
-                    <th>Semestre VIII</th>                    
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_300">Ecuaciones Diferenciales</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_301">Electro-magnetismo</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_302">Análisis y Diseño de Algoritmos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_303">Teoría de Sistemas Operativos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_304">Fundamentos de Ingeniería de Software</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_305">Ingles I</a></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_310">Probabilidad y Estadística</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_311">Lenguajes y Automatas</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_312">Redes de Computadores</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_313">Metodologías de Análisis</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_314">Administración en Informática</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_315">Ingles II</a></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_400">Física Contemporanea</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_401">Interfaz Hombre-Máquina</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_402">Modelos de Datos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_403">Taller de Sistemas Operativos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_404">Metodologías de Diseño</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_405">Ingles III</a></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_410">Biología</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_411">Desarrollo Web</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_412">Sistemas de Bases de Datos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_413">Arquitectura de Software</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_414">Evaluación de Proyectos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_415">Lenguajes de Programación</a></li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Semestre IX</th>
-                    <th>Semestre X</th>
-                    <th>Semestre XI</th>
-                    <th>Semestre XII</th>                    
-                </tr>
-                <tr>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_500">Pruebas de Software</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_501">Seminario de Especialidad I</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_502">Asignatura Electiva de Especialidad I</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_503">Sistemas de Telecomunicaciones</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_504">Gestion de Proyectos Informáticos</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_505">Investigacíon de Operaciones</a></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_510">Economía</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_511">Seminario de Especialidad II</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_512">Asignatura Electiva de Especialidad II</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_513">Fundamentos de Inteligencia Artificial</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_514">Taller de Aplicaciones</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_515">Simulación</a></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_600">Asignatura Electiva de Especialidad III</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_601">Seminario de Título I</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_602">Etica y Legislación</a></li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_610">Seminario de Tecnología de Información y Comunicación</a></li>
-                            <li><a style="cursor:pointer;" class="enlace_descarga" id="INC_611">Seminario de Título II</a></li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-            </div>
-        </div>        
+                <div class="center"><a class="btn btn-lg btn-primary" id="subir_documento"><span class="glyphicon glyphicon-upload"></span> Cargar Nuevos Documentos</a></div>
+            </div><!--/.col-sm-6-->
+        </div><!--/.row-->    
     </section><!--/#about-us-->
 
     <!-- Modal -->
@@ -207,10 +115,9 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h3 class="modal-title" id="myModalLabel"></h3>
       </div>
-      <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
+      <div class="modal-body" id="cuerpoModal">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
