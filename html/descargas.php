@@ -51,7 +51,7 @@
                 <form class="form-horizontal">
                     <fieldset>                    
                     <div class="form-group">
-                      <label class="col-md-3 control-label" for="planComun_select">Comun</label>
+                      <label class="col-md-3 control-label" for="planComun_select" title="Plan Comun de Ingeniería Civil Informática">Comun</label>
                       <div class="col-md-9">
                         <select id="planComun_select" name="planComun_select" class="form-control enlace_descarga">
                         </select>
@@ -64,7 +64,7 @@
                 <form class="form-horizontal">
                     <fieldset>
                     <div class="form-group">
-                      <label class="col-md-2 control-label" for="planICI_select">ICI</label>
+                      <label class="col-md-2 control-label" for="planICI_select" title="Plan de Ingeniería Civil Informática">ICI</label>
                       <div class="col-md-10">
                         <select id="planICI_select" name="planICI_select" class="form-control enlace_descarga">
                         </select>
@@ -77,7 +77,7 @@
                 <form class="form-horizontal">
                     <fieldset>
                     <div class="form-group">
-                      <label class="col-md-2 control-label" for="planIIN_select">IIN</label>
+                      <label class="col-md-2 control-label" for="planIIN_select" title="Plan de Ingeniería en Informática">IIN</label>
                       <div class="col-md-10">
                         <select id="planIIN_select" name="planIIN_select" class="form-control enlace_descarga">
                         </select>
@@ -90,7 +90,7 @@
                 <form class="form-horizontal">
                     <fieldset>
                     <div class="form-group">
-                      <label class="col-md-2 control-label" for="planIEJ_select">IEJ</label>
+                      <label class="col-md-2 control-label" for="planIEJ_select" title="Plan Comun de Ingeniería Ejecución en Informática">IEJ</label>
                       <div class="col-md-10">
                         <select id="planIEJ_select" name="planIEJ_select" class="form-control enlace_descarga">
                         </select>
@@ -111,7 +111,7 @@
     </section><!--/#about-us-->
 
     <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal_download" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">

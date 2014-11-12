@@ -63,7 +63,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
+                    <li class="active">
                         <a href="index.php"><span class="glyphicon glyphicon-comment"></span> Asignaturas</a>
                     </li>
                     <li>
@@ -73,17 +73,17 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-tag"></span> Menciones <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="software.php">Software</a>
+                                <a href="#">Software</a>
                             </li>
                             <li>
-                                <a href="basededatos.php">Base de Datos</a>
+                                <a href="#">Base de Datos</a>
                             </li>
                             <li>
-                                <a href="redes.php">Redes</a>
+                                <a href="#">Redes</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Perfil</a>
                     </li>
                 </ul>
@@ -99,82 +99,146 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Perfil: <small>Cambia la información de tu cuenta</small>
+                            Información: <small>Edita la información de la asignatura</small>
                         </h1>
                     </div>
                 </div>
                 <!-- /.row -->
                 <div class="row">
+                  <div class="col-lg-12">
+                    <p style="text-align : justify;">Selecciona la asignatura que deseas modificar</p>
+                  </div>
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>                    
+                          <div class="form-group">
+                            <label class="col-md-3 control-label" for="planComun_select" title="Plan Comun de Ingeniería Civil Informática">Comun</label>
+                            <div class="col-md-9">
+                              <select id="planComun_select" name="planComun_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="planICI_select" title="Plan de Ingeniería Civil Informática">ICI</label>
+                            <div class="col-md-10">
+                              <select id="planICI_select" name="planICI_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="planIIN_select" title="Plan de Ingeniería en Informática">IIN</label>
+                            <div class="col-md-10">
+                              <select id="planIIN_select" name="planIIN_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="planIEJ_select" title="Plan Comun de Ingeniería Ejecución en Informática">IEJ</label>
+                            <div class="col-md-10">
+                              <select id="planIEJ_select" name="planIEJ_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-12">
+                    <legend></legend>
+                  </div>  
+                </div>
+
+                <div class="row">
                    <div class="col-lg-12">
                         <div class='alert alert-dismissible' role='alert' id='validar_descarga'><div id="contenido_alert"></div></div>
                     </div>
-                </div>            
+                </div>
 
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <br>
                         <form class="form-horizontal">
                             <fieldset>
-                                <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['rut'];?>">
+                                <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['ramo'];?>">
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nombre_usuario">Nombre</label>  
-                                  <div class="col-md-3">
-                                    <input id="nombre_usuario" name="nombre_usuario" type="text" class="form-control input-md">
+                                  <label class="col-md-3 control-label" for="profesor_asignatura">Profesor</label>  
+                                  <div class="col-md-5">
+                                  <input id="profesor_asignatura" name="profesor_asignatura" type="text" class="form-control input-md" disabled> 
                                   </div>
                                   <div class="col-md-3">  
-                                    <a class="btn btn-success" id="link_modifica_nombre_usuario" name="link_modifica_nombre_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Nombre</a> 
+                                    <a class="btn btn-primary" id="boton_modifica_profesor" name="boton_modifica_profesor"><span class="glyphicon glyphicon-pencil"></span> Modificar Profesor</a> 
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="apellido_usuario">Apellido</label>  
-                                  <div class="col-md-3">
-                                  <input id="apellido_usuario" name="apellido_usuario" type="text" class="form-control input-md"> 
+                                  <label class="col-md-3 control-label" for="ayudante1_asignatura">Ayudante nº1</label>  
+                                  <div class="col-md-5">
+                                  <input id="ayudante1_asignatura" name="ayudante1_asignatura" type="text" class="form-control input-md" disabled> 
                                   </div>
                                   <div class="col-md-3">  
-                                    <a class="btn btn-primary" id="link_modifica_apellido_usuario" name="link_modifica_apellido_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Apellido</a> 
+                                    <a class="btn btn-warning" id="boton_modifica_ayudante1" name="boton_modifica_ayudante1"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="email_usuario">E-mail</label>  
-                                  <div class="col-md-3">
-                                  <input id="email_usuario" name="email_usuario" type="text" class="form-control input-md"> 
+                                  <label class="col-md-3 control-label" for="ayudante2_asignatura">Ayudante nº2</label>  
+                                  <div class="col-md-5">
+                                  <input id="ayudante2_asignatura" name="ayudante2_asignatura" type="text" class="form-control input-md" disabled> 
                                   </div>
                                   <div class="col-md-3">  
-                                    <a class="btn btn-warning" id="link_modifica_email_usuario" name="link_modifica_email_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar E-mail</a> 
+                                    <a class="btn btn-danger" id="boton_modifica_ayudante2" name="boton_modifica_ayudante2"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_actual">Contraseña</label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_actual" name="contraseña_usuario_actual" type="password" class="form-control input-md"> 
-                                  <span class="help-block">Contraseña Actual</span> 
+                                  <label class="col-md-3 control-label" for="comentario_asignarura">Comentarios</label>
+                                  <div class="col-md-5">                     
+                                    <textarea class="form-control" id="comentario_asignatura" name="comentario_asignatura" disabled></textarea>
+                                    <span class="help-block">Información acerca de la asignatura (comentarios)</span>
                                   </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-danger" id="link_modifica_contraseña_usuario" name="link_modifica_contraseña_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Contraseña</a> 
+                                  <div class="col-md-3">
+                                    <a class="btn btn-success" id="boton_modifica_comentario" name="boton_modifica_comentario"><span class="glyphicon glyphicon-pencil"></span> Modificar Comenterio</a>
+                                  </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="col-lg-5">
+                        <br>
+
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <div class="form-group">                                
+                                    <label class="col-md-3 control-label" for="foto_asignatura"></label>  
+                                      <div class="col-md-9">
+                                         <div style="border:1px solid;" id="foto_ramo_marco"><img src="" id="foto_ramo"></div> 
+                                      </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-md-3 control-label" for="foto_asignatura">Foto</label>  
+                                  <div class="col-md-9">
+                                  <input id="foto_asignatura" name="foto_asignatura" type="file" class="form-control input-md" disabled> 
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_nueva"></label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_nueva" name="contraseña_usuario_nueva" type="password" class="form-control input-md">
-                                  <span class="help-block">Contraseña Nueva</span> 
-                                  </div>
+                                    <label class="col-md-3 control-label" for="foto_asignatura"></label>  
+                                <div class="col-md-5">  
+                                    <a class="btn btn-primary" id="boton_modifica_foto" name="boton_modifica_foto"><span class="glyphicon glyphicon-picture"></span> Cambiar Imagen</a> 
                                 </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_rep"></label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_rep" name="contraseña_usuario_rep" type="password" class="form-control input-md">
-                                  <span class="help-block">Repite la nueva contraseña</span> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nickname_usuario">Nickname</label>  
-                                  <div class="col-md-3">
-                                  <input id="nickname_usuario" name="nickname_usuario" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-default" id="link_modifica_nickname_usuario" name="link_modifica_nickname_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Nickname</a> 
-                                  </div>
                                 </div>
                             </fieldset>
                         </form>
@@ -190,7 +254,7 @@
     </div>
     <!-- /#wrapper -->
 
-       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -209,7 +273,7 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/funcion_admin_perfil.js"></script>
+    <script src="js/funcion_admin_asignatura.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 

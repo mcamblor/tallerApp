@@ -98,7 +98,7 @@ $( document ).ready(function() {
 			});
 
 
-			$('#myModal').modal({show:true});
+			$('#myModal_download').modal({show:true});
 
 
 			}
@@ -109,19 +109,44 @@ $( document ).ready(function() {
 		$('input[type=file]').bootstrapFileInput();
 		$(".modal-title").html("Subir Nuevos Documentos");
 		$(".modal-body").html("<div class='row'><div class='col-sm-12' id='contenido_cuerpo'>Para subir un/unos documentos, debes seleccionar los archivos que deseas subir, tambien debes elegir a la asignatura que deseas que se suban. Los documentos estarn disponibles para descargarlos posterior a una aprobacion del encargado de la asignatura.</div></div>");
-		$("#contenido_cuerpo").append("<form class='form-horizontal form_upload_doc'><fieldset><div class='form-group'><label class='col-md-4 control-label' for='file_upload'>Archivo</label><div class='col-md-6'><a class='file-input-wrapper btn btn-default btn-warning'><span class='glyphicon glyphicon-floppy-open'></span> Cargar Archivo</span><input id='file_upload' name='file_upload' multiple class='btn-primary' type='file'></a><p class='help-block'>Para multiples cargas, selecciona varios archivos.</p></div></div><div class='form-group'><label class='col-md-4 control-label' for='asignatura_upload'>Asignatura</label><div class='col-md-6'><select id='asignatura_upload' name='asignatura_upload' class='form-control'></select><p class='help-block'>Selecciona la asignatura para subir un documento</p></div></div><div class='form-group'><label class='col-md-4 control-label' for='boton_upload'></label><div class='col-md-4'><a id='boton_upload' name='boton_upload' class='btn btn-success'><span class='glyphicon glyphicon-upload'></span> Subir Documento</a><br></div></fieldset><div class='alert alert-dismissible' role='alert' id='validar_descarga'><button type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button></div><br><br><div class='alert alert-dismissible' role='alert' id='validar_descarga2'><button type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button><div id='contenido_div_error'></div></div></form>");
-		$("#asignatura_upload").load('../includes/asignaturas_select.php');
+		$("#contenido_cuerpo").append("<form class='form-horizontal form_upload_doc'><fieldset><div class='form-group'><label class='col-md-4 control-label' for='file_upload'>Archivo</label><div class='col-md-6'><a class='file-input-wrapper btn btn-default btn-warning'><span class='glyphicon glyphicon-floppy-open'></span> Cargar Archivo</span><input id='file_upload' name='file_upload' multiple class='btn-primary' type='file'></a><p class='help-block'>Para multiples cargas, selecciona varios archivos.</p></div></div><div class='form-group'><label class='col-md-4 control-label' for='malla_upload'>Malla</label><div class='col-md-5'><select id='malla_upload' name='malla_upload' class='form-control'><option value='0' style='display:none;'>Seleccione una malla</option><option value='malla_comun'>Plan Comun de Ingeniería Civil Informática</option><option value='malla_ICI'>Plan de Ingeniería Civil Informática</option><option value='malla_IIN'>Plan de Ingeniería Informática</option><option value='malla_IEJ'>Plan de Ingeniería en Ejecución Informática</option></select><p class='help-block'>Selecciona una malla para subir un documento</p></div></div><div class='form-group'><label class='col-md-4 control-label' for='asignatura_upload'>Asignatura</label><div class='col-md-6'><select id='asignatura_upload' name='asignatura_upload' class='form-control' disabled></select><p class='help-block'>Selecciona la asignatura para subir un documento</p></div></div><div class='form-group'><label class='col-md-4 control-label' for='boton_upload'></label><div class='col-md-4'><a id='boton_upload' name='boton_upload' class='btn btn-success'><span class='glyphicon glyphicon-upload'></span> Subir Documento</a><br></div></fieldset><div class='alert alert-dismissible' role='alert' id='validar_descarga'><button type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button></div><br><br><div class='alert alert-dismissible' role='alert' id='validar_descarga2'><div id='contenido_div_error'></div></div></form>");
 		$("#validar_descarga").hide();
 		$("#validar_descarga2").hide();
-		$('#myModal').modal({show:true});
+		$('#myModal_download').modal({show:true});
+
+		$('#malla_upload').change(function(){
+			var data = $(this).val().split("_");
+			$.ajax({
+				url: '../logica/getAsignaturaDescargas.php',
+				type: 'POST',
+				async: true,
+				data: 'malla='+data[1],
+				success: function(datos_recibidos) {
+					$("#asignatura_upload").prop("disabled",false);
+					$("#asignatura_upload").html(datos_recibidos);
+					}
+			});
+		});
 
 		$("#boton_upload").click(function() {
 			var select_ramo = $("#asignatura_upload");
 			var comprobar_files = $("#file_upload");
+			var select_malla = $("#malla_upload");
 			
 			if(comprobar_files.val() == ''){
 				$("#validar_descarga2").addClass("alert-danger");
 				$("#contenido_div_error").html("<strong>ERROR! </strong>- Debes subir al menos un archivo.");
+				$("#validar_descarga2").show("slide");
+				setTimeout(function() {
+                	$('#validar_descarga2').hide('slide');
+                	$("#contenido_div_error").html("");
+            	}, 5000);
+            	return false;
+			}
+
+			if(select_malla.val() == 0){
+				$("#validar_descarga2").addClass("alert-danger");
+				$("#contenido_div_error").html("<strong>ERROR! </strong>- Debes seleccionar la malla donde cargaras tus archivos.");
 				$("#validar_descarga2").show("slide");
 				setTimeout(function() {
                 	$('#validar_descarga2').hide('slide');
@@ -143,6 +168,7 @@ $( document ).ready(function() {
 
 			var archivos = document.getElementById('file_upload');
 			var datos_periodo = select_ramo.val().split("_");
+			var download_code = datos_periodo[0].toLowerCase()+datos_periodo[1];
 			var documento = archivos.files;
 			var datta = new FormData();
 			
@@ -188,7 +214,7 @@ $( document ).ready(function() {
 					url: '../logica/setUrldownloadBD.php',
 					type: 'POST',
 					async: true,
-					data: 'ramo='+datos_periodo[1]+'&name='+nombres,
+					data: 'ramo='+download_code+'&name='+nombres+'&nombre_ramo='+$("#asignatura_upload option:selected" ).text(),
 					success: function(datos_recibidos) {
 						}
 					});

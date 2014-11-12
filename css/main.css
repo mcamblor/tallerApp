@@ -1209,3 +1209,11 @@ ul.faq li > div h3 {
 .boton_year{
   cursor: default;
 }
+
+#myModal_download .modal-dialog {
+width: 950px;
+}
+
+#myModal_mencion .modal-dialog {
+width: 950px;
+}

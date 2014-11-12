@@ -4,6 +4,46 @@ $( document ).ready(function() {
     var ayudante2 = "";
     var comentario = "";
     var numero_asignatura = "";
+
+
+    $.ajax({
+        url: '../../logica/getAsignaturaDescargas.php',
+        type: 'POST',
+        async: true,
+        data: 'malla=comun',
+        success: function(datos_recibidos) {
+            $("#planComun_select").html(datos_recibidos);
+            }
+    });
+    $.ajax({
+        url: '../../logica/getAsignaturaDescargas.php',
+        type: 'POST',
+        async: true,
+        data: 'malla=ICI',
+        success: function(datos_recibidos) {
+            $("#planICI_select").html(datos_recibidos);
+            }
+    });
+    $.ajax({
+        url: '../../logica/getAsignaturaDescargas.php',
+        type: 'POST',
+        async: true,
+        data: 'malla=IIN',
+        success: function(datos_recibidos) {
+            $("#planIIN_select").html(datos_recibidos);
+            }
+    });
+    $.ajax({
+        url: '../../logica/getAsignaturaDescargas.php',
+        type: 'POST',
+        async: true,
+        data: 'malla=IEJ',
+        success: function(datos_recibidos) {
+            $("#planIEJ_select").html(datos_recibidos);
+            }
+    });
+
+
     $("#boton_modifica_profesor").attr("disabled","disabled");
     $("#boton_modifica_ayudante1").attr("disabled","disabled");
     $("#boton_modifica_ayudante2").attr("disabled","disabled");
@@ -21,12 +61,45 @@ $( document ).ready(function() {
         });
     });
 
-    $.ajax({
+    $(".enlace_asig_modificar").change(function(){
+        var datos_envio = $(this).val().split("_");
+        var valor = $(this).val();
+        var select_id = $(this).attr("id");
+        $.ajax({
         url: '../../logica/getAsignaturaInfo.php',
         type: 'POST',
         async: true,
-        data: 'asignatura='+$("#datos_ocultos").val(),
+        data: 'asignatura='+datos_envio[1]+'&malla='+datos_envio[0],
         success: function(datos_recibidos) {
+                $("#profesor_asignatura").prop("disabled",false);
+                $("#ayudante1_asignatura").prop("disabled",false);
+                $("#ayudante2_asignatura").prop("disabled",false);
+                $("#foto_asignatura").prop("disabled",false);
+                $("#comentario_asignatura").prop("disabled",false);
+
+                switch(select_id) {
+                    case "planComun_select":
+                        $("#planICI_select option[value='0']").attr("selected",true);
+                        $("#planIIN_select option[value='0']").attr("selected",true);
+                        $("#planIEJ_select option[value='0']").attr("selected",true);
+                        break;
+                    case "planICI_select":
+                        $("#planComun_select option[value='0']").attr("selected",true);
+                        $("#planIIN_select option[value='0']").attr("selected",true);
+                        $("#planIEJ_select option[value='0']").attr("selected",true);
+                        break;
+                    case "planIIN_select":
+                        $("#planComun_select option[value='0']").attr("selected",true);
+                        $("#planICI_select option[value='0']").attr("selected",true);
+                        $("#planIEJ_select option[value='0']").attr("selected",true);
+                        break;
+                    case "planIEJ_select":
+                        $("#planComun_select option[value='0']").attr("selected",true);
+                        $("#planIIN_select option[value='0']").attr("selected",true);
+                        $("#planICI_select option[value='0']").attr("selected",true);
+                        break;
+                }
+
                 var data = datos_recibidos.split("||");
                 $("#profesor_asignatura").val(data[1]);
                 profesor = data[1];
@@ -34,11 +107,12 @@ $( document ).ready(function() {
                 ayudante1 =data[2]
                 $("#ayudante2_asignatura").val(data[3]);
                 ayudante2 = data[3]
-                numero_asignatura = data[4];
-                $("#foto_ramo").attr("src",data[5]);
-                $("#comentario_asignatura").val(data[6]);
-                comentario = data[6];
+                numero_asignatura = valor;
+                $("#foto_ramo").attr("src",data[4]);
+                $("#comentario_asignatura").val(data[5]);
+                comentario = data[5];
             }
+        });
     });
 
     $("#profesor_asignatura").keyup(function(){

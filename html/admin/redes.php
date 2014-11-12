@@ -30,6 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link href="../../js/DataTables-1.10.3/media/css/jquery.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -69,7 +70,7 @@
                     <li>
                         <a href="documentos.php"><span class="glyphicon glyphicon-file"></span> Documentos</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-tag"></span> Menciones <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
@@ -83,7 +84,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Perfil</a>
                     </li>
                 </ul>
@@ -99,88 +100,59 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Perfil: <small>Cambia la información de tu cuenta</small>
+                            Mencion de Redes: <small>Edita la información de la mención de Redes</small>
                         </h1>
                     </div>
                 </div>
-                <!-- /.row -->
-                <div class="row">
-                   <div class="col-lg-12">
-                        <div class='alert alert-dismissible' role='alert' id='validar_descarga'><div id="contenido_alert"></div></div>
-                    </div>
-                </div>            
-
                 <div class="row">
                     <div class="col-lg-12">
-                        <br>
-                        <form class="form-horizontal">
-                            <fieldset>
-                                <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['rut'];?>">
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nombre_usuario">Nombre</label>  
-                                  <div class="col-md-3">
-                                    <input id="nombre_usuario" name="nombre_usuario" type="text" class="form-control input-md">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Información General</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal">
+                                <fieldset>
+                               <div class="form-group">
+                                  <label class="col-lg-3 control-label" for="descripcion_mencion">Descripción</label>
+                                  <div class="col-lg-6">                     
+                                    <textarea class="form-control" id="descripcion_mencion" name="descripcion_mencion"></textarea>
                                   </div>
                                   <div class="col-md-3">  
-                                    <a class="btn btn-success" id="link_modifica_nombre_usuario" name="link_modifica_nombre_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Nombre</a> 
+                                    <a class="btn btn-warning" id="boton_modifica_mencion" name="boton_modifica_mencion"><span class="glyphicon glyphicon-pencil"></span> Modificar Descripción</a> 
                                   </div>
                                 </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="apellido_usuario">Apellido</label>  
-                                  <div class="col-md-3">
-                                  <input id="apellido_usuario" name="apellido_usuario" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-primary" id="link_modifica_apellido_usuario" name="link_modifica_apellido_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Apellido</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="email_usuario">E-mail</label>  
-                                  <div class="col-md-3">
-                                  <input id="email_usuario" name="email_usuario" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-warning" id="link_modifica_email_usuario" name="link_modifica_email_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar E-mail</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_actual">Contraseña</label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_actual" name="contraseña_usuario_actual" type="password" class="form-control input-md"> 
-                                  <span class="help-block">Contraseña Actual</span> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-danger" id="link_modifica_contraseña_usuario" name="link_modifica_contraseña_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Contraseña</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_nueva"></label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_nueva" name="contraseña_usuario_nueva" type="password" class="form-control input-md">
-                                  <span class="help-block">Contraseña Nueva</span> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_rep"></label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_rep" name="contraseña_usuario_rep" type="password" class="form-control input-md">
-                                  <span class="help-block">Repite la nueva contraseña</span> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nickname_usuario">Nickname</label>  
-                                  <div class="col-md-3">
-                                  <input id="nickname_usuario" name="nickname_usuario" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-default" id="link_modifica_nickname_usuario" name="link_modifica_nickname_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Nickname</a> 
-                                  </div>
-                                </div>
-                            </fieldset>
-                        </form>
+                                </fieldset>
+                                </form>
+                        </div>
+                      </div>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Ingresar una nueva Asignatura</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class='form-horizontal'><fieldset><div class='form-group'><label class='col-md-3 control-label' for='nombre_nuevo'>Nombre</label><div class='col-md-6'><input id='nombre_nuevo' name='nombre_nuevo' type='text' class='form-control input-md'></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_corta_nueva'>Descripción Corta</label><div class='col-md-6'><select id='descrip_corta_nueva' name='descrip_corta_nueva' class='form-control'><option value='0' style='display:none;'>Seleccione</option><option value='INC502'>Asignatura Electiva de Especialidad I</option><option value='INC512'>Asignatura Electiva de Especialidad II</option><option value='INC600'>Asignatura Electiva de Especialidad III</option><option value='INC501'>Seminario de Especialidad I</option><option value='INC511'>Seminario de Especialidad II</option></select></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_larga_new'>Descripción Larga</label><div class='col-md-3'><textarea class='form-control' id='descrip_larga_new' name='descrip_larga_new'></textarea></div></div><div class='form-group'><label class='col-md-3 control-label' for='profesor_new'>Profesor</label><div class='col-md-6'><input id='profesor_new' name='profesor_new' type='text' class='form-control input-md'></div></div><div class='form-group'><label class='col-md-3 control-label' for='foto_new'>Foto</label><div class='col-md-3'><input id='foto_new' name='foto_new' class='input-file' type='file'></div></div><div class='form-group'><label class='col-md-3 control-label' for='boton_agregar_ramo'></label><div class='col-md-4'><button id='boton_agregar_ramo' class="btn btn-primary btn-success" type="button"><span class="glyphicon glyphicon-save"></span> Agregar Asignatura</button></div></div><div class='alert alert-dismissible' role='alert' id='validar_add_ramo'></div></fieldset></form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Asignaturas de la Mención</h3>
+                        </div>
+                        <div class="panel-body" id="contenedor_redes">
+                            <table id='tablaMencion' class='display'><tbody id="datos_tabla"><thead><tr><th>Nombre</th><th>Descripción Corta</th><th>Descripción Larga</th><th>Profesor</th><th>Estado</th><th>Mostrar / No Mostrar</th><th>Modificar</th><th>Borrar</th></tr></thead></tbody></table>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                           
             </div>
             <!-- /.container-fluid -->
 
@@ -190,18 +162,31 @@
     </div>
     <!-- /#wrapper -->
 
-       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal_mostrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <h3 class="modal-title" id="myModalLabel"></h3>
           </div>
           <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" id="boton_aprobar_cierre"><span class="glyphicon glyphicon-ok"></span> Aprobar</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-success" id="boton_aprobar_mostrar"><span class="glyphicon glyphicon-ok"></span> Ok!</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="cerrar_modal_mostrar">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="myModal_other" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="myModalLabel"></h3>
+          </div>
+          <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
+          </div>
+          <div class="modal-footer" id="footer_other">
           </div>
         </div>
       </div>
@@ -209,7 +194,8 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/funcion_admin_perfil.js"></script>
+    <script src="../../js/DataTables-1.10.3/media/js/jquery.dataTables.min.js"></script>
+    <script src="js/funcion_admin_redes.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 

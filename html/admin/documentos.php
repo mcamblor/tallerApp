@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style="color:#FFF;"><img src="../../images/favicon.ico" alt="logo" style="vertical-align: sub;width: 25px;"><?php echo $_SESSION['nombre_ramo'];?> - Administración</a>
+                <a class="navbar-brand" style="color:#FFF;"><img src="../../images/favicon.ico" alt="logo" style="vertical-align: sub;width: 25px;">Panel de Administración</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -66,10 +66,24 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.php"><span class="glyphicon glyphicon-comment"></span> Información</a>
+                        <a href="index.php"><span class="glyphicon glyphicon-comment"></span> Asignaturas</a>
                     </li>
                     <li class="active">
                         <a href="documentos.php"><span class="glyphicon glyphicon-file"></span> Documentos</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-tag"></span> Menciones <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="software.php">Software</a>
+                            </li>
+                            <li>
+                                <a href="basededatos.php">Base de Datos</a>
+                            </li>
+                            <li>
+                                <a href="redes.php">Redes</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Perfil</a>
@@ -87,11 +101,72 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Documentos: <small>Administra los documentos que son cargados a la asignatura</small>
+                            Documentos: <small>Administra los documentos que son cargados a la asignaturas</small>
                         </h1>
                     </div>
                 </div>
                 <!-- /.row -->
+                <div class="row">
+                  <div class="col-lg-12">
+                    <p style="text-align : justify;">Selecciona la asignatura que deseas administrar sus documentos</p>
+                  </div>
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>                    
+                          <div class="form-group">
+                            <label class="col-md-3 control-label" for="planComun_select" title="Plan Comun de Ingeniería Civil Informática">Comun</label>
+                            <div class="col-md-9">
+                              <select id="planComun_select" name="planComun_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="planICI_select" title="Plan de Ingeniería Civil Informática">ICI</label>
+                            <div class="col-md-10">
+                              <select id="planICI_select" name="planICI_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="planIIN_select" title="Plan de Ingeniería en Informática">IIN</label>
+                            <div class="col-md-10">
+                              <select id="planIIN_select" name="planIIN_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="planIEJ_select" title="Plan Comun de Ingeniería Ejecución en Informática">IEJ</label>
+                            <div class="col-md-10">
+                              <select id="planIEJ_select" name="planIEJ_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-12">
+                    <legend></legend>
+                  </div>  
+                </div>
+
                 <div class="row">
                    <div class="col-lg-12">
                         <div class='alert alert-dismissible' role='alert' id='validar_descarga'><div id="contenido_alert"></div></div>

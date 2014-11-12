@@ -1,6 +1,16 @@
 $( document ).ready(function() {
 
 	$.ajax({
+		url: '../logica/getMencionInfo.php',
+		type: 'POST',
+		async: true,
+		data: 'mencion=RED',
+		success: function(datos_recibidos) {
+			$("#campo_descripcion").html(datos_recibidos);
+		}
+	});
+
+	$.ajax({
 		url: '../logica/getAsignaturaMencion.php',
 		type: 'POST',
 		async: true,
@@ -22,8 +32,8 @@ $( document ).ready(function() {
 				success: function(datos_recibidos) {
 						var dato = datos_recibidos.split("++");
 						$(".modal-title").html(dato[0]+": "+dato[1]);
-						$(".modal-body").html("<div class='row'><div class='col-sm-6'><h2></h2><p>"+dato[2]+"</p></div><div class='col-sm-6'><h2></h2><img src='"+dato[4]+"'></div></div><p><strong>Profesor: </strong>"+dato[3]+"<p><br><br><fieldset><div class='form-group'><label class='col-md-4 control-label' for='button1id'></label><div class='col-md-8'><a id='button1id' name='button1id' class='btn btn-success' style='margin-right:10%;' href='descargas.php'>Ir a Descargas</a><a id='button2id' name='button2id' class='btn btn-danger' href='malla.php'>Ver en Malla</a></div></div></fieldset>");
-						$('#myModal').modal({show:true});
+						$(".modal-body").html("<div class='row'><div class='col-sm-6'><h2></h2><p>"+dato[2]+"</p></div><div class='col-sm-6'><h2></h2><img src='"+dato[4]+"'></div></div><p><strong>Profesor: </strong>"+dato[3]+"<p><br><br><fieldset><div class='form-group'><label class='col-md-4 control-label' for='button1id'></label><div class='col-md-8'><a id='button1id' name='button1id' class='btn btn-success' style='margin-right:10%;' href='descargas.php'>Ir a Descargas</a><a id='button2id' name='button2id' class='btn btn-danger' href='mallaici.php'>Ver en Malla</a></div></div></fieldset>");
+						$('#myModal_mencion').modal({show:true});
 					}
 				});
 			});

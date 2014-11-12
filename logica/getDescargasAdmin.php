@@ -2,10 +2,12 @@
 
 require_once('../data/conexion_bd.php');
 
-$codigo = "inc".$_POST['asignatura'];
+//$malla = $_POST['malla'];
+//$ramo = $_POST['ramo'];
+$nombre_ramo = $_POST['nombre'];
 
 $consulta = new conexionBD;
-$rs1 = $consulta->consultar("SELECT titulo,url,abstract,autor,estado,anio,idDescargas FROM descargas WHERE idCodigo='$codigo'");
+$rs1 = $consulta->consultar("SELECT titulo,url,abstract,autor,estado,anio,idDescargas FROM descargas WHERE nombre='$nombre_ramo'");
 $count1 = $rs1->rowCount();
 
 $aprobados = '';

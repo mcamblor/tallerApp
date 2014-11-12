@@ -33,7 +33,7 @@
                                 <li><a href="database.php">Gestion y Diseño de Base de Datos</a></li>
                             </ul>
                         </li>
-                    <?php } if($script_ejecutandose[1] == "mallaObjetivo.php" || $script_ejecutandose[1] == "mallaAvance.php"){?>
+                    <?php } if($script_ejecutandose[1] == "mallaObjetivo.php" || $script_ejecutandose[1] == "mallaAvance.php" || $script_ejecutandose[1] == "mallaici.php" || $script_ejecutandose[1] == "mallaiej.php" || $script_ejecutandose[1] == "mallaiin.php" || $script_ejecutandose[1] == "mallaiciOB.php" || $script_ejecutandose[1] == "mallaiejOB.php" || $script_ejecutandose[1] == "mallaiinOB.php"){?>
                         <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Malla Curricular <i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">

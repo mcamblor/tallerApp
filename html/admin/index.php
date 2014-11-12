@@ -46,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style="color:#FFF;"><img src="../../images/favicon.ico" alt="logo" style="vertical-align: sub;width: 25px;"><?php echo $_SESSION['nombre_ramo'];?> - Administración</a>
+                <a class="navbar-brand" style="color:#FFF;"><img src="../../images/favicon.ico" alt="logo" style="vertical-align: sub;width: 25px;">Panel de Administración</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -64,10 +64,24 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.php"><span class="glyphicon glyphicon-comment"></span> Información</a>
+                        <a href="index.php"><span class="glyphicon glyphicon-comment"></span> Asignaturas</a>
                     </li>
                     <li>
                         <a href="documentos.php"><span class="glyphicon glyphicon-file"></span> Documentos</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-tag"></span> Menciones <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="software.php">Software</a>
+                            </li>
+                            <li>
+                                <a href="basededatos.php">Base de Datos</a>
+                            </li>
+                            <li>
+                                <a href="redes.php">Redes</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Perfil</a>
@@ -85,16 +99,77 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Información: <small>Edita la informacion del ramo en que estas a cargo</small>
+                            Información: <small>Edita la información de la asignatura</small>
                         </h1>
                     </div>
                 </div>
                 <!-- /.row -->
                 <div class="row">
+                  <div class="col-lg-12">
+                    <p style="text-align : justify;">Selecciona la asignatura que deseas modificar</p>
+                  </div>
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>                    
+                          <div class="form-group">
+                            <label class="col-md-3 control-label" for="planComun_select" title="Plan Comun de Ingeniería Civil Informática">Comun</label>
+                            <div class="col-md-9">
+                              <select id="planComun_select" name="planComun_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="planICI_select" title="Plan de Ingeniería Civil Informática">ICI</label>
+                            <div class="col-md-10">
+                              <select id="planICI_select" name="planICI_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="planIIN_select" title="Plan de Ingeniería en Informática">IIN</label>
+                            <div class="col-md-10">
+                              <select id="planIIN_select" name="planIIN_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-3">
+                      <form class="form-horizontal">
+                          <fieldset>
+                          <div class="form-group">
+                            <label class="col-md-2 control-label" for="planIEJ_select" title="Plan Comun de Ingeniería Ejecución en Informática">IEJ</label>
+                            <div class="col-md-10">
+                              <select id="planIEJ_select" name="planIEJ_select" class="form-control enlace_asig_modificar">
+                              </select>
+                            </div>
+                          </div>
+                          </fieldset>
+                      </form>
+                  </div><!--/.col-sm-6-->
+                  <div class="col-lg-12">
+                    <legend></legend>
+                  </div>  
+                </div>
+
+                <div class="row">
                    <div class="col-lg-12">
                         <div class='alert alert-dismissible' role='alert' id='validar_descarga'><div id="contenido_alert"></div></div>
                     </div>
-                </div>            
+                </div>
 
                 <div class="row">
                     <div class="col-lg-6">
@@ -105,7 +180,7 @@
                                 <div class="form-group">
                                   <label class="col-md-3 control-label" for="profesor_asignatura">Profesor</label>  
                                   <div class="col-md-5">
-                                  <input id="profesor_asignatura" name="profesor_asignatura" type="text" class="form-control input-md"> 
+                                  <input id="profesor_asignatura" name="profesor_asignatura" type="text" class="form-control input-md" disabled> 
                                   </div>
                                   <div class="col-md-3">  
                                     <a class="btn btn-primary" id="boton_modifica_profesor" name="boton_modifica_profesor"><span class="glyphicon glyphicon-pencil"></span> Modificar Profesor</a> 
@@ -114,7 +189,7 @@
                                 <div class="form-group">
                                   <label class="col-md-3 control-label" for="ayudante1_asignatura">Ayudante nº1</label>  
                                   <div class="col-md-5">
-                                  <input id="ayudante1_asignatura" name="ayudante1_asignatura" type="text" class="form-control input-md"> 
+                                  <input id="ayudante1_asignatura" name="ayudante1_asignatura" type="text" class="form-control input-md" disabled> 
                                   </div>
                                   <div class="col-md-3">  
                                     <a class="btn btn-warning" id="boton_modifica_ayudante1" name="boton_modifica_ayudante1"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
@@ -123,7 +198,7 @@
                                 <div class="form-group">
                                   <label class="col-md-3 control-label" for="ayudante2_asignatura">Ayudante nº2</label>  
                                   <div class="col-md-5">
-                                  <input id="ayudante2_asignatura" name="ayudante2_asignatura" type="text" class="form-control input-md"> 
+                                  <input id="ayudante2_asignatura" name="ayudante2_asignatura" type="text" class="form-control input-md" disabled> 
                                   </div>
                                   <div class="col-md-3">  
                                     <a class="btn btn-danger" id="boton_modifica_ayudante2" name="boton_modifica_ayudante2"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
@@ -132,7 +207,7 @@
                                 <div class="form-group">
                                   <label class="col-md-3 control-label" for="comentario_asignarura">Comentarios</label>
                                   <div class="col-md-5">                     
-                                    <textarea class="form-control" id="comentario_asignatura" name="comentario_asignatura"></textarea>
+                                    <textarea class="form-control" id="comentario_asignatura" name="comentario_asignatura" disabled></textarea>
                                     <span class="help-block">Información acerca de la asignatura (comentarios)</span>
                                   </div>
                                   <div class="col-md-3">
@@ -156,7 +231,7 @@
                                 <div class="form-group">
                                   <label class="col-md-3 control-label" for="foto_asignatura">Foto</label>  
                                   <div class="col-md-9">
-                                  <input id="foto_asignatura" name="foto_asignatura" type="file" class="form-control input-md"> 
+                                  <input id="foto_asignatura" name="foto_asignatura" type="file" class="form-control input-md" disabled> 
                                   </div>
                                 </div>
                                 <div class="form-group">

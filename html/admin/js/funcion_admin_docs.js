@@ -1,4 +1,8 @@
 $( document ).ready(function() {
+
+    var control_tabla = false;
+    var tab_aprob = "";
+    var tab_no_aprob = "";
     
     $("#validar_descarga").hide();
 
@@ -12,14 +16,80 @@ $( document ).ready(function() {
     });
 
     $.ajax({
+        url: '../../logica/getAsignaturaDescargas.php',
+        type: 'POST',
+        async: true,
+        data: 'malla=comun',
+        success: function(datos_recibidos) {
+            $("#planComun_select").html(datos_recibidos);
+            }
+    });
+    $.ajax({
+        url: '../../logica/getAsignaturaDescargas.php',
+        type: 'POST',
+        async: true,
+        data: 'malla=ICI',
+        success: function(datos_recibidos) {
+            $("#planICI_select").html(datos_recibidos);
+            }
+    });
+    $.ajax({
+        url: '../../logica/getAsignaturaDescargas.php',
+        type: 'POST',
+        async: true,
+        data: 'malla=IIN',
+        success: function(datos_recibidos) {
+            $("#planIIN_select").html(datos_recibidos);
+            }
+    });
+    $.ajax({
+        url: '../../logica/getAsignaturaDescargas.php',
+        type: 'POST',
+        async: true,
+        data: 'malla=IEJ',
+        success: function(datos_recibidos) {
+            $("#planIEJ_select").html(datos_recibidos);
+            }
+    });
+
+    $(".enlace_asig_modificar").change(function(){
+        var nombre_ramo = $("#"+$(this).attr("id")+" option:selected" ).text();
+        var select_id = $(this).attr("id");
+        $.ajax({
         url: '../../logica/getDescargasAdmin.php',
         type: 'POST',
         async: true,
-        data: 'asignatura='+$("#datos_ocultos").val(),
+        data: 'nombre='+nombre_ramo,
         success: function(datos_recibidos) {
                 var documentos = datos_recibidos.split("|-|");
                 var aprobados = documentos[0].split("||");
                 var no_aprobados = documentos[1].split("||");
+
+                switch(select_id) {
+                    case "planComun_select":
+                        $("#planICI_select option[value='0']").attr("selected",true);
+                        $("#planIIN_select option[value='0']").attr("selected",true);
+                        $("#planIEJ_select option[value='0']").attr("selected",true);
+                        break;
+                    case "planICI_select":
+                        $("#planComun_select option[value='0']").attr("selected",true);
+                        $("#planIIN_select option[value='0']").attr("selected",true);
+                        $("#planIEJ_select option[value='0']").attr("selected",true);
+                        break;
+                    case "planIIN_select":
+                        $("#planComun_select option[value='0']").attr("selected",true);
+                        $("#planICI_select option[value='0']").attr("selected",true);
+                        $("#planIEJ_select option[value='0']").attr("selected",true);
+                        break;
+                    case "planIEJ_select":
+                        $("#planComun_select option[value='0']").attr("selected",true);
+                        $("#planIIN_select option[value='0']").attr("selected",true);
+                        $("#planICI_select option[value='0']").attr("selected",true);
+                        break;
+                }
+
+                $("#tabla_doc_sin_aprobar").html("");
+                $("#tabla_doc_aprobados").html("");
 
                 for(var i=0;i<no_aprobados.length-1;i++){
                     var datos = no_aprobados[i].split("++");
@@ -30,20 +100,23 @@ $( document ).ready(function() {
                     var datos = aprobados[i].split("++");
                     $("#tabla_doc_aprobados").append("<tr class='template-upload fade in' id='filaAprobada_"+i+"'><td class='nombre_archivo' id='nombreAprobado_"+i+"'>"+datos[0]+"</td><td class='comentario_archivo' id='comentarioAprobado_"+i+"'>"+datos[5]+"</td><td class='autor_archivo' id='autorNoAprobado_"+i+"'>"+datos[2]+"</td><td class='boton_modificar'><a id='modificar_"+datos[4]+"_"+i+"_"+1+"' class='btn btn-primary botonModificar' title='Modificar Documento'><span class='glyphicon glyphicon-pencil'></span></a></td><td class='boton_visualizar'><a href='../"+datos[1]+"' target='_blank' class='btn btn-warning' title='Visualizar Documento'><span class='glyphicon glyphicon-eye-open'></span></a></td><td class='boton_eliminar'><a id='EliminarBoton_"+i+"_"+datos[4]+"' class='btn btn-danger botonEliminar' title='Eliminar Documento'><span class='glyphicon glyphicon-remove'></span></a></td></tr>");
                 }
-            
-                $('#tablaNoAprobado').dataTable({
-                    "scrollY":        "210px",
-                    "scrollCollapse": true,
-                    "searching": false,
-                    "paging": false
-                });
+                
+                if(control_tabla == false){
+                    tab_no_aprob = $('#tablaNoAprobado').dataTable({
+                        "scrollY":        "160px",
+                        "searching": false,
+                        "info": false,
+                        "paging": false
+                    });
 
-                $('#tablaAprobado').dataTable({
-                    "scrollY":        "210px",
-                    "scrollCollapse": true,
-                    "searching": false, 
-                    "paging": false
-                });
+                    tab_aprob = $('#tablaAprobado').dataTable({
+                        "scrollY":        "160px",
+                        "searching": false,
+                        "info": false,
+                        "paging": false
+                    });
+                    control_tabla = true;
+                }
 
                 $("#validar_aprobacion").hide();
 
@@ -191,6 +264,9 @@ $( document ).ready(function() {
 
             }
     });
+    });
+
+    
 
     
 });

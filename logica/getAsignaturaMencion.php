@@ -23,7 +23,7 @@ switch ($mencion) {
 
 function getAsigRedes(){
 	$consulta = new conexionBD;
-	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='RED'");
+	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='RED' AND estado='Visible'");
 	$count = $rs->rowCount();
 
 	$respuesta = "";
@@ -41,7 +41,7 @@ function getAsigRedes(){
 
 function getAsigSw(){
 	$consulta = new conexionBD;
-	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='SOF'");
+	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='SOF' AND estado='Visible'");
 	$count = $rs->rowCount();
 
 	$respuesta = "";
@@ -58,7 +58,7 @@ function getAsigSw(){
 
 function getAsigBD(){
 	$consulta = new conexionBD;
-	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='BD'");
+	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='BD' AND estado='Visible'");
 	$count = $rs->rowCount();
 
 	$respuesta = "";
