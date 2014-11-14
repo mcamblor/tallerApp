@@ -16,7 +16,10 @@ switch ($mencion) {
 		echo getAsigBD();
 		break;
 	case 'informacion':
-		echo obtenerInfoRamoMencion($_POST['codigo'],$_POST['linea']);
+		echo obtenerInfoRamoMencion($_POST['codigo'],$_POST['linea'],$_POST['nom']);
+		break;
+	case 'foto':
+		echo obtenerFotoMencion($_POST['codigo'],$_POST['linea'],$_POST['nom']);
 		break;
 }
 
@@ -73,22 +76,30 @@ function getAsigBD(){
 	return $respuesta;
 }
 
-function obtenerInfoRamoMencion($codigo,$mencion){
+function obtenerInfoRamoMencion($codigo,$mencion,$nombre){
 	$consulta = new conexionBD;
-	$rs = $consulta->consultar("SELECT profesor,descripcion_larga,nombre,url_imagen,descripcion_corta FROM asig_mencion WHERE mencion_idMencion='$mencion' AND idCodigo='$codigo'");
+	$rs = $consulta->consultar("SELECT profesor,descripcion_larga,nombre,url_imagen,descripcion_corta FROM asig_mencion WHERE mencion_idMencion='$mencion' AND idCodigo='$codigo' AND nombre='$nombre'");
 	$count = $rs->rowCount();
 
-	$respuesta = "";
-
-	while($record = $rs->fetch(PDO::FETCH_ASSOC)){
-		$respuesta = $respuesta.$record['descripcion_corta']."++";
-		$respuesta = $respuesta.$record['nombre']."++";
-		$respuesta = $respuesta.$record['descripcion_larga']."++";
-		$respuesta = $respuesta.$record['profesor']."++";
-		$respuesta = $respuesta.$record['url_imagen'];
-	}
-
+	$record = $rs->fetch(PDO::FETCH_ASSOC);
+	$respuesta = $record['descripcion_corta']."++";
+	$respuesta = $respuesta.$record['nombre']."++";
+	$respuesta = $respuesta.$record['descripcion_larga']."++";
+	$respuesta = $respuesta.$record['profesor']."++";
+	$respuesta = $respuesta.$record['url_imagen'];
+	
 	return $respuesta;	
+}
+
+function obtenerFotoMencion($codigo,$mencion,$nombre){
+	$consulta = new conexionBD;
+	$rs = $consulta->consultar("SELECT url_imagen FROM asig_mencion WHERE mencion_idMencion='$mencion' AND idCodigo='$codigo' AND nombre='$nombre'");
+	$count = $rs->rowCount();
+
+	$record = $rs->fetch(PDO::FETCH_ASSOC);
+	$respuesta = $record['url_imagen'];
+	
+	return $respuesta;
 }
 
 ?>

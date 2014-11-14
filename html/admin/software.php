@@ -30,6 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link href="../../js/DataTables-1.10.3/media/css/jquery.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -63,23 +64,23 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
+                    <li>
                         <a href="index.php"><span class="glyphicon glyphicon-comment"></span> Asignaturas</a>
                     </li>
                     <li>
                         <a href="documentos.php"><span class="glyphicon glyphicon-file"></span> Documentos</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-tag"></span> Menciones <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Software</a>
+                                <a href="software.php">Software</a>
                             </li>
                             <li>
-                                <a href="#">Base de Datos</a>
+                                <a href="basededatos.php">Base de Datos</a>
                             </li>
                             <li>
-                                <a href="#">Redes</a>
+                                <a href="redes.php">Redes</a>
                             </li>
                         </ul>
                     </li>
@@ -99,152 +100,61 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Información: <small>Edita la información de la asignatura</small>
+                            Mencion de Software: <small>Edita la información de la mención de Software</small>
                         </h1>
                     </div>
                 </div>
-                <!-- /.row -->
                 <div class="row">
-                  <div class="col-lg-12">
-                    <p style="text-align : justify;">Selecciona la asignatura que deseas modificar</p>
-                  </div>
-                  <div class="col-lg-3">
-                      <form class="form-horizontal">
-                          <fieldset>                    
-                          <div class="form-group">
-                            <label class="col-md-3 control-label" for="planComun_select" title="Plan Comun de Ingeniería Civil Informática">Comun</label>
-                            <div class="col-md-9">
-                              <select id="planComun_select" name="planComun_select" class="form-control enlace_asig_modificar">
-                              </select>
-                            </div>
-                          </div>
-                          </fieldset>
-                      </form>
-                  </div><!--/.col-sm-6-->
-                  <div class="col-lg-3">
-                      <form class="form-horizontal">
-                          <fieldset>
-                          <div class="form-group">
-                            <label class="col-md-2 control-label" for="planICI_select" title="Plan de Ingeniería Civil Informática">ICI</label>
-                            <div class="col-md-10">
-                              <select id="planICI_select" name="planICI_select" class="form-control enlace_asig_modificar">
-                              </select>
-                            </div>
-                          </div>
-                          </fieldset>
-                      </form>
-                  </div><!--/.col-sm-6-->
-                  <div class="col-lg-3">
-                      <form class="form-horizontal">
-                          <fieldset>
-                          <div class="form-group">
-                            <label class="col-md-2 control-label" for="planIIN_select" title="Plan de Ingeniería en Informática">IIN</label>
-                            <div class="col-md-10">
-                              <select id="planIIN_select" name="planIIN_select" class="form-control enlace_asig_modificar">
-                              </select>
-                            </div>
-                          </div>
-                          </fieldset>
-                      </form>
-                  </div><!--/.col-sm-6-->
-                  <div class="col-lg-3">
-                      <form class="form-horizontal">
-                          <fieldset>
-                          <div class="form-group">
-                            <label class="col-md-2 control-label" for="planIEJ_select" title="Plan Comun de Ingeniería Ejecución en Informática">IEJ</label>
-                            <div class="col-md-10">
-                              <select id="planIEJ_select" name="planIEJ_select" class="form-control enlace_asig_modificar">
-                              </select>
-                            </div>
-                          </div>
-                          </fieldset>
-                      </form>
-                  </div><!--/.col-sm-6-->
-                  <div class="col-lg-12">
-                    <legend></legend>
-                  </div>  
-                </div>
-
-                <div class="row">
-                   <div class="col-lg-12">
-                        <div class='alert alert-dismissible' role='alert' id='validar_descarga'><div id="contenido_alert"></div></div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <br>
-                        <form class="form-horizontal">
-                            <fieldset>
-                                <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['ramo'];?>">
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="profesor_asignatura">Profesor</label>  
-                                  <div class="col-md-5">
-                                  <input id="profesor_asignatura" name="profesor_asignatura" type="text" class="form-control input-md" disabled> 
+                    <div class="col-lg-12">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Información General</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal">
+                                <fieldset>
+                               <div class="form-group">
+                                  <label class="col-lg-3 control-label" for="descripcion_mencion">Descripción</label>
+                                  <div class="col-lg-6">                     
+                                    <textarea class="form-control" id="descripcion_mencion" name="descripcion_mencion" style="height: 150px;"></textarea>
                                   </div>
                                   <div class="col-md-3">  
-                                    <a class="btn btn-primary" id="boton_modifica_profesor" name="boton_modifica_profesor"><span class="glyphicon glyphicon-pencil"></span> Modificar Profesor</a> 
+                                    <button type="button" class="btn btn-warning" id="boton_modifica_mencion" name="boton_modifica_mencion" disabled style="margin-bottom:10%;"><span class="glyphicon glyphicon-pencil"></span> Modificar Descripción</button>
+                                    <button type="button" class="btn btn-danger" id="boton_deshacer_modifica" name="boton_deshacer_modifica" disabled><span class="glyphicon glyphicon-refresh"></span> Modificar Descripción</button> 
                                   </div>
                                 </div>
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="ayudante1_asignatura">Ayudante nº1</label>  
-                                  <div class="col-md-5">
-                                  <input id="ayudante1_asignatura" name="ayudante1_asignatura" type="text" class="form-control input-md" disabled> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-warning" id="boton_modifica_ayudante1" name="boton_modifica_ayudante1"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="ayudante2_asignatura">Ayudante nº2</label>  
-                                  <div class="col-md-5">
-                                  <input id="ayudante2_asignatura" name="ayudante2_asignatura" type="text" class="form-control input-md" disabled> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-danger" id="boton_modifica_ayudante2" name="boton_modifica_ayudante2"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="comentario_asignarura">Comentarios</label>
-                                  <div class="col-md-5">                     
-                                    <textarea class="form-control" id="comentario_asignatura" name="comentario_asignatura" disabled></textarea>
-                                    <span class="help-block">Información acerca de la asignatura (comentarios)</span>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <a class="btn btn-success" id="boton_modifica_comentario" name="boton_modifica_comentario"><span class="glyphicon glyphicon-pencil"></span> Modificar Comenterio</a>
-                                  </div>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </div>
-                    <div class="col-lg-5">
-                        <br>
-
-                        <form class="form-horizontal">
-                            <fieldset>
-                                <div class="form-group">                                
-                                    <label class="col-md-3 control-label" for="foto_asignatura"></label>  
-                                      <div class="col-md-9">
-                                         <div style="border:1px solid;" id="foto_ramo_marco"><img src="" id="foto_ramo"></div> 
-                                      </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="foto_asignatura">Foto</label>  
-                                  <div class="col-md-9">
-                                  <input id="foto_asignatura" name="foto_asignatura" type="file" class="form-control input-md" disabled> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="foto_asignatura"></label>  
-                                <div class="col-md-5">  
-                                    <a class="btn btn-primary" id="boton_modifica_foto" name="boton_modifica_foto"><span class="glyphicon glyphicon-picture"></span> Cambiar Imagen</a> 
-                                </div>
-                                </div>
-                            </fieldset>
-                        </form>
+                                <div class='alert alert-dismissible' role='alert' id='validar_actualizar'></div>
+                                </fieldset>
+                                </form>
+                        </div>
+                      </div>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Ingresar una nueva Asignatura</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class='form-horizontal'><fieldset><div class='form-group'><label class='col-md-3 control-label' for='nombre_nuevo'>Nombre</label><div class='col-md-6'><input id='nombre_nuevo' name='nombre_nuevo' type='text' class='form-control input-md'></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_corta_nueva'>Descripción Corta</label><div class='col-md-6'><select id='descrip_corta_nueva' name='descrip_corta_nueva' class='form-control'><option value='0' style='display:none;'>Seleccione</option><option value='INC502'>Asignatura Electiva de Especialidad I</option><option value='INC512'>Asignatura Electiva de Especialidad II</option><option value='INC600'>Asignatura Electiva de Especialidad III</option><option value='INC501'>Seminario de Especialidad I</option><option value='INC511'>Seminario de Especialidad II</option></select></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_larga_new'>Descripción Larga</label><div class='col-md-3'><textarea class='form-control' id='descrip_larga_new' name='descrip_larga_new'></textarea></div></div><div class='form-group'><label class='col-md-3 control-label' for='profesor_new'>Profesor</label><div class='col-md-6'><input id='profesor_new' name='profesor_new' type='text' class='form-control input-md'></div></div><div class='form-group'><label class='col-md-3 control-label' for='foto_new'>Foto</label><div class='col-md-3'><input id='foto_new' name='foto_new' class='input-file' type='file' accept="image/*"></div></div><div class='form-group'><label class='col-md-3 control-label' for='boton_agregar_ramo'></label><div class='col-md-4'><button id='boton_agregar_ramo' class="btn btn-primary btn-success" type="button"><span class="glyphicon glyphicon-save"></span> Agregar Asignatura</button></div></div><div class='alert alert-dismissible' role='alert' id='validar_add_ramo'></div></fieldset></form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Asignaturas de la Mención</h3>
+                        </div>
+                        <div class="panel-body" id="contenedor_redes">
+                            <table id='tablaMencion' class='display'><tbody id="datos_tabla"><thead><tr><th>Nombre</th><th>Descripción Corta</th><th>Descripción Larga</th><th>Profesor</th><th>Estado</th><th>Mostrar / No Mostrar</th><th>Modificar</th><th>Borrar</th></tr></thead></tbody></table>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                           
             </div>
             <!-- /.container-fluid -->
 
@@ -254,18 +164,31 @@
     </div>
     <!-- /#wrapper -->
 
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal_mostrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <h3 class="modal-title" id="myModalLabel"></h3>
           </div>
           <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success" id="boton_aprobar_cierre"><span class="glyphicon glyphicon-ok"></span> Aprobar</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+          <div class="modal-footer" id="footer_mostrar">
+            <button type="button" class="btn btn-success" id="boton_aprobar_mostrar"><span class="glyphicon glyphicon-ok"></span> Ok!</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="cerrar_modal_mostrar">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="myModal_other" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="myModalLabel"></h3>
+          </div>
+          <div class="modal-body" id="cuerpoModal_other" style="text-align : justify;">
+          </div>
+          <div class="modal-footer" id="footer_other">
           </div>
         </div>
       </div>
@@ -273,7 +196,8 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/funcion_admin_asignatura.js"></script>
+    <script src="../../js/DataTables-1.10.3/media/js/jquery.dataTables.min.js"></script>
+    <script src="js/funcion_admin_sw.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 

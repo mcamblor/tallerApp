@@ -45,8 +45,6 @@ $( document ).ready(function() {
 
 
     $("#boton_modifica_profesor").attr("disabled","disabled");
-    $("#boton_modifica_ayudante1").attr("disabled","disabled");
-    $("#boton_modifica_ayudante2").attr("disabled","disabled");
     $("#boton_modifica_comentario").attr("disabled","disabled");
     $("#boton_modifica_foto").attr("disabled","disabled");
 
@@ -72,8 +70,6 @@ $( document ).ready(function() {
         data: 'asignatura='+datos_envio[1]+'&malla='+datos_envio[0],
         success: function(datos_recibidos) {
                 $("#profesor_asignatura").prop("disabled",false);
-                $("#ayudante1_asignatura").prop("disabled",false);
-                $("#ayudante2_asignatura").prop("disabled",false);
                 $("#foto_asignatura").prop("disabled",false);
                 $("#comentario_asignatura").prop("disabled",false);
 
@@ -103,14 +99,10 @@ $( document ).ready(function() {
                 var data = datos_recibidos.split("||");
                 $("#profesor_asignatura").val(data[1]);
                 profesor = data[1];
-                $("#ayudante1_asignatura").val(data[2]);
-                ayudante1 =data[2]
-                $("#ayudante2_asignatura").val(data[3]);
-                ayudante2 = data[3]
                 numero_asignatura = valor;
-                $("#foto_ramo").attr("src",data[4]);
-                $("#comentario_asignatura").val(data[5]);
-                comentario = data[5];
+                $("#foto_ramo").attr("src",data[2]);
+                $("#comentario_asignatura").val(data[3]);
+                comentario = data[3];
             }
         });
     });
@@ -120,22 +112,6 @@ $( document ).ready(function() {
             $("#boton_modifica_profesor").removeAttr("disabled");
         }else{
             $("#boton_modifica_profesor").attr("disabled","disabled");
-        }
-    });
-
-    $("#ayudante1_asignatura").keyup(function(){
-        if($(this).val() != ayudante1){
-            $("#boton_modifica_ayudante1").removeAttr("disabled");
-        }else{
-            $("#boton_modifica_ayudante1").attr("disabled","disabled");
-        }
-    });
-
-    $("#ayudante2_asignatura").keyup(function(){
-        if($(this).val() != ayudante2){
-            $("#boton_modifica_ayudante2").removeAttr("disabled");
-        }else{
-            $("#boton_modifica_ayudante2").attr("disabled","disabled");
         }
     });
 
@@ -153,6 +129,65 @@ $( document ).ready(function() {
         }else{
             $("#boton_modifica_foto").attr("disabled","disabled");
         }
+    });
+
+    //BOTON MODIFICA FOTO ASIGNATURA
+
+    $("#boton_modifica_foto").click(function(){
+
+        var archivos = document.getElementById('foto_asignatura');
+        var documento = archivos.files;
+        var datta = new FormData();
+
+        for(var i=0;i<documento.length;i++){
+            datta.append('archivo'+i,documento[i]);
+        }
+
+        $.ajax({
+            url: '../../logica/uploadFotosRamos.php',
+            type: 'POST',
+            async: true,
+            contentType: false,
+            processData: false,
+            cache: false,
+            data: datta,
+            success: function(datos_recibidos) {
+                }
+        });
+
+        var urlSend = $("#foto_asignatura").val().split("\\");
+
+        $.ajax({
+        url: '../../logica/setDatosAsignatura.php',
+        type: 'POST',
+        async: true,
+        data: 'data='+urlSend[urlSend.length-1]+'&ramo='+numero_asignatura+'&tipo=foto',
+        success: function(datos_recibidos) {
+                var recibido = datos_recibidos.split("||");
+                if(recibido[0] == "ok"){
+                    profesor = $("#profesor_asignatura").val();
+                    $("#boton_modifica_foto").attr("disabled","disabled");
+                    $("#contenido_alert").html("<strong>EXITO! - </strong>La foto de la asignatura ha sido cambiada con exito");
+                    $("#validar_descarga").removeClass("alert-danger");
+                    $("#validar_descarga").addClass("alert-success");
+                    $("#foto_ramo").attr("src",recibido[1]);
+                    $("#validar_descarga").show("slow");
+                    setTimeout(function() {
+                        $('#validar_descarga').hide('slow');
+                    }, 5000);
+                }else{
+                    $("#profesor_asignatura").val(profesor);
+                    $("#boton_modifica_foto").attr("disabled","disabled");
+                    $("#contenido_alert").html("<strong>ERROR! - </strong>La foto de la asignatura no se pudo cambiar. Intente nuevamente");
+                    $("#validar_descarga").removeClass("alert-success");
+                    $("#validar_descarga").addClass("alert-danger");
+                    $("#validar_descarga").show("slow");
+                    setTimeout(function() {
+                        $('#validar_descarga').hide('slow');
+                    }, 5000);
+                }
+            }
+        });
     });
 
    //BOTON MODIFICA NOMBRE PROFESOR
@@ -178,74 +213,6 @@ $( document ).ready(function() {
                     $("#profesor_asignatura").val(profesor);
                     $("#boton_modifica_profesor").attr("disabled","disabled");
                     $("#contenido_alert").html("<strong>ERROR! - </strong>El nombre del profesor no se pudo cambiar. Intente nuevamente");
-                    $("#validar_descarga").removeClass("alert-success");
-                    $("#validar_descarga").addClass("alert-danger");
-                    $("#validar_descarga").show("slow");
-                    setTimeout(function() {
-                        $('#validar_descarga').hide('slow');
-                    }, 5000);
-                }
-            }
-        });
-   });
-
-    //BOTON MODIFICA NOMBRE AYUDANTE 1
-
-   $("#boton_modifica_ayudante1").click(function(){
-        $.ajax({
-        url: '../../logica/setDatosAsignatura.php',
-        type: 'POST',
-        async: true,
-        data: 'data='+$("#ayudante1_asignatura").val()+'&ramo='+numero_asignatura+'&tipo=ayudante1',
-        success: function(datos_recibidos) {
-                if(datos_recibidos == 1){
-                    ayudante1 = $("#ayudante1_asignatura").val();
-                    $("#boton_modifica_ayudante1").attr("disabled","disabled");
-                    $("#contenido_alert").html("<strong>EXITO! - </strong>El nombre del ayudante nº1 ha sido cambiado con exito");
-                    $("#validar_descarga").removeClass("alert-danger");
-                    $("#validar_descarga").addClass("alert-success");
-                    $("#validar_descarga").show("slow");
-                    setTimeout(function() {
-                        $('#validar_descarga').hide('slow');
-                    }, 5000);
-                }else{
-                    $("#ayudante1_asignatura").val(ayudante1);
-                    $("#boton_modifica_ayudante1").attr("disabled","disabled");
-                    $("#contenido_alert").html("<strong>ERROR! - </strong>El nombre del ayudante nº1 no se pudo cambiar. Intente nuevamente");
-                    $("#validar_descarga").removeClass("alert-success");
-                    $("#validar_descarga").addClass("alert-danger");
-                    $("#validar_descarga").show("slow");
-                    setTimeout(function() {
-                        $('#validar_descarga').hide('slow');
-                    }, 5000);
-                }
-            }
-        });
-   });
-
-   //BOTON MODIFICA NOMBRE AYUDANTE 2
-
-   $("#boton_modifica_ayudante2").click(function(){
-        $.ajax({
-        url: '../../logica/setDatosAsignatura.php',
-        type: 'POST',
-        async: true,
-        data: 'data='+$("#ayudante2_asignatura").val()+'&ramo='+numero_asignatura+'&tipo=ayudante2',
-        success: function(datos_recibidos) {
-                if(datos_recibidos == 1){
-                    ayudante2 = $("#ayudante2_asignatura").val();
-                    $("#boton_modifica_ayudante2").attr("disabled","disabled");
-                    $("#contenido_alert").html("<strong>EXITO! - </strong>El nombre del ayudante nº2 ha sido modificado con exito");
-                    $("#validar_descarga").removeClass("alert-danger");
-                    $("#validar_descarga").addClass("alert-success");
-                    $("#validar_descarga").show("slow");
-                    setTimeout(function() {
-                        $('#validar_descarga').hide('slow');
-                    }, 5000);
-                }else{
-                    $("#ayudante2_asignatura").val(ayudante2);
-                    $("#boton_modifica_ayudante2").attr("disabled","disabled");
-                    $("#contenido_alert").html("<strong>ERROR! - </strong>El nombre del ayudante nº2 no se pudo cambiar. Intente nuevamente");
                     $("#validar_descarga").removeClass("alert-success");
                     $("#validar_descarga").addClass("alert-danger");
                     $("#validar_descarga").show("slow");

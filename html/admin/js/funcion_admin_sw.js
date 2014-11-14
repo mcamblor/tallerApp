@@ -6,7 +6,7 @@ $( document ).ready(function() {
         url: '../../logica/getMencionInfo.php',
         type: 'POST',
         async: true,
-        data: 'mencion=RED',
+        data: 'mencion=SOF',
         success: function(datos_recibidos) {
             $("#descripcion_mencion").val(datos_recibidos);
             descrip_mencion = datos_recibidos;
@@ -36,7 +36,7 @@ $( document ).ready(function() {
             url: '../../logica/updateInfoMencion.php',
             type: 'POST',
             async: true,
-            data: 'mencion=RED&descrip='+$("#descripcion_mencion").val(),
+            data: 'mencion=SOF&descrip='+$("#descripcion_mencion").val(),
             success: function(datos_recibidos) {
                     if(datos_recibidos == "ok"){
                         $("#validar_actualizar").removeClass("alert-danger");
@@ -148,7 +148,7 @@ $( document ).ready(function() {
             url: '../../logica/setNuevaAsignaturaMencion.php',
             type: 'POST',
             async: true,
-            data: 'name='+name.val()+'&corta='+$("#descrip_corta_nueva option:selected").text()+'&larga='+larga.val()+'&profe='+profe.val()+'&mencion=RED&code='+corta.val()+'&urlEnvio='+urlSend[urlSend.length-1],
+            data: 'name='+name.val()+'&corta='+$("#descrip_corta_nueva option:selected").text()+'&larga='+larga.val()+'&profe='+profe.val()+'&mencion=SOF&code='+corta.val()+'&urlEnvio='+urlSend[urlSend.length-1],
             success: function(datos_recibidos) {
                 if(datos_recibidos=="ok"){
                     $("#validar_add_ramo").removeClass("alert-danger");
@@ -175,7 +175,7 @@ $( document ).ready(function() {
         url: '../../logica/getAsignaturaAdminMencion.php',
         type: 'POST',
         async: true,
-        data: 'mencion=RED',
+        data: 'mencion=SOF',
         success: function(datos_recibidos) {
             var datos_obtenidos = datos_recibidos.split("|+|");
             for (var i = 0; i < datos_obtenidos.length-1; i++) {
@@ -199,7 +199,7 @@ $( document ).ready(function() {
                     url: '../../logica/getAsignaturaMencion.php',
                     type: 'POST',
                     async: true,
-                    data: 'mencion=foto&codigo='+extra[2]+'&linea=RED&nom='+$('#nombre_'+extra[1]).text(),
+                    data: 'mencion=foto&codigo='+extra[2]+'&linea=SOF&nom='+$('#nombre_'+extra[1]).text(),
                     success: function(datos_recibidos) {
                         $(".modal-title").html("Modificar Asignatura: "+$('#nombre_'+extra[1]).text()); 
                         $("#cuerpoModal_other").html("<div class='row'><div class='col-lg-6'><div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'>Modificar información de la asignatura</h3></div><div class='panel-body' id='panel_cuerpo_act_ramo'><form class='form-horizontal'><fieldset><div class='form-group'><label class='col-md-3 control-label' for='nombre_act'>Nombre</label><div class='col-md-9'><input id='nombre_act' name='nombre_act' type='text' class='form-control input-md'></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_corta_act'>Descripción Corta</label><div class='col-md-9'><select id='descrip_corta_act' name='descrip_corta_act' class='form-control'><option value='0' style='display:none;'>Seleccione</option><option value='INC502'>Asignatura Electiva de Especialidad I</option><option value='INC512'>Asignatura Electiva de Especialidad II</option><option value='INC600'>Asignatura Electiva de Especialidad III</option><option value='INC501'>Seminario de Especialidad I</option><option value='INC511'>Seminario de Especialidad II</option></select></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_larga_act'>Descripción Larga</label><div class='col-md-9'><textarea class='form-control' id='descrip_larga_act' name='descrip_larga_act' style='resize: none; height:189px;'></textarea></div></div><div class='form-group'><label class='col-md-3 control-label' for='profesor_act'>Profesor</label><div class='col-md-9'><input id='profesor_act' name='profesor_act' type='text' class='form-control input-md'></div></div><div class='form-group'><div class='col-md-12'><button id='boton_agregar_act' class='btn btn-primary btn-success btn-block' type='button'><span class='glyphicon glyphicon-edit'></span> Modificar Asignatura</button><button id='boton_agregar_act_refresh' class='btn btn-primary btn-danger btn-block' type='button'><span class='glyphicon glyphicon-refresh'></span> Deshacer Cambios</button></div></div></fieldset></form></div></div></div><div class='col-lg-6'><div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'>Imagen de la asignatura</h3></div><div class='panel-body' id='panel_cuerpo_act_ramo_foto' style='height:482px;'><form class='form-horizontal'><fieldset><div class='form-group'><div class='col-md-12'><div style='border:1px solid;' id='foto_ramo_marco_act'><img src='' id='foto_ramo'></div></div></div><div class='form-group'><div class='col-md-12'><input id='foto_asignatura' name='foto_asignatura' type='file' class='form-control input-md' accept='image/*'></div></div><div class='form-group'><div class='col-md-12'><button type='button' class='btn btn-warning btn-block' id='boton_modifica_foto' name='boton_modifica_foto' disabled><span class='glyphicon glyphicon-picture'></span> Cambiar Imagen</button></div></div></fieldset></form></div></div></div><div class='col-lg-12'><div class='alert alert-dismissible' role='alert' id='validar_ramo_act'></div></div></div>");
@@ -398,7 +398,7 @@ $( document ).ready(function() {
                         url: '../../logica/deleteAsignaturaMencion.php',
                         type: 'POST',
                         async: true,
-                        data: 'mencion=RED&code='+data[2]+'&nombre_ramo='+$("#nombre_"+data[1]).text(),
+                        data: 'mencion=SOF&code='+data[2]+'&nombre_ramo='+$("#nombre_"+data[1]).text(),
                         success: function(datos_recibidos) {
                             if(datos_recibidos == "ok"){
                                 $(".modal-body").html("<div class='alert alert-dismissible alert-success' role='alert' id='validar_aprobacion'><strong>EXITO</strong> - La asignatura <strong>"+$('#nombre_'+data[1]).text()+"</strong> ha sido eliminada con exito. En breve sera redirigido a la gestion de mencion.</div>");                                  
@@ -436,7 +436,7 @@ $( document ).ready(function() {
                         url: '../../logica/setAsignaturaAdminMencionInfo.php',
                         type: 'POST',
                         async: true,
-                        data: 'mencion=RED&code='+data[2]+'&tipo='+data[3]+'&nombre_ramo='+$("#nombre_"+data[1]).text(),
+                        data: 'mencion=SOF&code='+data[2]+'&tipo='+data[3]+'&nombre_ramo='+$("#nombre_"+data[1]).text(),
                         success: function(datos_recibidos) {
                             if(datos_recibidos == "ok"){
                                 if($("#estado_"+data[1]).text() == "Visible"){

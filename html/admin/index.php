@@ -187,24 +187,6 @@
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-3 control-label" for="ayudante1_asignatura">Ayudante nº1</label>  
-                                  <div class="col-md-5">
-                                  <input id="ayudante1_asignatura" name="ayudante1_asignatura" type="text" class="form-control input-md" disabled> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-warning" id="boton_modifica_ayudante1" name="boton_modifica_ayudante1"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-3 control-label" for="ayudante2_asignatura">Ayudante nº2</label>  
-                                  <div class="col-md-5">
-                                  <input id="ayudante2_asignatura" name="ayudante2_asignatura" type="text" class="form-control input-md" disabled> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-danger" id="boton_modifica_ayudante2" name="boton_modifica_ayudante2"><span class="glyphicon glyphicon-pencil"></span> Modificar Ayudante</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
                                   <label class="col-md-3 control-label" for="comentario_asignarura">Comentarios</label>
                                   <div class="col-md-5">                     
                                     <textarea class="form-control" id="comentario_asignatura" name="comentario_asignatura" disabled></textarea>
@@ -231,13 +213,13 @@
                                 <div class="form-group">
                                   <label class="col-md-3 control-label" for="foto_asignatura">Foto</label>  
                                   <div class="col-md-9">
-                                  <input id="foto_asignatura" name="foto_asignatura" type="file" class="form-control input-md" disabled> 
+                                  <input id="foto_asignatura" name="foto_asignatura" type="file" class="form-control input-md" disabled accept="image/*"> 
                                   </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="foto_asignatura"></label>  
                                 <div class="col-md-5">  
-                                    <a class="btn btn-primary" id="boton_modifica_foto" name="boton_modifica_foto"><span class="glyphicon glyphicon-picture"></span> Cambiar Imagen</a> 
+                                    <button type='button' class="btn btn-warning" id="boton_modifica_foto" name="boton_modifica_foto"><span class="glyphicon glyphicon-picture"></span> Cambiar Imagen</button> 
                                 </div>
                                 </div>
                             </fieldset>
