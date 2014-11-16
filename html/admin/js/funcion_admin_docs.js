@@ -5,6 +5,8 @@ $( document ).ready(function() {
     var tab_no_aprob = "";
     
     $("#validar_descarga").hide();
+    $("#tablaNoAprobado").hide();
+    $("#tablaAprobado").hide();
 
        $("#boton_salir_admin").click(function(){
         $(".modal-title").html("Cierre de Sesion");
@@ -90,6 +92,11 @@ $( document ).ready(function() {
 
                 $("#tabla_doc_sin_aprobar").html("");
                 $("#tabla_doc_aprobados").html("");
+
+                $("#panel_sin_aprobar").html("<span class='glyphicon glyphicon-time'></span> Documentos sin Aprobar - "+nombre_ramo);
+                $("#panel_aprobados").html("<span class='glyphicon glyphicon-ok'></span> Documentos Aprobados - "+nombre_ramo);
+                $("#tablaNoAprobado").show();
+                $("#tablaAprobado").show();
 
                 for(var i=0;i<no_aprobados.length-1;i++){
                     var datos = no_aprobados[i].split("++");

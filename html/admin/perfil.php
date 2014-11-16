@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(!isset($_SESSION['nick']) || !isset($_SESSION['rut'])){
+        session_destroy();
+        echo '<script type="text/javascript">window.location = "../../index.php"; </script>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

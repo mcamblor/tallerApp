@@ -34,7 +34,6 @@
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
                         <li><a href="../index.php">Inicio</a></li>
-                        <li><a>Menciones</a></li>
                         <li class="active">Especialidad en Redes</li>>
                     </ul>
                 </div>
@@ -63,36 +62,51 @@
                             <div class="item fotos_mencion" style="background-image: url(../images/mencion/redes3.png)"></div><!--/.item-->
                         </div><!--/.carousel-inner-->
                     </div><!--/.carousel-->
-        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
-            <i class="icon-angle-left"></i>
-        </a>
-        <a class="next hidden-xs" href="#main-slider" data-slide="next">
-            <i class="icon-angle-right"></i>
-        </a>
-    </section><!--/#main-slider-->
+                    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+                        <i class="icon-angle-left"></i>
+                    </a>
+                    <a class="next hidden-xs" href="#main-slider" data-slide="next">
+                        <i class="icon-angle-right"></i>
+                    </a>
+                </section><!--/#main-slider-->
             </div><!--/.col-sm-6-->
         </div><!--/.row-->
-
-        <div class="gap"></div>
-        <h1 class="center">Asignaturas de mención - Año <?php echo date("Y"); ?></h1>
-        <p class="lead center">Haz clic para ver la informacion de una asignatura.</p>
-        <div class="gap"></div>
-
-        <div id="meet-the-team" class="row">
-        </div><!--/#meet-the-team-->
     </section><!--/#about-us-->
+
+    <section id="recent-works">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Asignaturas de Mención<br>Año <?php echo date("Y");?></h3>
+                    <p>Haz click en alguna asignatura, para poder ver su información.</p>
+                    <div class="btn-group">
+                        <a class="btn btn-danger" href="#scroller" data-slide="prev"><i class="icon-angle-left"></i></a>
+                        <a class="btn btn-danger" href="#scroller" data-slide="next"><i class="icon-angle-right"></i></a>
+                    </div>
+                    <p class="gap"></p>
+                </div>
+                <div class="col-md-9">
+                    <div id="scroller" class="carousel slide">
+                        <div class="carousel-inner carrusel_asignatura">
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.row-->
+        </div>
+    </section><!--/#recent-works-->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal_mencion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h3 class="modal-title" id="myModalLabel"></h3>
       </div>
       <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
       </div>
       <div class="modal-footer">
+        <a id='button1id' name='button1id' class='btn btn-success' href='descargas.php'>Ir a Descargas</a>
+        <a id='button2id' name='button2id' class='btn btn-danger' href='mallaici.php'>Ver en Malla</a>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>

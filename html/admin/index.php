@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(!isset($_SESSION['nick']) || !isset($_SESSION['rut'])){
+        session_destroy();
+        echo '<script type="text/javascript">window.location = "../../index.php"; </script>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -176,7 +180,6 @@
                         <br>
                         <form class="form-horizontal">
                             <fieldset>
-                                <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['ramo'];?>">
                                 <div class="form-group">
                                   <label class="col-md-3 control-label" for="profesor_asignatura">Profesor</label>  
                                   <div class="col-md-5">

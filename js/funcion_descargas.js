@@ -38,12 +38,13 @@ $( document ).ready(function() {
 	});
 	$(".enlace_descarga").change(function() {
 		var variables = $(this).val().split("_");
+		var res = variables[2].replace(new RegExp("-","g") , " ");
 		$("#"+$(this).attr("id")+" option[value='0']").attr("selected",true);
 		$.ajax({
 		url: '../logica/getAsignaturaGral.php',
 		type: 'POST',
 		async: true,
-		data: 'malla='+variables[0]+'&number='+variables[1],
+		data: 'malla='+variables[0]+'&number='+variables[1]+'&asig='+res,
 		success: function(datos_recibidos) {
 			var tmp = datos_recibidos.split("||");
 			var periodos_download = tmp[2].split("++");
@@ -167,8 +168,8 @@ $( document ).ready(function() {
 			}
 
 			var archivos = document.getElementById('file_upload');
-			var datos_periodo = select_ramo.val().split("_");
-			var download_code = datos_periodo[0].toLowerCase()+datos_periodo[1];
+			var datos_periodo = $("#asignatura_upload option:selected").val().split("_");
+			var download_code = datos_periodo[0].toLowerCase().concat(datos_periodo[1]);
 			var documento = archivos.files;
 			var datta = new FormData();
 			

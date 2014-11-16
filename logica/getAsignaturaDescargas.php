@@ -36,7 +36,7 @@ function malla_comun(){
 			}
 		}
 		if($record['numero']!=205 && $record['numero']!=215){
-			$resultado = $resultado."<option value='".$record['malla_idMalla']."_".$record['numero']."'>".$record['nombre']."</option>";
+			$resultado = $resultado."<option value='".$record['malla_idMalla']."_".$record['numero']."_".str_replace(' ', '-',$record['nombre'])."'>".$record['nombre']."</option>";
 		}
 	}
 	$resultado = $resultado."</optgroup>";
@@ -59,7 +59,7 @@ function malla_ICI(){
 				$fase_sem = $record['semestre_semestre'];
 			}
 		}
-		$resultado = $resultado."<option value='".$record['malla_idMalla']."_".$record['numero']."'>".$record['nombre']."</option>";
+		$resultado = $resultado."<option value='".$record['malla_idMalla']."_".$record['numero']."_".str_replace(' ', '-',$record['nombre'])."'>".$record['nombre']."</option>";
 	}
 	$resultado = $resultado."</optgroup>";
 	return  $resultado;
@@ -81,7 +81,7 @@ function malla_IIN(){
 				$fase_sem = $record['semestre_semestre'];
 			}
 		}
-		$resultado = $resultado."<option value='".$record['malla_idMalla']."_".$record['numero']."'>".$record['nombre']."</option>";
+		$resultado = $resultado."<option value='".$record['malla_idMalla']."_".$record['numero']."_".str_replace(' ', '-',$record['nombre'])."'>".$record['nombre']."</option>";
 	}
 	$resultado = $resultado."</optgroup>";
 	return  $resultado;
@@ -103,7 +103,7 @@ function malla_IEJ(){
 				$fase_sem = $record['semestre_semestre'];
 			}
 		}
-		$resultado = $resultado."<option value='".$record['malla_idMalla']."_".$record['numero']."'>".$record['nombre']."</option>";
+		$resultado = $resultado."<option value='".$record['malla_idMalla']."_".$record['numero']."_".str_replace(' ', '-',$record['nombre'])."'>".$record['nombre']."</option>";
 	}
 	$resultado = $resultado."</optgroup>";
 	return  $resultado;

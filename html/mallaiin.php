@@ -32,7 +32,6 @@
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
                         <li><a href="../index.php">Inicio</a></li>
-                        <li><a href="malla.php">Malla Curricular</a></li>
                         <li><a href="mallaAvance.php">Simulador de Avance Academico</a></li>
 						<li class="active">Malla IIN</li>
                     </ul>
@@ -55,16 +54,16 @@
 	    </div>
 	</section>
 
-<div class="modal fade" id="myModal_malla" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal_mencion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h3 class="modal-title" id="myModalLabel"></h3>
       </div>
       <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
       </div>
       <div class="modal-footer">
+        <a id='button1id' name='button1id' class='btn btn-success' href='descargas.php'>Ir a Descargas</a>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>

@@ -13,6 +13,15 @@ $( document ).ready(function() {
         }
     });
 
+    $("#boton_salir_admin").click(function(){
+        $(".modal-title").html("Cierre de Sesion");
+        $(".modal-body").html("Esta seguro de que desea cerrar la sesion");
+        $('#myModal3').modal({show:true});
+        $("#boton_aprobar_cierre").click(function(){
+            $(location).attr('href','../../logica/cierra_sesion.php');
+        });
+    });
+
     $("#descripcion_mencion").keyup(function(){
         if($(this).val() != descrip_mencion){
             $("#boton_modifica_mencion").removeAttr("disabled");

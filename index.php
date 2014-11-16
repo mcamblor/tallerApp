@@ -30,9 +30,22 @@
                 <li data-target="#main-slider" data-slide-to="0" class="active"></li>
                 <li data-target="#main-slider" data-slide-to="1"></li>
                 <li data-target="#main-slider" data-slide-to="2"></li>
+                <li data-target="#main-slider" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="item active" style="background-image: url(images/redes_banner.jpg)">
+                <div class="item active" style="background-image: url(images/banner/welcome_banner.jpg)">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="carousel-content center centered">
+                                    <h2 class="animation animated-item-1">Bienvenidos a la Universidad de Valparaíso</h2>
+                                    <h3 class="animation animated-item-2">Escuela de Ingeniería Civil Informática</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+                <div class="item" style="background-image: url(images/banner/redes_banner.jpg)">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12">
@@ -45,7 +58,7 @@
                         </div>
                     </div>
                 </div><!--/.item-->
-                <div class="item" style="background-image: url(images/sw_banner.jpg)">
+                <div class="item" style="background-image: url(images/banner/sw_banner.jpg)">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12">
@@ -58,7 +71,7 @@
                         </div>
                     </div>
                 </div><!--/.item-->
-                <div class="item" style="background-image: url(images/bd_banner.jpg)">
+                <div class="item" style="background-image: url(images/banner/bd_banner.jpg)">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-6">

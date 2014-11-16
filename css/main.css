@@ -444,7 +444,7 @@ body > section {
   background-color: rgba(0, 0, 0, 0.8);
 }
 #recent-works {
-  padding: 90px 0;
+  padding:0;
 }
 #recent-works .item-inner {
   position: relative;
@@ -1183,6 +1183,11 @@ ul.faq li > div h3 {
   width: 140px;
   height: 100px;
 }
+
+.caja_celda:hover{
+  opacity: 0.55;
+}
+
 
 .caja_no_pintada{
   border: 1px solid #75889B;

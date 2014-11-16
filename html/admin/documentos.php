@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(!isset($_SESSION['nick']) || !isset($_SESSION['rut'])){
+        session_destroy();
+        echo '<script type="text/javascript">window.location = "../../index.php"; </script>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -174,11 +178,10 @@
                 </div>            
 
                 <div class="row">
-                    <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['ramo'];?>">
                     <div class="col-lg-12"> 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span class="glyphicon glyphicon-time"></span> Documentos sin aprobar</h3>
+                                <h3 class="panel-title" id='panel_sin_aprobar'><span class="glyphicon glyphicon-time"></span> Documentos sin aprobar</h3>
                             </div>
                             <div class="panel-body">
                                 <table id="tablaNoAprobado" class="display" cellspacing="0" width="100%">
@@ -204,7 +207,7 @@
                     <div class="col-lg-12">        
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span class="glyphicon glyphicon-ok"></span> Documentos aprobados</h3>
+                                <h3 class="panel-title" id='panel_aprobados'><span class="glyphicon glyphicon-ok"></span> Documentos aprobados</h3>
                             </div>
                             <div class="panel-body">
                                 <table id="tablaAprobado" class="display" cellspacing="0" width="100%">

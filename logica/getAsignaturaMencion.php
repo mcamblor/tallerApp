@@ -26,7 +26,7 @@ switch ($mencion) {
 
 function getAsigRedes(){
 	$consulta = new conexionBD;
-	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='RED' AND estado='Visible'");
+	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo,url_imagen FROM asig_mencion WHERE mencion_idMencion='RED' AND estado='Visible'");
 	$count = $rs->rowCount();
 
 	$respuesta = "";
@@ -35,6 +35,7 @@ function getAsigRedes(){
 		$respuesta = $respuesta.$record['profesor']."++";
 		$respuesta = $respuesta.$record['descripcion_corta']."++";
 		$respuesta = $respuesta.$record['nombre']."++";
+		$respuesta = $respuesta.$record['url_imagen']."++";
 		$respuesta = $respuesta.$record['idCodigo']."||";
 	}
 
@@ -44,7 +45,7 @@ function getAsigRedes(){
 
 function getAsigSw(){
 	$consulta = new conexionBD;
-	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='SOF' AND estado='Visible'");
+	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo,url_imagen FROM asig_mencion WHERE mencion_idMencion='SOF' AND estado='Visible'");
 	$count = $rs->rowCount();
 
 	$respuesta = "";
@@ -53,6 +54,7 @@ function getAsigSw(){
 		$respuesta = $respuesta.$record['profesor']."++";
 		$respuesta = $respuesta.$record['descripcion_corta']."++";
 		$respuesta = $respuesta.$record['nombre']."++";
+		$respuesta = $respuesta.$record['url_imagen']."++";
 		$respuesta = $respuesta.$record['idCodigo']."||";
 	}
 
@@ -61,7 +63,7 @@ function getAsigSw(){
 
 function getAsigBD(){
 	$consulta = new conexionBD;
-	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo FROM asig_mencion WHERE mencion_idMencion='BD' AND estado='Visible'");
+	$rs = $consulta->consultar("SELECT profesor,descripcion_corta,nombre,idCodigo,url_imagen FROM asig_mencion WHERE mencion_idMencion='BD' AND estado='Visible'");
 	$count = $rs->rowCount();
 
 	$respuesta = "";
@@ -70,6 +72,7 @@ function getAsigBD(){
 		$respuesta = $respuesta.$record['profesor']."++";
 		$respuesta = $respuesta.$record['descripcion_corta']."++";
 		$respuesta = $respuesta.$record['nombre']."++";
+		$respuesta = $respuesta.$record['url_imagen']."++";
 		$respuesta = $respuesta.$record['idCodigo']."||";
 	}
 
@@ -78,7 +81,7 @@ function getAsigBD(){
 
 function obtenerInfoRamoMencion($codigo,$mencion,$nombre){
 	$consulta = new conexionBD;
-	$rs = $consulta->consultar("SELECT profesor,descripcion_larga,nombre,url_imagen,descripcion_corta FROM asig_mencion WHERE mencion_idMencion='$mencion' AND idCodigo='$codigo' AND nombre='$nombre'");
+	$rs = $consulta->consultar("SELECT profesor,descripcion_larga,nombre,url_imagen,descripcion_corta,idCodigo FROM asig_mencion WHERE mencion_idMencion='$mencion' AND idCodigo='$codigo' AND nombre='$nombre'");
 	$count = $rs->rowCount();
 
 	$record = $rs->fetch(PDO::FETCH_ASSOC);
@@ -86,6 +89,7 @@ function obtenerInfoRamoMencion($codigo,$mencion,$nombre){
 	$respuesta = $respuesta.$record['nombre']."++";
 	$respuesta = $respuesta.$record['descripcion_larga']."++";
 	$respuesta = $respuesta.$record['profesor']."++";
+	$respuesta = $respuesta.$record['idCodigo']."++";
 	$respuesta = $respuesta.$record['url_imagen'];
 	
 	return $respuesta;	

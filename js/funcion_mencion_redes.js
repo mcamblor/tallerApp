@@ -21,11 +21,26 @@ $( document ).ready(function() {
 
 			var tmp = datos_recibidos.split("||");
 
-			for(var i=0;i<tmp.length-1;i++){
-				var data = tmp[i].split("++");
-				$("#meet-the-team").append("<div class='col-md-3 col-xs-6'><div class='center'><p><img class='img-responsive img-thumbnail img-circle' src='../images/mencion/libro.jpg' alt='' ></p><h5>"+data[2]+"<small class='designation muted'>"+data[0]+"</small></h5><p>"+data[1]+"</p><button id='"+data[3]+"_"+i+"' class='btn btn-primary btn-default asignatura'>Ver Asignatura</button></div></div>");
+			var fila = 0;
+			var control_div = 1;
+			for(var i=1;i<=tmp.length-1;i++){
+				var data = tmp[i-1].split("++");
+				if(i==1){
+					fila = fila + 1;
+					$(".carrusel_asignatura").append("<div class='item active'><div class='row fila"+fila+"'><div class='col-xs-4'><div class='portfolio-item'><div class='item-inner'><img class='img-responsive' src='"+data[3]+"'><h5>"+data[2]+"</h5><div class='overlay'><button class='btn btn-primary preview btn-danger asignatura' id='"+data[4]+"_"+(i-1)+"' title='"+data[2]+"'><i class='icon-eye-open'></i></button></div></div></div></div></div></div>");				
+				}else{
+					if((i/4)!=control_div){
+						$(".fila"+fila).append("<div class='col-xs-4'><div class='portfolio-item'><div class='item-inner'><img class='img-responsive' src='"+data[3]+"'><h5>"+data[2]+"</h5><div class='overlay'><button class='btn btn-primary preview btn-danger asignatura' id='"+data[4]+"_"+(i-1)+"' title='"+data[2]+"'><i class='icon-eye-open'></i></button></div></div></div></div>");
+						//alert(i+"/"+4+" = "+(i/4));
+					}else{
+						fila = fila + 1;
+						control_div = control_div + 1;
+						$(".carrusel_asignatura").append("<div class='item'><div class='row fila"+fila+"'><div class='col-xs-4'><div class='portfolio-item'><div class='item-inner'><img class='img-responsive' src='"+data[3]+"'><h5>"+data[2]+"</h5><div class='overlay'><button class='btn btn-primary preview btn-danger asignatura' id='"+data[4]+"_"+(i-1)+"' title='"+data[2]+"'><i class='icon-eye-open'></i></button></div></div></div></div></div></div>");
+					}
+				}
 				names.push(data[2]);
 			}
+
 			$( ".asignatura" ).click(function() {
 				var dat = $(this).attr("id").split("_");
 				$.ajax({
@@ -35,8 +50,27 @@ $( document ).ready(function() {
 				data: 'mencion=informacion&codigo='+dat[0]+'&linea=RED&nom='+names[dat[1]],
 				success: function(datos_recibidos) {
 						var dato = datos_recibidos.split("++");
+						var sem = "";
+						var ano = (new Date).getFullYear();
+						switch(dato[4]) {
+						    case "INC502":
+						       	sem = "9º Semestre";
+						        break;
+						    case "INC501":
+						        sem = "9º Semestre";
+						        break;
+						    case "INC511":
+						        sem = "10º Semestre";
+						        break;
+						    case "INC512":
+						        sem = "10º Semestre";
+						        break;
+						    case "INC600":
+						        sem = "11º Semestre";
+						        break;   
+						}
 						$(".modal-title").html(dato[0]+": "+dato[1]);
-						$(".modal-body").html("<div class='row'><div class='col-sm-6'><h2></h2><p>"+dato[2]+"</p></div><div class='col-sm-6'><h2></h2><img src='"+dato[4]+"' style='width:423px; height:310px;'></div></div><p><strong>Profesor: </strong>"+dato[3]+"<p><br><br><fieldset><div class='form-group'><label class='col-md-4 control-label' for='button1id'></label><div class='col-md-8'><a id='button1id' name='button1id' class='btn btn-success' style='margin-right:10%;' href='descargas.php'>Ir a Descargas</a><a id='button2id' name='button2id' class='btn btn-danger' href='mallaici.php'>Ver en Malla</a></div></div></fieldset>");
+						$(".modal-body").html("<div class='row'><div class='col-sm-6'><h2></h2><p><strong>Descripcion: </strong>"+dato[2]+"</p><p><strong>Profesor (Periodo: "+ano+"): </strong>"+dato[3]+"</p><p><strong>Semestre: </strong>"+sem+"</p><p><strong>Codigo: </strong>"+dato[4]+"<p/></div><div class='col-sm-6'><h2></h2><img src='"+dato[5]+"' style='width:423px; height:310px;'></div></div>");
 						$('#myModal_mencion').modal({show:true});
 					}
 				});

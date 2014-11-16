@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(!isset($_SESSION['nick']) || !isset($_SESSION['rut'])){
+        session_destroy();
+        echo '<script type="text/javascript">window.location = "../../index.php"; </script>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -189,6 +193,23 @@
           <div class="modal-body" id="cuerpoModal_other" style="text-align : justify;">
           </div>
           <div class="modal-footer" id="footer_other">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h3 class="modal-title" id="myModalLabel"></h3>
+          </div>
+          <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="boton_aprobar_cierre"><span class="glyphicon glyphicon-ok"></span> Aprobar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>

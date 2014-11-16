@@ -4,6 +4,7 @@ $( document ).ready(function() {
     var ayudante2 = "";
     var comentario = "";
     var numero_asignatura = "";
+    var nombre_asignatura = "";
 
 
     $.ajax({
@@ -97,6 +98,7 @@ $( document ).ready(function() {
                 }
 
                 var data = datos_recibidos.split("||");
+                nombre_asignatura = data[0];
                 $("#profesor_asignatura").val(data[1]);
                 profesor = data[1];
                 numero_asignatura = valor;
@@ -161,7 +163,7 @@ $( document ).ready(function() {
         url: '../../logica/setDatosAsignatura.php',
         type: 'POST',
         async: true,
-        data: 'data='+urlSend[urlSend.length-1]+'&ramo='+numero_asignatura+'&tipo=foto',
+        data: 'data='+urlSend[urlSend.length-1]+'&ramo='+nombre_asignatura+'&tipo=foto',
         success: function(datos_recibidos) {
                 var recibido = datos_recibidos.split("||");
                 if(recibido[0] == "ok"){
@@ -197,7 +199,7 @@ $( document ).ready(function() {
         url: '../../logica/setDatosAsignatura.php',
         type: 'POST',
         async: true,
-        data: 'data='+$("#profesor_asignatura").val()+'&ramo='+numero_asignatura+'&tipo=profesor',
+        data: 'data='+$("#profesor_asignatura").val()+'&ramo='+nombre_asignatura+'&tipo=profesor',
         success: function(datos_recibidos) {
                 if(datos_recibidos == 1){
                     profesor = $("#profesor_asignatura").val();
@@ -231,7 +233,7 @@ $( document ).ready(function() {
         url: '../../logica/setDatosAsignatura.php',
         type: 'POST',
         async: true,
-        data: 'data='+$("#comentario_asignatura").val()+'&ramo='+numero_asignatura+'&tipo=comentario',
+        data: 'data='+$("#comentario_asignatura").val()+'&ramo='+nombre_asignatura+'&tipo=comentario',
         success: function(datos_recibidos) {
                 if(datos_recibidos == 1){
                     comentario = $("#comentario_asignatura").val();

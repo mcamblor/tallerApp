@@ -5,10 +5,10 @@
                     <h4><span class="glyphicon glyphicon-globe"></span> Enlaces</h4>
                     <div>
                         <ul class="arrow">
-                            <li><a href="http://www.uv.cl/">Universidad de Valparaíso</a></li>
-                            <li><a href="http://laboratorios.informatica.uv.cl/">Laboratorios Informática UV</a></li>
-                            <li><a href="http://informatica.uv.cl/">Portal Ingeniería Civil Informática UV</a></li>
-                            <li><a href="http://portal04.uv.cl/Login-war/mainPage.jspx">Portal Academico UV</a></li>
+                            <li><a target="_blank" href="http://www.uv.cl/">Universidad de Valparaíso</a></li>
+                            <li><a target="_blank" href="http://laboratorios.informatica.uv.cl/">Laboratorios Informática UV</a></li>
+                            <li><a target="_blank" href="http://informatica.uv.cl/">Portal Ingeniería Civil Informática UV</a></li>
+                            <li><a target="_blank" href="http://portal04.uv.cl/Login-war/mainPage.jspx">Portal Academico UV</a></li>
                         </ul>
                     </div>
                 </div><!--/.col-md-3-->
@@ -17,9 +17,9 @@
                     <h4><span class="glyphicon glyphicon-thumbs-up"></span> Siguenos</h4>
                     <div>
                         <ul class="arrow">
-                            <li><a href="https://twitter.com/EInformaticaUV">Twitter Ingeniería Civil Informática UV</a></li>
-                            <li><a href="https://www.facebook.com/iciuv?fref=ts">Facebook Ingeniería Civil Informática UV</a></li>
-                            <li><a href="https://www.youtube.com/channel/UCcCMuc0cGNKxN2_S3bk3g3w">Youtube Ingeniería Civil Informática UV</a></li>
+                            <li><a target="_blank" href="https://twitter.com/EInformaticaUV">Twitter Ingeniería Civil Informática UV</a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/iciuv?fref=ts">Facebook Ingeniería Civil Informática UV</a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UCcCMuc0cGNKxN2_S3bk3g3w">Youtube Ingeniería Civil Informática UV</a></li>
                         </ul>
                     </div>
                 </div><!--/.col-md-3-->
@@ -36,9 +36,11 @@
                 </div><!--/.col-md-3-->
 
                 <div class="col-xs-6 col-md-3 column">          
-                      <h4><span class="glyphicon glyphicon-question-sign"></span> Ayuda</h4>
+                      <h4><span class="glyphicon glyphicon-user"></span> Diseñado por</h4>
                       <ul class="arrow">
-                        <li><a href="#">Manual de Usuario</a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/mcamblorarregui?fref=ts">Matias Camblor Arregui</a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/victorignacio.monsalveastudillo?fref=ts">Victor Monsalve Astudillo</a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/jgarinroman2?fref=ts">Jorge Garin Roman</a></li>
                       </ul> 
                   </div>                
             </div>
@@ -49,11 +51,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2014 <a target="_blank" href="#">Taller de Aplicaciones</a>. Escuela de Ingeniería Civil Informática.
+                    &copy; 2014 Taller de Aplicaciones. Escuela de Ingeniería Civil Informática.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><img src="../images/header_decom.png" alt="logo" style="margin-top:-32px"></li>
+                        <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i> Ir Arriba</a></li><!--#gototop-->
                     </ul>
                 </div>
             </div>

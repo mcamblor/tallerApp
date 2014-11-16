@@ -13,7 +13,7 @@ switch ($tipo) {
 		$profe = $_POST['new_profe'];
 		$search = explode("||", $_POST['busqueda']);
 		$consulta = new conexionBD;
-		$rs1 = $consulta->consultar("UPDATE `asig_mencion` SET `profesor`='$profe',`descripcion_corta`='$nombre_esp',`descripcion_larga`='$larga',`nombre`='$nombre',`idCodigo`='$codigo' WHERE `idCodigo`='$search[1]' AND `nombre`='$search[0]'");
+		$rs1 = $consulta->consultar("UPDATE `asig_mencion` SET `profesor`='$profe',`descripcion_corta`='$nombre_esp',`descripcion_larga`='$larga',`nombre`='$nombre',`idCodigo`='$codigo' WHERE `nombre`='$search[0]'");
 		$count1 = $rs1->rowCount();
 		if($count1!=0){
 			echo "ok";
@@ -25,7 +25,7 @@ switch ($tipo) {
 		$search = explode("||", $_POST['busqueda']);
 		$newUrl = "/tallerapp/images/asignaturas/".$_POST['fotoname'];
 		$consulta = new conexionBD;
-		$rs1 = $consulta->consultar("UPDATE `asig_mencion` SET `url_imagen`='$newUrl' WHERE `idCodigo`='$search[1]' AND `nombre`='$search[0]'");
+		$rs1 = $consulta->consultar("UPDATE `asig_mencion` SET `url_imagen`='$newUrl' WHERE `nombre`='$search[0]'");
 		$count1 = $rs1->rowCount();
 		if($count1!=0){
 			echo "ok||".$newUrl;
