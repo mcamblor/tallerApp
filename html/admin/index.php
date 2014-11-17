@@ -26,6 +26,9 @@
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet">
 
+    <link href="js/multi_select_check/jquery.multiselect.css" rel="stylesheet">
+    <link href="js/multi_select_check/jquery-ui.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -196,7 +199,32 @@
                                     <span class="help-block">Información acerca de la asignatura (comentarios)</span>
                                   </div>
                                   <div class="col-md-3">
-                                    <a class="btn btn-success" id="boton_modifica_comentario" name="boton_modifica_comentario"><span class="glyphicon glyphicon-pencil"></span> Modificar Comenterio</a>
+                                    <a class="btn btn-primary" id="boton_modifica_comentario" name="boton_modifica_comentario"><span class="glyphicon glyphicon-pencil"></span> Modificar Comenterio</a>
+                                  </div>
+                                </div>
+                                <div class="form-group" id="formObjetivos">
+                                  <label class="col-md-3 control-label" for="objet_asig">Objetivos</label>
+                                  <div class="col-md-9">
+                                    <select id="objet_asig" name="objet_asig" class="form-control" multiple="multiple" disabled>
+                                    </select>
+                                    <span class="help-block">Los objetivos marcados seran visibles para los usuarios</span>
+                                    <a class="btn btn-primary" id="boton_modifica_objetivos" name="boton_modifica_objetivos"><span class="glyphicon glyphicon-pencil"></span> Modificar Objetivos</a>
+                                  </div>
+                                </div>
+                                <div class="form-group" id="formAddObjt">
+                                  <label class="col-md-3 control-label" for="obj_new_asignatura">Nuevo Objetivo</label>  
+                                  <div class="col-md-9">
+                                  <textarea class="form-control" id="obj_new_asignatura" name="obj_new_asignatura"></textarea><br>
+                                  <a class="btn btn-primary" id="boton_add_objetivo" name="boton_add_objetivo"><span class="glyphicon glyphicon-import"></span> Agregar Objetivo</a> 
+                                  </div>
+                                </div>
+                                <div class="form-group" id="formObjetivosRemove">
+                                  <label class="col-md-3 control-label" for="objet_asig_remove">Borrar Objetivos</label>
+                                  <div class="col-md-9">
+                                    <select id="objet_asig_remove" name="objet_asig_remove" class="form-control" multiple="multiple" disabled>
+                                    </select>
+                                    <span class="help-block">Los objetivos marcados seran borrados del sistema</span>
+                                    <a class="btn btn-primary" id="boton_borra_objetivos" name="boton_borra_objetivos"><span class="glyphicon glyphicon-remove"></span> Borrar Objetivos</a>
                                   </div>
                                 </div>
                             </fieldset>
@@ -221,8 +249,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="foto_asignatura"></label>  
-                                <div class="col-md-5">  
-                                    <button type='button' class="btn btn-warning" id="boton_modifica_foto" name="boton_modifica_foto"><span class="glyphicon glyphicon-picture"></span> Cambiar Imagen</button> 
+                                <div class="col-md-9">  
+                                    <button type='button' class="btn btn-primary btn-block" id="boton_modifica_foto" name="boton_modifica_foto"><span class="glyphicon glyphicon-picture"></span> Cambiar Imagen</button>
+                                    <button type='button' class="btn btn-primary btn-block" id="ver_galeria_fotos" name="ver_galeria_fotos"><span class="glyphicon glyphicon-th-large"></span> Ver Galería</button> 
                                 </div>
                                 </div>
                             </fieldset>
@@ -243,7 +272,6 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <h3 class="modal-title" id="myModalLabel"></h3>
           </div>
           <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
@@ -256,8 +284,25 @@
       </div>
     </div>
 
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="myModalLabel"></h3>
+          </div>
+          <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/multi_select_check/jquery-ui.min.js"></script>
+    <script src="js/multi_select_check/jquery.multiselect.js"></script>
     <script src="js/funcion_admin_asignatura.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

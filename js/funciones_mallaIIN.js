@@ -27,7 +27,11 @@ $( document ).ready(function() {
 					    		var from = datos_recibidos.split("||");
 					    		var ano = (new Date).getFullYear();
 					    		$(".modal-title").html("Semestre "+from[3]+"º - "+from[0]);
-					    		$(".modal-body").html("<div class='row'><div class='col-sm-6'><h2></h2><p><strong>Descripcion: </strong>"+from[4]+"</p><p><strong>Profesor (Periodo: "+ano+"): </strong>"+from[1]+"</p><p><strong>Codigo: </strong>"+datos[0]+datos[1]+"<p/></div><div class='col-sm-6'><h2></h2><img src='"+from[2]+"' style='width:423px; height:310px;'></div></div>");
+					    		$(".modal-body").html("<div class='row'><div class='col-sm-6'><h2></h2><p><strong>Descripcion: </strong>"+from[4]+"</p><p><strong>Profesor (Periodo: "+ano+"): </strong>"+from[1]+"</p><p><strong>Codigo: </strong>"+datos[0]+datos[1]+"</p><p><strong>Objetivos:</strong></p><ul class='lista_objetivos'></ul></div><div class='col-sm-6'><h2></h2><img src='"+from[2]+"' style='width:423px; height:310px;'></div></div>");
+					    		var objet_receb = from[5].split("++");
+					    		for (var i = 0; i<objet_receb.length - 1;i++) {
+					    			$(".lista_objetivos").append("<li>"+objet_receb[i]+"</li>");
+					    		};
 					    		$('#myModal_mencion').modal({show:true});
 					    	}
 					});
