@@ -93,7 +93,17 @@ $( document ).ready(function() {
                 $('#myModal2').modal({show:true});
 
                 $(".boton_cambia_foto").click(function(){
-                    
+                    var dataID = $(this).attr("id").split("_");
+                    $("#foto_ramo").attr("src",$("#imagen_"+dataID[2]).attr("src"));
+                    $.ajax({
+                        url: '../../logica/updateUrlFotos.php',
+                        type: 'POST',
+                        async: true,
+                        data: 'name_change='+nombre_asignatura+'&newUrl='+$("#imagen_"+dataID[2]).attr("src"),
+                        success: function(datos_recibidos){
+                                $("#boton_cierra_modal_galeria").click();
+                            }
+                    });
                 });
             }
         });

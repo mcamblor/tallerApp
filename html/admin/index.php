@@ -293,7 +293,7 @@
           <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="boton_cierra_modal_galeria">Cerrar</button>
           </div>
         </div>
       </div>
