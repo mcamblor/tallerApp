@@ -197,12 +197,12 @@ $( document ).ready(function() {
                 if(datos_recibidos == 1){
                     apodo = $("#nickname_usuario").val();
                     $("#link_modifica_nickname_usuario").attr("disabled","disabled");
-                    $("#contenido_alert").html("<strong>EXITO! - </strong>El nickname del usuario ha sido modificado con exito. Los cambios se veran en el siguiente inicio de sesion");
+                    $("#contenido_alert").html("<strong>EXITO! - </strong>El nickname del usuario ha sido modificado con exito. Su sesion se cerrara para realizar los cambios por seguridad.");
                     $("#validar_descarga").removeClass("alert-danger");
                     $("#validar_descarga").addClass("alert-success");
                     $("#validar_descarga").show("slow");
                     setTimeout(function() {
-                        $('#validar_descarga').hide('slow');
+                        $(location).attr('href','../../logica/cierra_sesion.php');
                     }, 5000);
                 }else{
                     $("#nickname_usuario").val(apodo);
@@ -267,12 +267,12 @@ $( document ).ready(function() {
                     $("#contraseña_usuario_nueva").val("");
                     $("#contraseña_usuario_rep").val("");
                     $("#link_modifica_contraseña_usuario").attr("disabled","disabled");
-                    $("#contenido_alert").html("<strong>EXITO! - </strong>La contraseña del usuario ha sido modificada con exito. Los cambios se veran en el siguiente inicio de sesion");
+                    $("#contenido_alert").html("<strong>EXITO! - </strong>La contraseña del usuario ha sido modificada con exito. Su sesion se cerrara para realizar los cambios por seguridad.");
                     $("#validar_descarga").removeClass("alert-danger");
                     $("#validar_descarga").addClass("alert-success");
                     $("#validar_descarga").show("slow");
                     setTimeout(function() {
-                        $('#validar_descarga').hide('slow');
+                        $(location).attr('href','../../logica/cierra_sesion.php');
                     }, 5000);
                 }else{
                     $("#contraseña_usuario_actual").val("");

@@ -211,8 +211,10 @@ $( document ).ready(function() {
                     data: 'mencion=foto&codigo='+extra[2]+'&linea=BD&nom='+$('#nombre_'+extra[1]).text(),
                     success: function(datos_recibidos) {
                         $(".modal-title").html("Modificar Asignatura: "+$('#nombre_'+extra[1]).text()); 
-                        $("#cuerpoModal_other").html("<div class='row'><div class='col-lg-6'><div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'>Modificar información de la asignatura</h3></div><div class='panel-body' id='panel_cuerpo_act_ramo'><form class='form-horizontal'><fieldset><div class='form-group'><label class='col-md-3 control-label' for='nombre_act'>Nombre</label><div class='col-md-9'><input id='nombre_act' name='nombre_act' type='text' class='form-control input-md'></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_corta_act'>Descripción Corta</label><div class='col-md-9'><select id='descrip_corta_act' name='descrip_corta_act' class='form-control'><option value='0' style='display:none;'>Seleccione</option><option value='INC502'>Asignatura Electiva de Especialidad I</option><option value='INC512'>Asignatura Electiva de Especialidad II</option><option value='INC600'>Asignatura Electiva de Especialidad III</option><option value='INC501'>Seminario de Especialidad I</option><option value='INC511'>Seminario de Especialidad II</option></select></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_larga_act'>Descripción Larga</label><div class='col-md-9'><textarea class='form-control' id='descrip_larga_act' name='descrip_larga_act' style='resize: none; height:189px;'></textarea></div></div><div class='form-group'><label class='col-md-3 control-label' for='profesor_act'>Profesor</label><div class='col-md-9'><input id='profesor_act' name='profesor_act' type='text' class='form-control input-md'></div></div><div class='form-group'><div class='col-md-12'><button id='boton_agregar_act' class='btn btn-primary btn-success btn-block' type='button'><span class='glyphicon glyphicon-edit'></span> Modificar Asignatura</button><button id='boton_agregar_act_refresh' class='btn btn-primary btn-danger btn-block' type='button'><span class='glyphicon glyphicon-refresh'></span> Deshacer Cambios</button></div></div></fieldset></form></div></div></div><div class='col-lg-6'><div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'>Imagen de la asignatura</h3></div><div class='panel-body' id='panel_cuerpo_act_ramo_foto' style='height:482px;'><form class='form-horizontal'><fieldset><div class='form-group'><div class='col-md-12'><div style='border:1px solid;' id='foto_ramo_marco_act'><img src='' id='foto_ramo'></div></div></div><div class='form-group'><div class='col-md-12'><input id='foto_asignatura' name='foto_asignatura' type='file' class='form-control input-md' accept='image/*'></div></div><div class='form-group'><div class='col-md-12'><button type='button' class='btn btn-warning btn-block' id='boton_modifica_foto' name='boton_modifica_foto' disabled><span class='glyphicon glyphicon-picture'></span> Cambiar Imagen</button></div></div></fieldset></form></div></div></div><div class='col-lg-12'><div class='alert alert-dismissible' role='alert' id='validar_ramo_act'></div></div></div>");
+                        $("#cuerpoModal_other").html("<div class='row'><div class='col-lg-6'><div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'>Modificar información de la asignatura</h3></div><div class='panel-body' id='panel_cuerpo_act_ramo' style='height:505px;'><form class='form-horizontal'><fieldset><div class='form-group'><label class='col-md-3 control-label' for='nombre_act'>Nombre</label><div class='col-md-9'><input id='nombre_act' name='nombre_act' type='text' class='form-control input-md'></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_corta_act'>Descripción Corta</label><div class='col-md-9'><select id='descrip_corta_act' name='descrip_corta_act' class='form-control'><option value='0' style='display:none;'>Seleccione</option><option value='INC502'>Asignatura Electiva de Especialidad I</option><option value='INC512'>Asignatura Electiva de Especialidad II</option><option value='INC600'>Asignatura Electiva de Especialidad III</option><option value='INC501'>Seminario de Especialidad I</option><option value='INC511'>Seminario de Especialidad II</option></select></div></div><div class='form-group'><label class='col-md-3 control-label' for='descrip_larga_act'>Descripción Larga</label><div class='col-md-9'><textarea class='form-control' id='descrip_larga_act' name='descrip_larga_act' style='resize: none; height:189px;'></textarea></div></div><div class='form-group'><label class='col-md-3 control-label' for='profesor_act'>Profesor</label><div class='col-md-9'><input id='profesor_act' name='profesor_act' type='text' class='form-control input-md'></div></div><div class='form-group'><div class='col-md-12' style='margin-top:9%;'><button id='boton_agregar_act' class='btn btn-primary btn-success btn-block' type='button'><span class='glyphicon glyphicon-edit'></span> Modificar Asignatura</button><button id='boton_agregar_act_refresh' class='btn btn-primary btn-danger btn-block' type='button'><span class='glyphicon glyphicon-refresh'></span> Deshacer Cambios</button></div></div></fieldset></form></div></div></div><div class='col-lg-6'><div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'>Imagen de la asignatura</h3></div><div class='panel-body' id='panel_cuerpo_act_ramo_foto' style='height:505px;'><form class='form-horizontal'><fieldset><div class='form-group'><div class='col-md-12'><div style='border:1px solid;' id='foto_ramo_marco_act'><img src='' id='foto_ramo'></div></div></div><div class='form-group'><div class='col-md-12'><input id='foto_asignatura' name='foto_asignatura' type='file' class='form-control input-md' accept='image/*'></div></div><div class='form-group'><div class='col-md-12'><button type='button' class='btn btn-warning btn-block' id='boton_modifica_foto' name='boton_modifica_foto' disabled><span class='glyphicon glyphicon-picture'></span> Cambiar Imagen</button><button type='button' class='btn btn-warning btn-block' id='boton_galeria' name='boton_galeria'><span class='glyphicon glyphicon-th-large'></span> Galeria de Imagenes</button></div></div></fieldset></form></div></div></div><div class='col-lg-12'><div class='alert alert-dismissible' role='alert' id='validar_ramo_act'></div></div></div><div class='row fila_galeria'><div class='col-lg-12'><div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'>Galeria de Imagenes</h3></div><div class='panel-body panel_galeria'></div></div></div></div>");
                         $("#footer_other").html("<button type='button' class='btn btn-primary' data-dismiss='modal' id='cerrar_modal_modifica_ramo'>Cerrar</button>");
+                        
+                        $(".fila_galeria").hide();
 
                         $("#nombre_act").val($('#nombre_'+extra[1]).text());
                         $("#foto_ramo").attr("src",datos_recibidos);
@@ -230,6 +232,59 @@ $( document ).ready(function() {
 
                         $("#validar_ramo_act").hide();
                         $('#myModal_other').modal({show:true});
+
+                        var control_galeria = false;
+                        $("#boton_galeria").click(function(){
+                                if(control_galeria == true){
+                                    control_galeria = false;
+                                    $(".panel_galeria").html("");
+                                    $(".fila_galeria").hide();
+                                    return false;
+                                }
+                                control_galeria = true;
+                                $.ajax({
+                                url: '../../logica/galeriaFotos.php',
+                                type: 'POST',
+                                async: true,
+                                data: 'dat=none',
+                                success: function(datos_recibidos){
+                                        var fotos = datos_recibidos.split("||");
+                                        $(".panel_galeria").html("");
+                                        var fila = 0;
+                                        var control_row = 1;
+                                        for (var i = 0;i<fotos.length-1;i++) {
+                                            if(i==0){
+                                                fila = fila + 1;
+                                                $(".panel_galeria").append("<div class='row fila"+fila+"'><div class='col-md-2'><div class='thumbnail'><img src='"+fotos[i]+"' id='imagen_"+i+"'><div class='caption'><p align='center'><div class='btn-group'><button type='button' class='btn btn-primary btn-xs boton_cambia_foto' id='cambia_imagen_"+i+"'>Aplicar</button><button type='button' class='btn btn-primary btn-xs dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><span class='caret'></span><span class='sr-only'>Toggle Dropdown</span></button><ul class='dropdown-menu' role='menu'><li><img src='"+fotos[i]+"' style='width:423px; height:310px;'></li></ul></div></p></div></div></div></div>");
+                                            }else{
+                                                if((i/6)!=control_row){
+                                                    $(".fila"+fila).append("<div class='col-md-2'><div class='thumbnail'><img src='"+fotos[i]+"' id='imagen_"+i+"'><div class='caption'><p align='center'><div class='btn-group'><button type='button' class='btn btn-primary btn-xs boton_cambia_foto' id='cambia_imagen_"+i+"'>Aplicar</button><button type='button' class='btn btn-primary btn-xs dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><span class='caret'></span><span class='sr-only'>Toggle Dropdown</span></button><ul class='dropdown-menu dropdown-menu-right' role='menu'><li><img src='"+fotos[i]+"' style='width:423px; height:310px;'></li></ul></div></p></div></div></div>");
+                                                }else{
+                                                    fila = fila + 1;
+                                                    control_row = control_row + 1;
+                                                    $(".panel_galeria").append("<div class='row fila"+fila+"'><div class='col-md-2'><div class='thumbnail'><img src='"+fotos[i]+"' id='imagen_"+i+"'><div class='caption'><p align='center'><div class='btn-group'><button type='button' class='btn btn-primary btn-xs boton_cambia_foto' id='cambia_imagen_"+i+"'>Aplicar</button><button type='button' class='btn btn-primary btn-xs dropdown-toggle' data-toggle='dropdown' aria-expanded='false'><span class='caret'></span><span class='sr-only'>Toggle Dropdown</span></button><ul class='dropdown-menu' role='menu'><li><img src='"+fotos[i]+"' style='width:423px; height:310px;'></li></ul></div></p></div></div></div></div>");
+                                                }
+                                            }                    
+                                        }
+
+                                        $(".fila_galeria").show();
+                                        
+                                        $(".boton_cambia_foto").click(function(){
+                                            var dataID = $(this).attr("id").split("_");
+                                            $("#foto_ramo").attr("src",$("#imagen_"+dataID[2]).attr("src"));
+                                            $.ajax({
+                                                url: '../../logica/updateUrlFotos.php',
+                                                type: 'POST',
+                                                async: true,
+                                                data: 'name_change='+nombre_mod+'&newUrl='+$("#imagen_"+dataID[2]).attr("src"),
+                                                success: function(datos_recibidos){
+                                                        $(".fila_galeria").hide();
+                                                    }
+                                            });
+                                        });
+                                    }
+                                });
+                            });
 
                         $("#boton_agregar_act_refresh").click(function(){
                            $("#nombre_act").val(nombre_mod);
