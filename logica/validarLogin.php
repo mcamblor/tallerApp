@@ -17,7 +17,15 @@
 			if($record["password"] == $pass){
 				$_SESSION['nick'] = $record["nickname"];
 				$_SESSION['rut'] = $record["rut"];
-				echo 0;
+				$tmp = $record["tipo"];
+				if($tmp == "superadmin"){
+					$_SESSION['nivel'] = "superadmin";
+					echo 3;
+				}
+				if($tmp == "admin"){
+					$_SESSION['nivel'] = "admin";
+					echo 0;
+				}
 			}else{
 				session_destroy();
 				echo 1;    

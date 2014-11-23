@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['nick']) || !isset($_SESSION['rut']) || !isset($_SESSION['nivel'])){
-        if($_SESSION['nivel'] != "admin"){
+        if($_SESSION['nivel'] != "superadmin"){
           session_destroy();
           echo '<script type="text/javascript">window.location = "../../index.php"; </script>';
         }
@@ -52,7 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style="color:#FFF;"><img src="../../images/favicon.ico" alt="logo" style="vertical-align: sub;width: 25px;">Panel de Administración</a>
+                <a class="navbar-brand" style="color:#FFF;"><img src="../../images/favicon.ico" alt="logo" style="vertical-align: sub;width: 25px;">Panel de Administración - Super Administrador</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -60,7 +60,6 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['nick']; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="../../index.php" target="_blank"><span class="glyphicon glyphicon-eye-open"></span> Ir al Sitio</a>
                             <a id="boton_salir_admin" style="cursor:pointer"><span class="glyphicon glyphicon-log-out"></span> Salir</a>
                         </li>
                     </ul>
@@ -69,28 +68,8 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
-                        <a href="index.php"><span class="glyphicon glyphicon-comment"></span> Asignaturas</a>
-                    </li>
-                    <li>
-                        <a href="documentos.php"><span class="glyphicon glyphicon-file"></span> Documentos</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-tag"></span> Menciones <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="software.php">Software</a>
-                            </li>
-                            <li>
-                                <a href="basededatos.php">Base de Datos</a>
-                            </li>
-                            <li>
-                                <a href="redes.php">Redes</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="active">
-                        <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Perfil</a>
+                        <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Agregar Usuarios</a>
                     </li>
                 </ul>
             </div>
@@ -105,7 +84,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Perfil: <small>Cambia la información de tu cuenta</small>
+                            Agregar Usuarios: <small>Ingresa nuevos usuarios administradores de contenido al sistema</small>
                         </h1>
                     </div>
                 </div>
@@ -115,71 +94,46 @@
                         <div class='alert alert-dismissible' role='alert' id='validar_descarga'><div id="contenido_alert"></div></div>
                     </div>
                 </div>            
-
                 <div class="row">
                     <div class="col-lg-12">
                         <br>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" id="formulario_add_user">
                             <fieldset>
-                                <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['rut'];?>">
                                 <div class="form-group">
                                   <label class="col-md-4 control-label" for="nombre_usuario">Nombre</label>  
                                   <div class="col-md-3">
-                                    <input id="nombre_usuario" name="nombre_usuario" type="text" class="form-control input-md">
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-success" id="link_modifica_nombre_usuario" name="link_modifica_nombre_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Nombre</a> 
+                                    <input id="nombre_usuario" name="nombre_usuario" type="text" class="form-control input-md" placeholder="Nombre nuevo usuario">
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="col-md-4 control-label" for="apellido_usuario">Apellido</label>  
                                   <div class="col-md-3">
-                                  <input id="apellido_usuario" name="apellido_usuario" type="text" class="form-control input-md"> 
+                                  <input id="apellido_usuario" name="apellido_usuario" type="text" class="form-control input-md" placeholder="Apellido nuevo usuario"> 
                                   </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-primary" id="link_modifica_apellido_usuario" name="link_modifica_apellido_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Apellido</a> 
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="rut_usuario">RUT</label>  
+                                  <div class="col-md-3">
+                                    <input id="rut_usuario" name="rut_usuario" type="text" class="form-control input-md" placeholder="12345678-9">
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="col-md-4 control-label" for="email_usuario">E-mail</label>  
                                   <div class="col-md-3">
-                                  <input id="email_usuario" name="email_usuario" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-warning" id="link_modifica_email_usuario" name="link_modifica_email_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar E-mail</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_actual">Contraseña</label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_actual" name="contraseña_usuario_actual" type="password" class="form-control input-md"> 
-                                  <span class="help-block">Contraseña Actual</span> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-danger" id="link_modifica_contraseña_usuario" name="link_modifica_contraseña_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Contraseña</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_nueva"></label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_nueva" name="contraseña_usuario_nueva" type="password" class="form-control input-md">
-                                  <span class="help-block">Contraseña Nueva</span> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_rep"></label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_rep" name="contraseña_usuario_rep" type="password" class="form-control input-md">
-                                  <span class="help-block">Repite la nueva contraseña</span> 
+                                  <input id="email_usuario" name="email_usuario" type="text" class="form-control input-md" placeholder="@uv.cl | @alumnos.uv.cl"> 
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="col-md-4 control-label" for="nickname_usuario">Nickname</label>  
                                   <div class="col-md-3">
-                                  <input id="nickname_usuario" name="nickname_usuario" type="text" class="form-control input-md"> 
+                                  <input id="nickname_usuario" name="nickname_usuario" type="text" class="form-control input-md" placeholder="Apodo"> 
                                   </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-default" id="link_modifica_nickname_usuario" name="link_modifica_nickname_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Nickname</a> 
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-md-4 control-label" for="boton_agregar_usuario"></label>
+                                  <div class="col-md-8">
+                                    <a id="boton_agregar_usuario" name="boton_agregar_usuario" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Agregar Usuario</a>
+                                    <a id="boton_agregar_usuario_reset" name="boton_agregar_usuario_reset" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Reset</a>
                                   </div>
                                 </div>
                             </fieldset>
@@ -215,7 +169,8 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/funcion_admin_perfil.js"></script>
+    <script src="js/funcion_admin_admin.js"></script>
+    <script src="js/valida_rut/jquery.Rut.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 

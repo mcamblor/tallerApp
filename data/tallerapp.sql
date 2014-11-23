@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2014 a las 14:03:44
+-- Tiempo de generación: 18-11-2014 a las 15:47:47
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -680,7 +680,7 @@ CREATE TABLE IF NOT EXISTS `usuario_administrador` (
 --
 
 INSERT INTO `usuario_administrador` (`rut`, `nombre`, `apellido`, `mail`, `password`, `nickname`) VALUES
-(16484897, 'Jorge', 'Garin', 'jorge.garinr@alumnos.uv.cl', 'garinroman', 'jgarinr2');
+(16484897, 'Jorge', 'Garin', 'jorge.garinr@alumnos.uv.cl', 'garinroman', 'jgarinr');
 
 --
 -- Restricciones para tablas volcadas

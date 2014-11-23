@@ -25,7 +25,6 @@ $( document ).ready(function() {
 				$(".modal-title").html("Inicio de Sesión");
 				if(datos_recibidos == 0){
 					window.location.href="html/admin/index.php";
-					//$(".modal-body").html("Usuario logueado");
 				}
 				if(datos_recibidos == 1){
 					$(".modal-body").html("La contraseña ingresada no pertenece al usuario ingresado");
@@ -35,7 +34,9 @@ $( document ).ready(function() {
 					$(".modal-body").html("El usuario ingresado no existe en el sistema");
 					$('#myModal_index').modal({show:true});
 				}
-				
+				if(datos_recibidos == 3){
+					window.location.href="html/admin/admin_site.php";
+				}
 			}
 		});
 	});
