@@ -11,7 +11,6 @@
     <link href="../css/prettyPhoto.css" rel="stylesheet">
     <link href="../css/animate.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
-    <link href="../js/DataTables-1.10.3/media/css/jquery.dataTables.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -43,68 +42,20 @@
     </section><!--/#title-->
 
     <section id="portfolio" class="container">
-        <ul class="portfolio-filter">
-            <li><a class="btn btn-default active" href="#" data-filter="*">Todos</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".bootstrap">Académicos</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".html">Administrativos</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".wordpress">Ayudantes Laboratorio</a></li>
-        </ul><!--/#portfolio-filter-->
-
-        <ul class="portfolio-items col-3">
-            <li class="portfolio-item apps">
-                <div class="item-inner">
-                    <img src="images/portfolio/thumb/item1.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="images/portfolio/full/item1.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>             
-                    </div>           
-                </div>           
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item joomla bootstrap">
-                <div class="item-inner">
-                    <img src="images/portfolio/thumb/item2.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="images/portfolio/full/item2.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>              
-                    </div>           
-                </div>           
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item bootstrap wordpress">
-                <div class="item-inner">
-                    <img src="images/portfolio/thumb/item3.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="images/portfolio/full/item3.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>        
-                    </div>           
-                </div>           
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item joomla wordpress apps">
-                <div class="item-inner">
-                    <img src="images/portfolio/thumb/item4.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="images/portfolio/full/item4.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>          
-                    </div>           
-                </div>           
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item joomla html">
-                <div class="item-inner">
-                    <img src="images/portfolio/thumb/item5.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="images/portfolio/full/item5.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>          
-                    </div>    
-                </div>       
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item wordpress html">
-                <div class="item-inner">
-                    <img src="images/portfolio/thumb/item6.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="images/portfolio/full/item6.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>           
-                    </div>           
-                </div>           
-            </li><!--/.portfolio-item-->
+        <div class="row">
+            <div class="col-sm-6">
+                <ul class="portfolio-filter">
+                    <li><a class="btn btn-default active" href="#" data-filter="*" id="botonTODOS">Todos</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".academico" id="botonACA">Académicos</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".adm" id="botonADM">Administrativos</a></li>
+                    <li><a class="btn btn-default" href="#" data-filter=".ayudante" id="botonAYU">Ayudantes de Laboratorio</a></li>
+                </ul><!--/#portfolio-filter-->
+            </div>
+            <div class="col-sm-6">
+                <h4 align="right"><span id="cont1">Personal Escuela Ingeniería Civil en Informática</span> - Periodo: <?php echo date("Y");?></h4>
+            </div>
+        </div>
+        <ul class="portfolio-items col-5">
         </ul>
     </section><!--/#portfolio-->
 
@@ -131,8 +82,7 @@
     <script src="../js/jquery.prettyPhoto.js"></script>
     <script src="../js/jquery.isotope.min.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/DataTables-1.10.3/media/js/jquery.dataTables.min.js"></script>
-    <script src="../js/funcion_descargas.js"></script>
-    <script src="../js/bootstrap.file-input.js"></script>
+    <script src="../js/funciones_conocenos.js"></script>
+    
 </body>
 </html>
