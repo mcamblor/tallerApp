@@ -7,7 +7,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><img src="images/banner/logo_header.png"></a>
+                <a class="navbar-brand" href="index.php">Informática UV</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -27,6 +27,7 @@
                             <li><a href="html/mallaObjetivo.php">Objetivos en Común</a></li>
                         </ul>
                     </li>
+                    <li><a href="html/conocenos.php">¿Quienes somos?</a></li>
                     <li><a href="html/descargas.php">Descargas</a></li>
                     <li><div class="dropdown">
                           <button type="button" class="btn btn-success btn-sm" data-toggle="dropdown">Login</button>

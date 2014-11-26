@@ -48,7 +48,12 @@
                             <li><a href="mallaAvance.php">Simulación de Avance Académico</a></li>
                             <li><a href="mallaObjetivo.php">Objetivos en Común</a></li>
                         </ul>
-                        </li>  
+                        </li>
+
+                    <?php } if($script_ejecutandose[1] == "conocenos.php"){?>
+                        <li class="active"><a href="conocenos.php">¿Quienes somos?</a></li>
+                    <?php }else{ ?>
+                        <li><a href="conocenos.php">¿Quienes somos?</a></li>
                     <?php } if($script_ejecutandose[1] == "descargas.php"){?>
                         <li class="active"><a href="descargas.php">Descargas</a></li>
                     <?php }else{ ?> 

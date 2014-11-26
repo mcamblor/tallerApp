@@ -38,8 +38,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="carousel-content center centered">
-                                    <h2 class="animation animated-item-1">Bienvenidos a la Universidad de Valparaíso</h2>
-                                    <h3 class="animation animated-item-2">Escuela de Ingeniería Civil Informática</h3>
+                                    <h2 class="boxed animation animated-item-1">Bienvenidos a la Universidad de Valparaíso</h2>
+                                    <h3 class="boxed animation animated-item-2">Escuela de Ingeniería Civil Informática</h3>
                                 </div>
                             </div>
                         </div>
