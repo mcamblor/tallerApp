@@ -1,4 +1,0 @@
-tallerApp
-=========
-
-Proyecto Taller Aplicaciones 

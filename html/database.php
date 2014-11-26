@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1><span class="glyphicon glyphicon-hdd"></span> Especialidad en Base de Datos</h1>
-                    <p>Gestion y Diseño de Base de Datos</p>
+                    <p>Gestión y Diseño de Base de Datos</p>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">

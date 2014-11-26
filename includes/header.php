@@ -15,16 +15,16 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menciones <i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="html/redes.php">Redes y Telecomunnicaciones</a></li>
-                            <li><a href="html/software.php">Gestion de Proyectos de Software</a></li>
-                            <li><a href="html/database.php">Gestion y Diseño de Base de Datos</a></li>
+                            <li><a href="html/redes.php">Redes y Telecomunicaciones</a></li>
+                            <li><a href="html/software.php">Gestión de Proyectos de Software</a></li>
+                            <li><a href="html/database.php">Gestión y Diseño de Base de Datos</a></li>
                         </ul>
                     </li> 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Malla Curricular <i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="html/mallaAvance.php">Simulacion de Avance Academico</a></li>
-                            <li><a href="html/mallaObjetivo.php">Objetivos en Comun</a></li>
+                            <li><a href="html/mallaAvance.php">Simulación de Avance Académico</a></li>
+                            <li><a href="html/mallaObjetivo.php">Objetivos en Común</a></li>
                         </ul>
                     </li>
                     <li><a href="html/descargas.php">Descargas</a></li>

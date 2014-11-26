@@ -6,7 +6,6 @@
                     <div>
                         <ul class="arrow">
                             <li><a target="_blank" href="http://www.uv.cl/">Universidad de Valparaíso</a></li>
-                            <li><a target="_blank" href="http://laboratorios.informatica.uv.cl/">Laboratorios Informática UV</a></li>
                             <li><a target="_blank" href="http://informatica.uv.cl/">Portal Ingeniería Civil Informática UV</a></li>
                             <li><a target="_blank" href="http://portal04.uv.cl/Login-war/mainPage.jspx">Portal Academico UV</a></li>
                         </ul>
@@ -19,8 +18,6 @@
                         <ul class="arrow">
                             <li><a target="_blank" href="https://twitter.com/EInformaticaUV">Twitter Ingeniería Civil Informática UV</a></li>
                             <li><a target="_blank" href="https://www.facebook.com/iciuv?fref=ts">Facebook Ingeniería Civil Informática UV</a></li>
-                            <li><a target="_blank" href="https://www.youtube.com/channel/UCcCMuc0cGNKxN2_S3bk3g3w">Youtube Ingeniería Civil Informática UV</a></li>
-                        </ul>
                     </div>
                 </div><!--/.col-md-3-->
 

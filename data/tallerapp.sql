@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2014 a las 15:47:47
+-- Tiempo de generación: 26-11-2014 a las 01:47:06
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -418,7 +418,7 @@ CREATE TABLE IF NOT EXISTS `descargas` (
   `autor` varchar(100) DEFAULT NULL,
   `nombre` varchar(100) NOT NULL,
   PRIMARY KEY (`idDescargas`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
 --
 -- Volcado de datos para la tabla `descargas`
@@ -437,7 +437,8 @@ INSERT INTO `descargas` (`idDescargas`, `titulo`, `url`, `abstract`, `anio`, `es
 (41, 'kit-arduino-uno-v30-19946-MLC20181545367_102014-F', '../static/documentos/2014/kit-arduino-uno-v30-19946-MLC20181545367_102014-F.jpg', 'Sin Comentarios', 2014, 1, 'inc100', 'Sin Autor', 'ALGEBRA ELEMENTAL'),
 (42, 'Transferencias de Fondos a Terceros', '../static/documentos/2014/Transferencias de Fondos a Terceros.pdf', 'Sin Comentarios', 2014, 1, 'inc412', 'Sin Autor', 'SISTEMAS DE BASES DE DATOS'),
 (43, 'Economia', '../static/documentos/2014/Economia.xlsx', 'Sin Comentarios', 2014, 0, 'iin412', 'Sin Autor', 'SISTEMAS DE BASES DE DATOS'),
-(44, 'HORARIOS LABORATORIOS', '../static/documentos/2014/HORARIOS LABORATORIOS.xlsx', 'Sin Comentarios', 2014, 0, 'iej310', 'Sin Autor', 'SISTEMAS DE BASES DE DATOS');
+(44, 'HORARIOS LABORATORIOS', '../static/documentos/2014/HORARIOS LABORATORIOS.xlsx', 'Sin Comentarios', 2014, 0, 'iej310', 'Sin Autor', 'SISTEMAS DE BASES DE DATOS'),
+(45, 'tumblr_nfk05pF6ty1r88u00o1_500', '../static/documentos/2014/tumblr_nfk05pF6ty1r88u00o1_500.jpg', 'Sin Comentarios', 2014, 0, 'inc102', 'Sin Autor', 'FUNDAMENTOS DE PROGRAMACION');
 
 -- --------------------------------------------------------
 
@@ -666,12 +667,13 @@ INSERT INTO `semestre` (`semestre`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `usuario_administrador` (
-  `rut` int(10) NOT NULL,
+  `rut` varchar(15) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(20) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
   `nickname` varchar(30) NOT NULL,
+  `tipo` varchar(12) NOT NULL,
   PRIMARY KEY (`rut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -679,8 +681,9 @@ CREATE TABLE IF NOT EXISTS `usuario_administrador` (
 -- Volcado de datos para la tabla `usuario_administrador`
 --
 
-INSERT INTO `usuario_administrador` (`rut`, `nombre`, `apellido`, `mail`, `password`, `nickname`) VALUES
-(16484897, 'Jorge', 'Garin', 'jorge.garinr@alumnos.uv.cl', 'garinroman', 'jgarinr');
+INSERT INTO `usuario_administrador` (`rut`, `nombre`, `apellido`, `mail`, `password`, `nickname`, `tipo`) VALUES
+('11111111-1', 'Jorge', 'Garin', 'jorge.garinr@alumnos.uv.cl', 'admin', 'admin', 'superadmin'),
+('16484897-3', 'Jorge', 'Garin', 'jorge.garinr@alumnos.uv.cl', 'garinroman', 'jgarinr', 'admin');
 
 --
 -- Restricciones para tablas volcadas
