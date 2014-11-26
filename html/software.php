@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1><span class="glyphicon glyphicon-tasks"></span> Especialidad en Software</h1>
-                    <p>Gestión de Proyectos de Software</p>
+                    <p>Gestion de Proyectos de Software</p>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">

@@ -19,34 +19,34 @@
                         <li class="dropdown active">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menciones <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="redes.php">Redes y Telecomunicaciones</a></li>
-                                <li><a href="software.php">Gestión de Proyectos de Software</a></li>
-                                <li><a href="database.php">Gestión y Diseño de Base de Datos</a></li>
+                                <li><a href="redes.php">Redes y Telecomunnicaciones</a></li>
+                                <li><a href="software.php">Gestion de Proyectos de Software</a></li>
+                                <li><a href="database.php">Gestion y Diseño de Base de Datos</a></li>
                             </ul>
                         </li>
                     <?php }else{ ?>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menciones <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="redes.php">Redes y Telecomunicaciones</a></li>
-                                <li><a href="software.php">Gestión de Proyectos de Software</a></li>
-                                <li><a href="database.php">Gestión y Diseño de Base de Datos</a></li>
+                                <li><a href="redes.php">Redes y Telecomunnicaciones</a></li>
+                                <li><a href="software.php">Gestion de Proyectos de Software</a></li>
+                                <li><a href="database.php">Gestion y Diseño de Base de Datos</a></li>
                             </ul>
                         </li>
                     <?php } if($script_ejecutandose[1] == "mallaObjetivo.php" || $script_ejecutandose[1] == "mallaAvance.php" || $script_ejecutandose[1] == "mallaici.php" || $script_ejecutandose[1] == "mallaiej.php" || $script_ejecutandose[1] == "mallaiin.php" || $script_ejecutandose[1] == "mallaiciOB.php" || $script_ejecutandose[1] == "mallaiejOB.php" || $script_ejecutandose[1] == "mallaiinOB.php"){?>
                         <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Malla Curricular <i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="mallaAvance.php">Simulación de Avance Académico</a></li>
-                            <li><a href="mallaObjetivo.php">Objetivos en Común</a></li>
+                            <li><a href="mallaAvance.php">Simulacion de Avance Academico</a></li>
+                            <li><a href="mallaObjetivo.php">Objetivos en Comun</a></li>
                         </ul>
                         </li>
                     <?php }else{ ?>
                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Malla Curricular <i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="mallaAvance.php">Simulación de Avance Académico</a></li>
-                            <li><a href="mallaObjetivo.php">Objetivos en Común</a></li>
+                            <li><a href="mallaAvance.php">Simulacion de Avance Academico</a></li>
+                            <li><a href="mallaObjetivo.php">Objetivos en Comun</a></li>
                         </ul>
                         </li>
 

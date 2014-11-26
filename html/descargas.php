@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1><span class="glyphicon glyphicon-download"></span> Descargas</h1>
-                    <p>Desacarga y sube contenido a las asignaturas de la carrera de Ingenieria Civil Informática</p>
+                    <p>Contenido descargable de las asignaturas de la carrera de Ingenieria Civil Informatica</p>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
@@ -51,7 +51,7 @@
                 <form class="form-horizontal">
                     <fieldset>                    
                     <div class="form-group">
-                      <label class="col-md-3 control-label" for="planComun_select" title="Plan Común de Ingeniería Civil Informática">Común</label>
+                      <label class="col-md-3 control-label" for="planComun_select" title="Plan Comun de Ingeniería Civil Informática">Comun</label>
                       <div class="col-md-9">
                         <select id="planComun_select" name="planComun_select" class="form-control enlace_descarga">
                         </select>
