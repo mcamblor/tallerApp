@@ -244,7 +244,6 @@ function mallaICI(){
 		$resultado = $resultado."</table></body></html>";//echo "pase por aqui";
 		generaPDF($resultado); //////////////////////////////////////////////////////////////////////
 }
-
 function mallaIIN(){
 	$consulta = new conexionBD;
 		$consulta2 = new conexionBD;

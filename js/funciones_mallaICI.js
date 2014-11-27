@@ -20,8 +20,7 @@ $( document ).ready(function() {
 						}
 					});
 				});
-			
-			
+						
 				$("#boton_reiniciar_simulacion").click(function(){
 					$(".caja_celda").each(function(){
 						$(this).removeClass("caja_pintada");
