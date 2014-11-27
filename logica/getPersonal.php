@@ -2,68 +2,23 @@
 
 require_once('../data/conexion_bd.php');
 
-$tipo = $_POST['tipo'];
-
-switch ($tipo) {
-	case 'academico':
-		getAcademico();
-		break;
-	case 'administrativo':
-		getADM();
-		break;
-	case 'ayudante':
-		getAyudante();
-		break;
-	
-}
-
-function getAcademico(){
 	$consulta = new conexionBD;	
-	$rs = $consulta->consultar("SELECT `nombre`, `tipo`, `correo`, `web`, `fono`, `urlfoto` FROM `academico` WHERE `estado`=1");
+	$rs1 = $consulta->consultar("SELECT `idacademico`, `nombre`, `tipo`, `correo`, `web`, `fono`, `urlfoto` FROM `academico` WHERE `estado`=1");
 
-	$resultado = "";
-	while($record = $rs->fetch(PDO::FETCH_ASSOC)){
-		$resultado = $resultado.$record['nombre']."++";
-		$resultado = $resultado.$record['tipo']."++";
-		$resultado = $resultado.$record['correo']."++";
-		$resultado = $resultado.$record['web']."++";
-		$resultado = $resultado.$record['fono']."++";
-		$resultado = $resultado.$record['urlfoto']."||";
+	while($record1 = $rs1->fetch(PDO::FETCH_ASSOC)){
+		echo "<li class='portfolio-item academico'><div class='item-inner'><img src='".$record1['urlfoto']."' ><h5 align='center'>".$record1['nombre']."</h5><div class='overlay'><button class='preview btn btn-danger personal_academico'  id='academico_".$record1['idacademico']."' href='".$record1['urlfoto']."'><i class='icon-eye-open'></i></button></div></div></li>";
 	}
 
-	echo $resultado;
+	$rs2 = $consulta->consultar("SELECT `nombre`, `correo`, `urlFoto` FROM `ayudante` WHERE `estado`=1");
 
-}
-
-function getAyudante(){
-	$consulta = new conexionBD;	
-	$rs = $consulta->consultar("SELECT `nombre`, `correo`, `urlFoto` FROM `ayudante` WHERE `estado`=1");
-
-	$resultado = "";
-	while($record = $rs->fetch(PDO::FETCH_ASSOC)){
-		$resultado = $resultado.$record['nombre']."++";
-		$resultado = $resultado.$record['correo']."++";
-		$resultado = $resultado.$record['urlFoto']."||";
+	while($record2 = $rs2->fetch(PDO::FETCH_ASSOC)){
+		echo "<li class='portfolio-item ayudante'><div class='item-inner'><img src='".$record2['urlFoto']."' ><h5 align='center'>".$record2['nombre']."</h5><div class='overlay'><a class='preview btn btn-danger' href='".$record2['urlFoto']."' rel='prettyPhoto' title='".$record2['nombre']."<br>".$record2['correo']."'><i class='icon-eye-open'></i></a></div></div></li>";
 	}
 
-	echo $resultado;
+	$rs3 = $consulta->consultar("SELECT `nombre`, `cargo`, `correo`, `urlfoto` FROM `administrativo` WHERE `estado`=1");
 
-}
-
-function getADM(){
-	$consulta = new conexionBD;	
-	$rs = $consulta->consultar("SELECT `nombre`, `cargo`, `correo`, `urlfoto` FROM `administrativo` WHERE `estado`=1");
-
-	$resultado = "";
-	while($record = $rs->fetch(PDO::FETCH_ASSOC)){
-		$resultado = $resultado.$record['nombre']."++";
-		$resultado = $resultado.$record['cargo']."++";
-		$resultado = $resultado.$record['correo']."++";
-		$resultado = $resultado.$record['urlfoto']."||";
+	while($record3 = $rs3->fetch(PDO::FETCH_ASSOC)){
+		echo "<li class='portfolio-item adm'><div class='item-inner'><img src='".$record3['urlfoto']."' ><h5 align='center'>".$record3['nombre']."</h5><div class='overlay'><a class='preview btn btn-danger' href='".$record3['urlfoto']."' rel='prettyPhoto' title='".$record3['nombre']."<br>".$record3['cargo']."<br>".$record3['correo']."'><i class='icon-eye-open'></i></a></div></div></li>";
 	}
-
-	echo $resultado;
-
-}
 
 ?>

@@ -45,35 +45,36 @@
         <div class="row">
             <div class="col-sm-6">
                 <ul class="portfolio-filter">
-                    <li><a class="btn btn-default active" href="#" data-filter="*" id="botonTODOS">Todos</a></li>
-                    <li><a class="btn btn-default" href="#" data-filter=".academico" id="botonACA">Académicos</a></li>
-                    <li><a class="btn btn-default" href="#" data-filter=".adm" id="botonADM">Administrativos</a></li>
-                    <li><a class="btn btn-default" href="#" data-filter=".ayudante" id="botonAYU">Ayudantes de Laboratorio</a></li>
+                    <li><a class="btn btn-default active" data-filter="*" href="#" id="botonTODOS">Todos</a></li>
+                    <li><a class="btn btn-default" data-filter=".academico" href="#" id="botonACA">Académicos</a></li>
+                    <li><a class="btn btn-default" data-filter=".adm" href="#" id="botonADM">Administrativos</a></li>
+                    <li><a class="btn btn-default" data-filter=".ayudante" href="#" id="botonAYU">Ayudantes de Laboratorio</a></li>
                 </ul><!--/#portfolio-filter-->
             </div>
             <div class="col-sm-6">
-                <h4 align="right"><span id="cont1">Personal Escuela Ingeniería Civil en Informática</span> - Periodo: <?php echo date("Y");?></h4>
+                <h4 align="right"><span id="cont1">Personal Escuela Ingeniería Civil en Informática</span> - Período: <?php echo date("Y");?></h4>
             </div>
         </div>
         <ul class="portfolio-items col-5">
+          <?php include("../logica/getPersonal.php");?>
         </ul>
     </section><!--/#portfolio-->
 
     <!-- Modal -->
-<div class="modal fade" id="myModal_download" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="myModalLabel"></h3>
-      </div>
-      <div class="modal-body" id="cuerpoModal">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="myModalLabel"></h3>
+          </div>
+          <div class="modal-body" id="cuerpoModal">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
     <?php include("../includes/footer_html.php");?>
 
@@ -81,8 +82,8 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.prettyPhoto.js"></script>
     <script src="../js/jquery.isotope.min.js"></script>
-    <script src="../js/main.js"></script>
     <script src="../js/funciones_conocenos.js"></script>
+    <script src="../js/main.js"></script>
     
 </body>
 </html>
