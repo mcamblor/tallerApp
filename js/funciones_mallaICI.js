@@ -7,7 +7,21 @@ $( document ).ready(function() {
 	    success: function(datos_recibidos) {
 	    		//RECIBIR MALLA CURRICULAR
 				$("#mallaICI").html(datos_recibidos);
-
+			
+				$("#boton_descargar_simulacion").click(function(){
+					$.ajax({
+						url: '../logica/generaPDF.php',
+						type: 'POST',
+						async: true,
+						data: 'malla=ICI',
+						success: function(datos_recibidos) {
+							//alert("PDF CREADO");
+							//alert(datos_recibidos);
+						}
+					});
+				});
+			
+			
 				$("#boton_reiniciar_simulacion").click(function(){
 					$(".caja_celda").each(function(){
 						$(this).removeClass("caja_pintada");

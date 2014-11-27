@@ -17,7 +17,7 @@ switch ($var) {
 }
 
 
-function mallaICI(){
+function mallaICI(){ 
 		$consulta = new conexionBD;
 		$consulta2 = new conexionBD;
 		$s1 = $consulta->consultar("SELECT id, malla_idMalla, numero, nombre from asignatura where malla_idMalla='INC' and numero between '100' and '104'");
