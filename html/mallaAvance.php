@@ -47,13 +47,13 @@
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <a href="mallaici.php" class="enlace_malla"><img src="../images/mencion/planici.png" class="foto_malla"></a>
+                <a href="mallaici.php" class="btn btn-lg btn-block btn-success enlace_malla">Ingeniería Civil en Informática</a>
             </div>
             <div class="col-sm-4">
-                <a href="mallaiin.php" class="enlace_malla"><img src="../images/mencion/planiin.png" class="foto_malla"></a>
+                <a href="mallaiin.php" class="btn btn-lg btn-block btn-primary enlace_malla">Ingeniería en Informática</a>
             </div>
             <div class="col-sm-4">
-                <a href="mallaiej.php" class="enlace_malla"><img src="../images/mencion/planiej.png" class="foto_malla"></a>
+                <a href="mallaiej.php" class="btn btn-lg btn-block btn-danger enlace_malla">Ingeniería en Ejecución en Informática</a>
             </div>
         </div>
     </section><!--/#about-us-->

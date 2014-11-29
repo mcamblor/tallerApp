@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1><span class="glyphicon glyphicon-screenshot"></span> Objetivos Academicos</h1>
-                    <p>Informate sobre los objetivos que se comparten entre las asignaturas</p>
+                    <p>Enterate de las relacion de competencias que guardan las asignaturas.</p>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
@@ -47,13 +47,13 @@
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <a href="mallaiciOB.php" class="enlace_malla"><img src="../images/mencion/planici.png" class="foto_malla"></a>
+                <a href="mallaiciOB.php" class="btn btn-lg btn-block btn-success enlace_malla">Ingeniería Civil en Informática</a>
             </div>
             <div class="col-sm-4">
-                <a href="mallaiinOB.php" class="enlace_malla"><img src="../images/mencion/planiin.png" class="foto_malla"></a>
+                <a href="mallaiinOB.php" class="btn btn-lg btn-block btn-primary enlace_malla">Ingeniería en Informática</a>
             </div>
             <div class="col-sm-4">
-                <a href="mallaiejOB.php" class="enlace_malla"><img src="../images/mencion/planiej.png" class="foto_malla"></a>
+                <a href="mallaiejOB.php" class="btn btn-lg btn-block btn-danger enlace_malla">Ingeniería en Ejecución en Informática</a>
             </div>
         </div>
     </section><!--/#about-us-->

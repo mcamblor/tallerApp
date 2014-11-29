@@ -7,6 +7,17 @@ $( document ).ready(function() {
 	    success: function(datos_recibidos) {
 				$("#mallaIIN").html(datos_recibidos);
 
+				$("#boton_descargar_simulacion").click(function(){
+					$.ajax({
+						url: '../logica/generaPDF.php',
+						type: 'POST',
+						async: true,
+						data: 'malla=IIN',
+						success: function(datos_recibidos) {
+							}
+					});
+				});
+
 				$("#boton_reiniciar_simulacion").click(function(){
 					$(".caja_celda").each(function(){
 						$(this).removeClass("caja_pintada");

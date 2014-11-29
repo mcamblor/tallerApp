@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+
+	var global_malla = "";
+
 	$.ajax({
 	    url: '../logica/getMalla.php',
 	    type: 'POST',
@@ -6,21 +9,10 @@ $( document ).ready(function() {
 	    data: 'malla=ICI',
 	    success: function(datos_recibidos) {
 	    		//RECIBIR MALLA CURRICULAR
+	    		global_malla = datos_recibidos;
 				$("#mallaICI").html(datos_recibidos);
+				$("#llevar_malla").val(datos_recibidos);
 			
-				$("#boton_descargar_simulacion").click(function(){
-					$.ajax({
-						url: '../logica/generaPDF.php',
-						type: 'POST',
-						async: true,
-						data: 'malla=ICI',
-						success: function(datos_recibidos) {
-							//alert("PDF CREADO");
-							//alert(datos_recibidos);
-						}
-					});
-				});
-						
 				$("#boton_reiniciar_simulacion").click(function(){
 					$(".caja_celda").each(function(){
 						$(this).removeClass("caja_pintada");
@@ -28,6 +20,7 @@ $( document ).ready(function() {
 						$(this).removeClass("caja_click");
 						$(this).addClass("caja_no_pintada");
 					});
+					$("#llevar_malla").val($("#mallaICI").html());
 				});
 
 				$(".boton_ver_info_asignatura").click(function(){
@@ -151,7 +144,7 @@ $( document ).ready(function() {
 								$(this).addClass("caja_click");
 							}
 						}
-						
+					$("#llevar_malla").val($("#mallaICI").html());		
 				});
 
 				function pintarAvance(numRamo){
@@ -332,6 +325,7 @@ $( document ).ready(function() {
 							}
 						}
 					});
+					$("#llevar_malla").val($("#mallaICI").html());
 				});
 
 				//PINTAR AÑO EN ESPECIFICO

@@ -41,8 +41,8 @@
     </section><!--/#title-->
     <section class="container">
         <div class="center gap">
-                <h2><span class="glyphicon glyphicon-hand-up"></span> Asignaturas y sus Objetivos</h2>
-                <p>Las asignaturas tienen objetivos que sirven para otras asignaturas.<br>Haz click en una asignatura para ver con que otras asignaturas se relaciona segun sus objetivos<p>
+                <h2><span class="glyphicon glyphicon-hand-up"></span> Asignaturas y sus Competencias</h2>
+                <p>Las asignaturas tienen objetivos que sirven para futuras asignaturas, como tambien para reforzar conocimientos ya adquiridos.<br>Haz click en una asignatura para ver con que otras asignaturas se relaciona segun sus objetivos<p>
         </div>
         <div class="row" style='margin-bottom:2%;'>
             <div class="col-sm-6 center"><a class="btn btn-lg btn-primary" id="boton_descargar_simulacion"><span class="glyphicon glyphicon-picture"></span> Guardar Simulación en PDF</a></div>

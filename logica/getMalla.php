@@ -75,7 +75,7 @@ function mallaICI(){
 				if($sem1){
 					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_1 sem_1' id='celdaSem1_".$sem1['malla_idMalla'].$sem1['numero']."||++'>".$sem1['malla_idMalla'].$sem1['numero']."<br>".$sem1['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem1['malla_idMalla']."_".$sem1['numero']."'>Ver Informacion</a></td>";
 					$r2 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem2[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp2 = "";
 					while($rr2 = $r2->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr2['numero']."\n";
@@ -88,7 +88,7 @@ function mallaICI(){
 					$resultado = $resultado."<td style='border:none;'></td>\n";
 				}
 				$r3 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem3[id]'"); 
-				$resultado = $resultado."<td>R:";
+				$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp3 = "";
 				while($rr3 = $r3->fetch(PDO::FETCH_ASSOC)){
 					$resultado = $resultado."\n".$rr3['numero']."\n";
@@ -96,7 +96,7 @@ function mallaICI(){
 				}$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_2 sem_3' id='celdaSem3_".$sem3['malla_idMalla'].$sem3['numero']."||".$tmp3."'>".$sem3['malla_idMalla'].$sem3['numero']."<br>".$sem3['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem3['malla_idMalla']."_".$sem3['numero']."'>Ver Informacion</a></td>";
 				$r4 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem4[id]'"); 
-				$resultado = $resultado."<td>R:";
+				$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp4 = "";
 				while($rr4 = $r4->fetch(PDO::FETCH_ASSOC)){
 					$resultado = $resultado."\n".$rr4['numero']."\n";
@@ -104,7 +104,7 @@ function mallaICI(){
 				}$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_2 sem_4' id='celdaSem4_".$sem4['malla_idMalla'].$sem4['numero']."||".$tmp4."'>".$sem4['malla_idMalla'].$sem4['numero']."<br>".$sem4['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem4['malla_idMalla']."_".$sem4['numero']."'>Ver Informacion</a></td>";
 				$r5 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem5[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp5 = "";	
 					while($rr5 = $r5->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr5['numero']."\n";
@@ -112,7 +112,7 @@ function mallaICI(){
 					}$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_3 sem_5' id='celdaSem5_".$sem5['malla_idMalla'].$sem5['numero']."||".$tmp5."'>".$sem5['malla_idMalla'].$sem5['numero']."<br>".$sem5['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem5['malla_idMalla']."_".$sem5['numero']."'>Ver Informacion</a></td>";
 				$r6 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem6[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp6 = "";	
 					while($rr6 = $r6->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr6['numero']."\n";
@@ -120,7 +120,7 @@ function mallaICI(){
 					}$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_3 sem_6' id='celdaSem6_".$sem6['malla_idMalla'].$sem6['numero']."||".$tmp6."'>".$sem6['malla_idMalla'].$sem6['numero']."<br>".$sem6['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem6['malla_idMalla']."_".$sem6['numero']."'>Ver Informacion</a></td>";
 				$r7 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem7[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp7 = "";
 					while($rr7 = $r7->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr7['numero']."\n";
@@ -128,7 +128,7 @@ function mallaICI(){
 					}$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_4 sem_7' id='celdaSem7_".$sem7['malla_idMalla'].$sem7['numero']."||".$tmp7."'>".$sem7['malla_idMalla'].$sem7['numero']."<br>".$sem7['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem7['malla_idMalla']."_".$sem7['numero']."'>Ver Informacion</a></td>";
 				$r8 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem8[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp8= "";
 					while($rr8 = $r8->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr8['numero']."\n";
@@ -136,7 +136,7 @@ function mallaICI(){
 					}$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_4 sem_8' id='celdaSem8_".$sem8['malla_idMalla'].$sem8['numero']."||".$tmp8."'>".$sem8['malla_idMalla'].$sem8['numero']."<br>".$sem8['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem8['malla_idMalla']."_".$sem8['numero']."'>Ver Informacion</a></td>";
 				$r9 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem9[id]'"); 
-				$resultado = $resultado."<td>R:";
+				$resultado = $resultado."<td class='requisito_celda'>R:";
 				$count = $r9->rowCount();
 				$tmp9 = "";
 				if($count > 2){
@@ -151,7 +151,7 @@ function mallaICI(){
 				$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_5 sem_9' id='celdaSem9_".$sem9['malla_idMalla'].$sem9['numero']."||".$tmp9."'>".$sem9['malla_idMalla'].$sem9['numero']."<br>".$sem9['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem9['malla_idMalla']."_".$sem9['numero']."'>Ver Informacion</a></td>";
 				$r10 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem10[id]'"); 
-				$resultado = $resultado."<td>R:";
+				$resultado = $resultado."<td class='requisito_celda'>R:";
 				$count = $r10->rowCount();
 				$tmp10 =  "";
 				if($count > 3){
@@ -167,7 +167,7 @@ function mallaICI(){
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_5 sem_10' id='celdaSem10_".$sem10['malla_idMalla'].$sem10['numero']."||".$tmp10."'>".$sem10['malla_idMalla'].$sem10['numero']."<br>".$sem10['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem10['malla_idMalla']."_".$sem10['numero']."'>Ver Informacion</a></td>";
 				if($sem11){
 					$r11 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem11[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$count = $r11->rowCount();
 					$tmp11 = "";
 					if($count > 2){
@@ -188,7 +188,7 @@ function mallaICI(){
 				}
 				if($sem12){
 					$r12 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem12[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp12 = "";
 					while($rr12 = $r12->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr12['numero']."\n";
@@ -202,6 +202,8 @@ function mallaICI(){
 				$resultado = $resultado."</tr>";
 			}
 
+		$consulta = null;
+		$consulta2 = null;
 		echo $resultado."</table>";
 }
 
@@ -257,7 +259,7 @@ function mallaIIN(){
 				if($sem1){
 					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_1 sem_1' id='celdaSem1_".$sem1['malla_idMalla'].$sem1['numero']."||++'>".$sem1['malla_idMalla'].$sem1['numero']."<br>".$sem1['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem1['malla_idMalla']."_".$sem1['numero']."'>Ver Informacion</a></td>";
 					$r2 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem2[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp2 = "";
 					while($rr2 = $r2->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr2['numero']."\n";
@@ -270,7 +272,7 @@ function mallaIIN(){
 					$resultado = $resultado."<td> </td>\n";
 				}
 				$r3 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem3[id]'"); 
-				$resultado = $resultado."<td>R:";
+				$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp3 = "";
 				while($rr3 = $r3->fetch(PDO::FETCH_ASSOC)){
 					$resultado = $resultado."\n".$rr3['numero']."\n";
@@ -278,7 +280,7 @@ function mallaIIN(){
 				}$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_2 sem_3' id='celdaSem3_".$sem3['malla_idMalla'].$sem3['numero']."||".$tmp3."'>".$sem3['malla_idMalla'].$sem3['numero']."<br>".$sem3['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem3['malla_idMalla']."_".$sem3['numero']."'>Ver Informacion</a></td>";
 				$r4 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem4[id]'"); 
-				$resultado = $resultado."<td>R:";
+				$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp4 = "";
 				while($rr4 = $r4->fetch(PDO::FETCH_ASSOC)){
 					$resultado = $resultado."\n".$rr4['numero']."\n";
@@ -286,7 +288,7 @@ function mallaIIN(){
 				}$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_2 sem_4' id='celdaSem4_".$sem4['malla_idMalla'].$sem4['numero']."||".$tmp4."'>".$sem4['malla_idMalla'].$sem4['numero']."<br>".$sem4['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem4['malla_idMalla']."_".$sem4['numero']."'>Ver Informacion</a></td>";
 				$r5 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem5[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp5 = "";
 					while($rr5 = $r5->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr5['numero']."\n";
@@ -296,7 +298,7 @@ function mallaIIN(){
 				
 				if($sem6){
 					$r6 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem6[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp6 = "";
 					while($rr6 = $r6->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr6['numero']."\n";
@@ -304,7 +306,7 @@ function mallaIIN(){
 					}$resultado = $resultado."</td>\n";
 					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_3 sem_6' id='celdaSem6_".$sem6['malla_idMalla'].$sem6['numero']."||".$tmp6."'>".$sem6['malla_idMalla'].$sem6['numero']."<br>".$sem6['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem6['malla_idMalla']."_".$sem6['numero']."'>Ver Informacion</a></td>";
 					$r7 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem7[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp7 = "";
 					while($rr7 = $r7->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr7['numero']."\n";
@@ -312,7 +314,7 @@ function mallaIIN(){
 					}$resultado = $resultado."</td>\n";
 					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_4 sem_7' id='celdaSem7_".$sem7['malla_idMalla'].$sem7['numero']."||".$tmp7."'>".$sem7['malla_idMalla'].$sem7['numero']."<br>".$sem7['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem7['malla_idMalla']."_".$sem7['numero']."'>Ver Informacion</a></td>";
 					$r8 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem8[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp8 = "";
 					while($rr8 = $r8->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr8['numero']."\n";
@@ -324,7 +326,7 @@ function mallaIIN(){
 				}
 				if($sem9){
 					$r9 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem9[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$count = $r9->rowCount();
 					if($count > 1){
 						$resultado = $resultado."\n4°\nAÑO\nAPR\n";
@@ -342,7 +344,7 @@ function mallaIIN(){
 				}
 				if($sem10){
 					$r10 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem10[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$count = $r10->rowCount();
 					$tmp10 = "";
 					while($rr10 = $r10->fetch(PDO::FETCH_ASSOC)){
@@ -355,6 +357,8 @@ function mallaIIN(){
 					
 				$resultado = $resultado."</tr>";
 			}
+			$consulta = null;
+			$consulta2 = null;
 			echo $resultado."</table>";
 }
 
@@ -403,7 +407,7 @@ function mallaIEJ(){
 				if($sem1){
 					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_1 sem_1' id='celdaSem1_".$sem1['malla_idMalla'].$sem1['numero']."||++'>".$sem1['malla_idMalla'].$sem1['numero']."<br>".$sem1['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem1['malla_idMalla']."_".$sem1['numero']."'>Ver Informacion</a></td>";
 					$r2 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem2[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp2 = "";
 					while($rr2 = $r2->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr2['numero']."\n";
@@ -416,7 +420,7 @@ function mallaIEJ(){
 					$resultado = $resultado."<td> </td>\n";
 				}
 				$r3 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem3[id]'"); 
-				$resultado = $resultado."<td>R:";
+				$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp3 = "";
 				while($rr3 = $r3->fetch(PDO::FETCH_ASSOC)){
 					$resultado = $resultado."\n".$rr3['numero']."\n";
@@ -424,7 +428,7 @@ function mallaIEJ(){
 				}$resultado = $resultado."</td>\n";
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_2 sem_3' id='celdaSem3_".$sem3['malla_idMalla'].$sem3['numero']."||".$tmp3."'>".$sem3['malla_idMalla'].$sem3['numero']."<br>".$sem3['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem3['malla_idMalla']."_".$sem3['numero']."'>Ver Informacion</a></td>";
 				$r4 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem4[id]'"); 
-				$resultado = $resultado."<td>R:";
+				$resultado = $resultado."<td class='requisito_celda'>R:";
 				$tmp4 = "";
 				while($rr4 = $r4->fetch(PDO::FETCH_ASSOC)){
 					$resultado = $resultado."\n".$rr4['numero']."\n";
@@ -433,7 +437,7 @@ function mallaIEJ(){
 				$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_2 sem_4' id='celdaSem4_".$sem4['malla_idMalla'].$sem4['numero']."||".$tmp4."'>".$sem4['malla_idMalla'].$sem4['numero']."<br>".$sem4['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem4['malla_idMalla']."_".$sem4['numero']."'>Ver Informacion</a></td>";
 				if($sem5){
 					$r5 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem5[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp5 = "";
 					while($rr5 = $r5->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr5['numero']."\n";
@@ -441,7 +445,7 @@ function mallaIEJ(){
 					}$resultado = $resultado."</td>\n";
 					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_3 sem_5' id='celdaSem5_".$sem5['malla_idMalla'].$sem5['numero']."||".$tmp5."'>".$sem5['malla_idMalla'].$sem5['numero']."<br>".$sem5['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem5['malla_idMalla']."_".$sem5['numero']."'>Ver Informacion</a></td>";
 					$r6 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem6[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp6 = "";
 					while($rr6 = $r6->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr6['numero']."\n";
@@ -449,7 +453,7 @@ function mallaIEJ(){
 					}$resultado = $resultado."</td>\n";
 					$resultado = $resultado."<td><div class='caja_celda caja_no_pintada year_3 sem_6' id='celdaSem6_".$sem6['malla_idMalla'].$sem6['numero']."||".$tmp6."'>".$sem6['malla_idMalla'].$sem6['numero']."<br>".$sem6['nombre']."</div><a class='btn btn-xs btn-primary boton_ver_info_asignatura' id='".$sem6['malla_idMalla']."_".$sem6['numero']."'>Ver Informacion</a></td>";
 					$r7 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem7[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$tmp7 = "";
 					while($rr7 = $r7->fetch(PDO::FETCH_ASSOC)){
 						$resultado = $resultado."\n".$rr7['numero']."\n";
@@ -459,7 +463,7 @@ function mallaIEJ(){
 				}else{}
 				if($sem8){	
 					$r8 = $consulta2->consultar("select r.numero from requisito as r join asignatura as asig join asignatura_has_requisito as a where a.requisito_cod_malla=r.cod_malla and asig.id=a.asignatura_id and asig.id='$sem8[id]'"); 
-					$resultado = $resultado."<td>R:";
+					$resultado = $resultado."<td class='requisito_celda'>R:";
 					$count = $r8->rowCount();
 					if($count > 1){
 						$resultado = $resultado."\n7°\nSEM\nAPR\n";
@@ -477,6 +481,9 @@ function mallaIEJ(){
 									
 				$resultado = $resultado."</tr>";
 			}
+	
+			$consulta = null;
+			$consulta2 = null;
 			echo $resultado."</table>";
 
 }

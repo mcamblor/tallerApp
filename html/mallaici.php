@@ -41,11 +41,15 @@
     </section><!--/#title-->
     <section class="container">
         <div class="center gap">
-                <h2><span class="glyphicon glyphicon-flag"></span> Marca los ramos aprobados</h2>
-                <p>Si quieres marcar todo un periodo academico, haz click en el semestre (viceversa).<br>Si quieres marcar un año academico, haz click en el año.(viceversa)<p>
+                <h2><span class="glyphicon glyphicon-flag"></span> Marca las asignaturas que deseas probar</h2>
+                <p>Si quieres marcar todo un periodo academico, haz click en el semestre (o viceversa)</p>
         </div>
         <div class="row" style='margin-bottom:2%;'>
-            <div class="col-sm-6 center"><a class="btn btn-lg btn-primary" id="boton_descargar_simulacion"><span class="glyphicon glyphicon-picture"></span> Guardar Simulación en PDF</a></div>
+            <form method="POST" action="../logica/generaPDF.php">
+                <input type="text" hidden value="ICI" id="tipoMalla" name="tipoMalla">
+                <textarea id="llevar_malla" name="llevar_malla" hidden></textarea>
+                <div class="col-sm-6 center"><button class="btn btn-lg btn-primary" id="boton_descargar_simulacion" type="submit"><span class="glyphicon glyphicon-picture"></span> Guardar Simulación en PDF</button></div>
+            </form>
             <div class="col-sm-6 center"><a class="btn btn-lg btn-danger" id="boton_reiniciar_simulacion"><span class="glyphicon glyphicon-refresh"></span> Reiniciar Simulación</a></div>
         </div>
 	    <div class="row">
