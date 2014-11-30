@@ -6,17 +6,7 @@ $( document ).ready(function() {
 	    data: 'malla=IIN',
 	    success: function(datos_recibidos) {
 				$("#mallaIIN").html(datos_recibidos);
-
-				$("#boton_descargar_simulacion").click(function(){
-					$.ajax({
-						url: '../logica/generaPDF.php',
-						type: 'POST',
-						async: true,
-						data: 'malla=IIN',
-						success: function(datos_recibidos) {
-							}
-					});
-				});
+				$("#llevar_malla").val(datos_recibidos);			
 
 				$("#boton_reiniciar_simulacion").click(function(){
 					$(".caja_celda").each(function(){
@@ -25,6 +15,7 @@ $( document ).ready(function() {
 						$(this).removeClass("caja_click");
 						$(this).addClass("caja_no_pintada");
 					});
+					$("#llevar_malla").val($("#mallaIIN").html());
 				});
 
 				$(".boton_ver_info_asignatura").click(function(){
@@ -147,7 +138,7 @@ $( document ).ready(function() {
 								$(this).addClass("caja_click");
 							}
 						}
-						
+					$("#llevar_malla").val($("#mallaIIN").html());	
 				});
 
 				function pintarAvance(numRamo){
@@ -326,6 +317,7 @@ $( document ).ready(function() {
 							}
 						}
 					});
+					$("#llevar_malla").val($("#mallaIIN").html());
 				});
 
 				//PINTAR AÑO EN ESPECIFICO

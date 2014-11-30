@@ -1,6 +1,6 @@
 <?php
 
-$var = $_POST['tipoMalla'];
+$var = explode("_", $_POST['tipoMalla']);
 $datos = $_POST['llevar_malla'];
 
 $estilo = "<html><head>
@@ -100,12 +100,35 @@ $estilo = "<html><head>
 	require_once("dompdf/dompdf_config.inc.php");
 	$dompdf = new DOMPDF();
 	$dompdf->set_paper("c2","landscape");
-	$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Avance Académico: Ingeniería Civil en Informática</h1>".utf8_decode($datos))."</body></html>");
+	switch ($var[0]) {
+		case 'ICI':
+			if($var[1]=="SIM"){
+				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Simulador de Avance Académico: Ingeniería Civil en Informática</h1>".utf8_decode($datos))."</body></html>");
+			}else{
+				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Objetivos en Común: Ingeniería Civil en Informática</h1>".utf8_decode($datos))."</body></html>");
+			}	
+		break;
+		case 'IIN':
+			if($var[1]=="SIM"){
+				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Simulador de Avance Académico: Ingeniería en Informática</h1>".utf8_decode($datos))."</body></html>");
+			}else{
+				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Objetivos en Común: Ingeniería en Informática</h1>".utf8_decode($datos))."</body></html>");
+			}
+		break;
+		case 'IEJ':
+			if($var[1]=="SIM"){
+				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Simulador de Avance Académico: Ingeniería en Ejecución en Informática</h1>".utf8_decode($datos))."</body></html>");
+			}else{
+				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Objetivos en Común: Ingeniería en Ejecución en Informática</h1>".utf8_decode($datos))."</body></html>");
+			}
+		break;
+	}
 	$dompdf->render();
 	$pdf = $dompdf->output();
-	$filename = 'malla'.$var.'-'.date("Y-m-d").'-'.date("H-i-s").'.pdf';
-	//file_put_contents("../static/simulacion/".$filename, $pdf);
+	$filename = 'malla'.$var[0].'-'.date("Y-m-d").'-'.date("H-i-s").'.pdf';
+	/*if($var[1]=="SIM"){
+		file_put_contents("../static/simulacion/".$filename, $pdf);
+	}*/
 	$dompdf->stream($filename, array("Attachment" => 0));
-
 
 ?>

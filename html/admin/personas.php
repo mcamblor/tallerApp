@@ -36,7 +36,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link href="../../js/DataTables-1.10.3/media/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -90,7 +90,10 @@
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Perfil</a>
+                        <a href="personas.php"><span class="glyphicon glyphicon-user"></span> Personas</a>
+                    </li>
+                    <li>
+                        <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Mi cuenta</a>
                     </li>
                 </ul>
             </div>
@@ -105,85 +108,83 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Perfil: <small>Cambia la información de tu cuenta</small>
+                            Personas: <small>Administra las personas del equipo de Ingeniería Civil en Informática</small>
                         </h1>
                     </div>
                 </div>
-                <!-- /.row -->
-                <div class="row">
-                   <div class="col-lg-12">
-                        <div class='alert alert-dismissible' role='alert' id='validar_descarga'><div id="contenido_alert"></div></div>
-                    </div>
-                </div>            
 
                 <div class="row">
-                    <div class="col-lg-12">
-                        <br>
-                        <form class="form-horizontal">
-                            <fieldset>
-                                <input type="text" id="datos_ocultos" HIDDEN value="<?php echo $_SESSION['rut'];?>">
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nombre_usuario">Nombre</label>  
-                                  <div class="col-md-3">
-                                    <input id="nombre_usuario" name="nombre_usuario" type="text" class="form-control input-md">
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-success" id="link_modifica_nombre_usuario" name="link_modifica_nombre_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Nombre</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="apellido_usuario">Apellido</label>  
-                                  <div class="col-md-3">
-                                  <input id="apellido_usuario" name="apellido_usuario" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-primary" id="link_modifica_apellido_usuario" name="link_modifica_apellido_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Apellido</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="email_usuario">E-mail</label>  
-                                  <div class="col-md-3">
-                                  <input id="email_usuario" name="email_usuario" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-warning" id="link_modifica_email_usuario" name="link_modifica_email_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar E-mail</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_actual">Contraseña</label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_actual" name="contraseña_usuario_actual" type="password" class="form-control input-md"> 
-                                  <span class="help-block">Contraseña Actual</span> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-danger" id="link_modifica_contraseña_usuario" name="link_modifica_contraseña_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Contraseña</a> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_nueva"></label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_nueva" name="contraseña_usuario_nueva" type="password" class="form-control input-md">
-                                  <span class="help-block">Contraseña Nueva</span> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="contraseña_usuario_rep"></label>  
-                                  <div class="col-md-3">
-                                  <input id="contraseña_usuario_rep" name="contraseña_usuario_rep" type="password" class="form-control input-md">
-                                  <span class="help-block">Repite la nueva contraseña</span> 
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nickname_usuario">Nickname</label>  
-                                  <div class="col-md-3">
-                                  <input id="nickname_usuario" name="nickname_usuario" type="text" class="form-control input-md"> 
-                                  </div>
-                                  <div class="col-md-3">  
-                                    <a class="btn btn-default" id="link_modifica_nickname_usuario" name="link_modifica_nickname_usuario"><span class="glyphicon glyphicon-pencil"></span> Modificar Nickname</a> 
-                                  </div>
-                                </div>
-                            </fieldset>
-                        </form>
+                   <div class="col-lg-4">
+                        <button type="button" class="btn btn-lg btn-block btn-success" id="agregarAcademico">Agregar Académico</button>
+                    </div>
+                    <div class="col-lg-4">
+                        <button type="button" class="btn btn-lg btn-block btn-primary" id="agregarAdministrativo">Agregar Administrativo</button>
+                    </div>
+                    <div class="col-lg-4">
+                        <button type="button" class="btn btn-lg btn-block btn-danger" id="agregarAyudante">Agregar Ayudante de Laboratorio</button>
+                    </div>
+                </div>            
+                <br>
+                <div class="row">
+                    <div class="col-lg-4">
+                      <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" id='panel_sin_aprobar'><span class="glyphicon glyphicon-user"></span> Académicos</h3>
+                            </div>
+                            <div class="panel-body">
+                              <table id="tabla_academicos" class="display" cellspacing="0" width="100%">
+                                    <tbody id='tabla_body_academicos'>
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Modificar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" id='panel_sin_aprobar'><span class="glyphicon glyphicon-user"></span> Administrativos</h3>
+                            </div>
+                            <div class="panel-body">
+                              <table id="tabla_administrativos" class="display" cellspacing="0" width="100%">
+                                    <tbody id='tabla_body_administrativos'>
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Modificar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" id='panel_sin_aprobar'><span class="glyphicon glyphicon-user"></span> Ayudantes de Laboratorio</h3>
+                            </div>
+                            <div class="panel-body">
+                              <table id="tabla_ayudantes" class="display" cellspacing="0" width="100%">
+                                    <tbody id='tabla_body_ayudantes'>
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Modificar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                    </tbody>
+                                </table>
+                            </div>
+                      </div>      
                     </div>
                 </div>
 
@@ -200,14 +201,11 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <h3 class="modal-title" id="myModalLabel"></h3>
           </div>
           <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" id="boton_aprobar_cierre"><span class="glyphicon glyphicon-ok"></span> Aprobar</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>
@@ -215,7 +213,8 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/funcion_admin_perfil.js"></script>
+    <script src="../../js/DataTables-1.10.3/media/js/jquery.dataTables.min.js"></script>
+    <script src="js/funcion_admin_personas.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 

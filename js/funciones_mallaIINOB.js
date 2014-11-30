@@ -6,6 +6,7 @@ $( document ).ready(function() {
 	    data: 'malla=IIN',
 	    success: function(datos_recibidos) {
 				$("#mallaIIN").html(datos_recibidos);
+				$("#llevar_malla").val(datos_recibidos);
 
 				$("#boton_reiniciar_simulacion").click(function(){
 					$(".caja_celda").each(function(){
@@ -14,6 +15,7 @@ $( document ).ready(function() {
 						$(this).removeClass("caja_click");
 						$(this).addClass("caja_no_pintada");
 					});
+					$("#llevar_malla").val($("#mallaIIN").html());
 				});
 
 				$(".boton_ver_info_asignatura").click(function(){

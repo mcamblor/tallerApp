@@ -46,7 +46,7 @@
         </div>
         <div class="row" style='margin-bottom:2%;'>
             <form method="POST" action="../logica/generaPDF.php">
-                <input type="text" hidden value="ICI" id="tipoMalla" name="tipoMalla">
+                <input type="text" hidden value="ICI_SIM" id="tipoMalla" name="tipoMalla">
                 <textarea id="llevar_malla" name="llevar_malla" hidden></textarea>
                 <div class="col-sm-6 center"><button class="btn btn-lg btn-primary" id="boton_descargar_simulacion" type="submit"><span class="glyphicon glyphicon-picture"></span> Guardar Simulación en PDF</button></div>
             </form>

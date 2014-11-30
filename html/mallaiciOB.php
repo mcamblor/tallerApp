@@ -45,7 +45,11 @@
                 <p>Las asignaturas tienen objetivos que sirven para futuras asignaturas, como tambien para reforzar conocimientos ya adquiridos.<br>Haz click en una asignatura para ver con que otras asignaturas se relaciona segun sus objetivos<p>
         </div>
         <div class="row" style='margin-bottom:2%;'>
-            <div class="col-sm-6 center"><a class="btn btn-lg btn-primary" id="boton_descargar_simulacion"><span class="glyphicon glyphicon-picture"></span> Guardar Simulación en PDF</a></div>
+            <form method="POST" action="../logica/generaPDF.php">
+                <input type="text" hidden value="ICI_OBJ" id="tipoMalla" name="tipoMalla">
+                <textarea id="llevar_malla" name="llevar_malla" hidden></textarea>
+                <div class="col-sm-6 center"><button class="btn btn-lg btn-primary" id="boton_descargar_simulacion" type="submit"><span class="glyphicon glyphicon-picture"></span> Guardar Simulación en PDF</button></div>
+            </form>
             <div class="col-sm-6 center"><a class="btn btn-lg btn-danger" id="boton_reiniciar_simulacion"><span class="glyphicon glyphicon-refresh"></span> Reiniciar Simulación</a></div>
         </div>
 	    <div class="row">

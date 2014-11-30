@@ -7,6 +7,7 @@ $( document ).ready(function() {
 	    success: function(datos_recibidos) {
 	    		//RECIBIR MALLA CURRICULAR
 				$("#mallaICI").html(datos_recibidos);
+				$("#llevar_malla").val(datos_recibidos);
 
 				$("#boton_reiniciar_simulacion").click(function(){
 					$(".caja_celda").each(function(){
@@ -15,6 +16,7 @@ $( document ).ready(function() {
 						$(this).removeClass("caja_click");
 						$(this).addClass("caja_no_pintada");
 					});
+					$("#llevar_malla").val($("#mallaICI").html());
 				});
 
 				$(".boton_ver_info_asignatura").click(function(){

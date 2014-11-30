@@ -91,7 +91,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Perfil</a>
+                        <a href="personas.php"><span class="glyphicon glyphicon-user"></span> Personas</a>
+                    </li>
+                    <li>
+                        <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Mi cuenta</a>
                     </li>
                 </ul>
             </div>

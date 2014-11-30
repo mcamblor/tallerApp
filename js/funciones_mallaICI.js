@@ -1,7 +1,5 @@
 $( document ).ready(function() {
 
-	var global_malla = "";
-
 	$.ajax({
 	    url: '../logica/getMalla.php',
 	    type: 'POST',
@@ -9,8 +7,7 @@ $( document ).ready(function() {
 	    data: 'malla=ICI',
 	    success: function(datos_recibidos) {
 	    		//RECIBIR MALLA CURRICULAR
-	    		global_malla = datos_recibidos;
-				$("#mallaICI").html(datos_recibidos);
+	    		$("#mallaICI").html(datos_recibidos);
 				$("#llevar_malla").val(datos_recibidos);
 			
 				$("#boton_reiniciar_simulacion").click(function(){
