@@ -194,8 +194,7 @@ $( document ).ready(function() {
                         },click: function(event, ui){
                           var x = ui.value.split("_");
                           object2[x[2]] = (ui.checked ? 'checked' : 'unchecked');
-                        },
-                        hide: "explode"
+                        }
                     });
                     $("#objet_asig_remove").multiselect({
                         position: {
@@ -204,8 +203,7 @@ $( document ).ready(function() {
                         },click: function(event, ui){
                           var x = ui.value.split("_");
                           object4[x[2]] = (ui.checked ? 'checked' : 'unchecked');
-                        },
-                        hide: "explode"
+                        }
                     });
                     control = true;
                 }else{

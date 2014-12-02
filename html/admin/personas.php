@@ -28,6 +28,9 @@
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet">
 
+    <link href="js/multi_select_check/jquery.multiselect.css" rel="stylesheet">
+    <link href="js/multi_select_check/jquery-ui.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -214,6 +217,8 @@
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
     <script src="../../js/DataTables-1.10.3/media/js/jquery.dataTables.min.js"></script>
+    <script src="js/multi_select_check/jquery-ui.min.js"></script>
+    <script src="js/multi_select_check/jquery.multiselect.js"></script>
     <script src="js/funcion_admin_personas.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
