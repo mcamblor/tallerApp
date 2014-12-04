@@ -16,7 +16,6 @@
 			$record = $rs->fetch(PDO::FETCH_ASSOC);
 			if($record["password"] == $pass){
 				$_SESSION['nick'] = $record["nickname"];
-				$_SESSION['rut'] = $record["rut"];
 				$tmp = $record["tipo"];
 				if($tmp == "superadmin"){
 					$_SESSION['nivel'] = "superadmin";

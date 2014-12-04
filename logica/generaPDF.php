@@ -99,9 +99,9 @@ $estilo = "<html><head>
 	
 	require_once("dompdf/dompdf_config.inc.php");
 	$dompdf = new DOMPDF();
-	$dompdf->set_paper("c2","landscape");
 	switch ($var[0]) {
 		case 'ICI':
+			$dompdf->set_paper("c2","landscape");
 			if($var[1]=="SIM"){
 				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Simulador de Avance Académico: Ingeniería Civil en Informática</h1>".utf8_decode($datos))."</body></html>");
 			}else{
@@ -109,6 +109,7 @@ $estilo = "<html><head>
 			}	
 		break;
 		case 'IIN':
+			$dompdf->set_paper("c2","landscape");
 			if($var[1]=="SIM"){
 				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Simulador de Avance Académico: Ingeniería en Informática</h1>".utf8_decode($datos))."</body></html>");
 			}else{
@@ -116,6 +117,7 @@ $estilo = "<html><head>
 			}
 		break;
 		case 'IEJ':
+			$dompdf->set_paper("a3","landscape");
 			if($var[1]=="SIM"){
 				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Simulador de Avance Académico: Ingeniería en Ejecución en Informática</h1>".utf8_decode($datos))."</body></html>");
 			}else{

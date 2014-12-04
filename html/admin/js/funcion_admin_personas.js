@@ -1,4 +1,14 @@
 $( document ).ready(function() {
+
+    $("#boton_salir_admin").click(function(){
+        $(".modal-title").html("Cierre de Sesion");
+        $(".modal-body").html("Esta seguro de que desea cerrar la sesion");
+        $(".modal-footer").html("<button type='button' class='btn btn-success' id='boton_aprobar_cierre'><span class='glyphicon glyphicon-ok'></span> Aprobar</button><button type='button' class='btn btn-primary' data-dismiss='modal'>Cerrar</button>");
+        $('#myModal').modal({show:true});
+        $("#boton_aprobar_cierre").click(function(){
+            $(location).attr('href','../../logica/cierra_sesion.php');
+        });
+    });
 	
     $.ajax({
         url: '../../logica/getPersonalAdmin.php',
@@ -46,6 +56,46 @@ $( document ).ready(function() {
                         "info": false,
                         "paging": false
                     });
+
+                $(".botonEliminarAcademico").click(function(){
+                    var dat = $(this).attr("id").split("_");
+                    $("#myModalLabel").html("Borrar un Académico");
+                    $(".modal-footer").html("<button type='button' class='btn btn-danger' id='boton_borrar_academico'>Borrar</button><button type='button' class='btn btn-primary' data-dismiss='modal'>Cerrar</button>");
+                    $("#cuerpoModal").html("<div class='row'><div class='col-lg-12'><div class='alert alert-dismissible' role='alert' id='validar_descarga'></div></div></div><div class='row campo_borra_academico'><div class='col-lg-12'>Desea eliminar al académico <strong>"+$("#nombreAcademico_"+dat[1]).text()+"</strong></div></div>");
+                    $('#myModal').modal({show:true});
+
+                    $("#validar_descarga").hide();
+
+                    $("#boton_borrar_academico").click(function(){
+                        $.ajax({
+                            url: '../../logica/deletePersonal.php',
+                            type: 'POST',
+                            async: true,
+                            data: 'tipo=Academico&idPer='+dat[1],
+                            success: function(datos_recibidos){
+                                if(datos_recibidos == "ok"){
+                                    $("#validar_descarga").removeClass("alert-danger");
+                                    $("#validar_descarga").addClass("alert-success");
+                                    $("#validar_descarga").html("<strong>EXITO!</strong> - El académico <strong>"+$("#nombreAcademico_"+dat[1]).text()+"</strong> ha sido eliminado.");
+                                    $("#validar_descarga").show("slow");
+                                    $(".campo_borra_academico").html("");
+                                    $(".modal-footer").html("");
+                                    setTimeout(function() {
+                                        location.reload();
+                                    }, 4000); 
+                                }else{
+                                    $("#validar_descarga").removeClass("alert-success");
+                                    $("#validar_descarga").addClass("alert-danger");
+                                    $("#validar_descarga").html("<strong>ERROR!</strong> - El académico <strong>"+$("#nombreAcademico_"+dat[1]).text()+"</strong> no se ha sido eliminado. Intente nuevamente.");
+                                    $("#validar_descarga").show("slow");
+                                    setTimeout(function() {
+                                        $("#validar_descarga").hide("slow");
+                                    }, 4000);
+                                }
+                            }
+                        });
+                    });
+                });
 
                 $(".botonEliminarAyudante").click(function(){
                     var dat = $(this).attr("id").split("_");

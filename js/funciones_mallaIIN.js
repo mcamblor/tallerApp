@@ -6,7 +6,18 @@ $( document ).ready(function() {
 	    data: 'malla=IIN',
 	    success: function(datos_recibidos) {
 				$("#mallaIIN").html(datos_recibidos);
-				$("#llevar_malla").val(datos_recibidos);			
+				$("#llevar_malla").val(datos_recibidos);
+
+				$("#boton_ayuda_malla_ac").click(function(){
+					$(".modal-title").html("");
+					$(".modal-body").html("<iframe width='890' height='452' class='js-player' src='http://www.powtoon.com/embed/dgkJ3qUKt2N/?player=powtoon' frameborder='0'></iframe>");
+					$(".modal-footer").html("<button type='button' class='btn btn-primary' id='closeTuto' data-dismiss='modal'>Cerrar</button>");
+					$('#myModal_mencion').modal({show:true,backdrop: 'static'});
+					
+					$("#closeTuto").click(function(){
+						$(".modal-body").html("");
+					});
+				});		
 
 				$("#boton_reiniciar_simulacion").click(function(){
 					$(".caja_celda").each(function(){
@@ -34,6 +45,7 @@ $( document ).ready(function() {
 					    		for (var i = 0; i<objet_receb.length - 1;i++) {
 					    			$(".lista_objetivos").append("<li>"+objet_receb[i]+"</li>");
 					    		};
+					    		$(".modal-footer").html("<a id='button1id' name='button1id' class='btn btn-success' href='descargas.php'>Ir a Descargas</a><button type='button' class='btn btn-primary' data-dismiss='modal'>Cerrar</button>");
 					    		$('#myModal_mencion').modal({show:true});
 					    	}
 					});

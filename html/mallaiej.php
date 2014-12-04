@@ -48,9 +48,10 @@
             <form method="POST" action="../logica/generaPDF.php">
                 <input type="text" hidden value="IEJ_SIM" id="tipoMalla" name="tipoMalla">
                 <textarea id="llevar_malla" name="llevar_malla" hidden></textarea>
-                <div class="col-sm-6 center"><button class="btn btn-lg btn-primary" id="boton_descargar_simulacion" type="submit"><span class="glyphicon glyphicon-picture"></span> Guardar Simulación en PDF</button></div>
+                <div class="col-sm-4 center"><button class="btn btn-lg btn-block btn-primary" id="boton_descargar_simulacion" type="submit"><span class="glyphicon glyphicon-picture"></span> Guardar Simulación en PDF</button></div>
             </form>
-            <div class="col-sm-6 center"><a class="btn btn-lg btn-danger" id="boton_reiniciar_simulacion"><span class="glyphicon glyphicon-refresh"></span> Reiniciar Simulación</a></div>
+            <div class="col-sm-4 center"><a class="btn btn-lg btn-block btn-warning" id="boton_ayuda_malla_ac"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></div>
+            <div class="col-sm-4 center"><a class="btn btn-lg btn-block btn-danger" id="boton_reiniciar_simulacion"><span class="glyphicon glyphicon-refresh"></span> Reiniciar Simulación</a></div>
         </div>
         <div class="row">
             <div class="col-sm-12" style="overflow-x:scroll;" id="mallaIEJ">
@@ -68,8 +69,6 @@
       <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
       </div>
       <div class="modal-footer">
-        <a id='button1id' name='button1id' class='btn btn-success' href='descargas.php'>Ir a Descargas</a>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

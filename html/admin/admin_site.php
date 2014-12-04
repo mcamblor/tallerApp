@@ -1,7 +1,10 @@
 <?php
     session_start();
-    if(!isset($_SESSION['nick']) || !isset($_SESSION['rut']) || !isset($_SESSION['nivel'])){
-        if($_SESSION['nivel'] != "superadmin"){
+    if(!isset($_SESSION['nick']) || !isset($_SESSION['nivel'])){
+          session_destroy();
+          echo '<script type="text/javascript">window.location = "../../index.php"; </script>';
+    }else{
+      if($_SESSION['nivel'] != "superadmin"){
           session_destroy();
           echo '<script type="text/javascript">window.location = "../../index.php"; </script>';
         }
