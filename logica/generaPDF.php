@@ -103,31 +103,35 @@ $estilo = "<html><head>
 		case 'ICI':
 			$dompdf->set_paper("c2","landscape");
 			if($var[1]=="SIM"){
-				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Simulador de Avance Académico: Ingeniería Civil en Informática</h1>".utf8_decode($datos))."</body></html>");
+				$dompdf->load_html($estilo."<body>".utf8_encode("<img src='../images/pdf/logo_uv.png'><img src='../images/pdf/header_decom.png'  style='position: absolute; right: 420px;'><h1 align='center'>Simulador de Avance Académico: Ingeniería Civil en Informática<br>Realizado el ".date("d/m/Y").' - '.date("H:i:s")."</h1>".utf8_decode($datos)).utf8_encode("<br><h1>OBJETIVO</h1><p>Esta aplicación tiene por objetivo simular el avance académico de un alumno para que pueda visualizar su estado actual y futuro.</p><h1>INDICACIONES</h1><p>Los colores representan lo siguiente:</p><ul><li><strong>SIN PINTAR:</strong> Son las asignaturas no consideradas en la simulación</li><li><strong>NARANJA:</strong> Son las asignaturas que son objeto de simulación</li><li><strong>VERDES:</strong> Son las asignaturas necesarias para poder cursar las asignaturas pintadas en naranjo</li><li><strong>CELESTE:</strong> Son las asignaturas que se pueden inscribir si es que se han aprobado las asignaturas en naranjo</li></ul>")."</body></html>");
 			}else{
-				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Objetivos en Común: Ingeniería Civil en Informática</h1>".utf8_decode($datos))."</body></html>");
+				$dompdf->load_html($estilo."<body>".utf8_encode("<img src='../images/pdf/logo_uv.png'><img src='../images/pdf/header_decom.png'  style='position: absolute; right: 420px;'><h1 align='center'>Objetivos en Común: Ingeniería Civil en Informática<br>Realizado el ".date("d/m/Y").' - '.date("H:i:s")."</h1>".utf8_decode($datos)).utf8_encode("<br><h1>OBJETIVO</h1><p>Esta aplicación tiene por objetivo mostrar como las asignaturas se relacionan y refuerzan entre si a medida que el alumno va adquiriendo sus conocimientos y aprobando sus objetivos</p><h1>INDICACIONES</h1><p>Los colores representan lo siguiente:</p><ul><li><strong>SIN PINTAR:</strong> Son las asignaturas no consideradas en el ejemplo</li><li><strong>NARANJA:</strong> Es la asigntura a la cual se desea saber sus relaciones y fortelezas</li><li><strong>VERDES:</strong> Son las asignaturas que se ven fortalecidas al adquirir los objetivos de la asignatura pintada en naranja</li><li><strong>CELESTE:</strong> Son las asignaturas que se verán beneficiadas al adquirir los objetivos aprendidos en la asignatura en naranjo.</li></ul>")."</body></html>");
 			}	
 		break;
 		case 'IIN':
 			$dompdf->set_paper("c2","landscape");
 			if($var[1]=="SIM"){
-				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Simulador de Avance Académico: Ingeniería en Informática</h1>".utf8_decode($datos))."</body></html>");
+				$dompdf->load_html($estilo."<body>".utf8_encode("<img src='../images/pdf/logo_uv.png'><img src='../images/pdf/header_decom.png'  style='position: absolute; right: 420px;'><h1 align='center'>Simulador de Avance Académico: Ingeniería en Informática<br>Realizado el ".date("d/m/Y").' - '.date("H:i:s")."</h1>".utf8_decode($datos)).utf8_encode("<br><h1>OBJETIVO</h1><p>Esta aplicación tiene por objetivo simular el avance académico de un alumno para que pueda visualizar su estado actual y futuro.</p><h1>INDICACIONES</h1><p>Los colores representan lo siguiente:</p><ul><li><strong>SIN PINTAR:</strong> Son las asignaturas no consideradas en la simulación</li><li><strong>NARANJA:</strong> Son las asignaturas que son objeto de simulación</li><li><strong>VERDES:</strong> Son las asignaturas necesarias para poder cursar las asignaturas pintadas en naranjo</li><li><strong>CELESTE:</strong> Son las asignaturas que se pueden inscribir si es que se han aprobado las asignaturas en naranjo</li></ul>")."</body></html>");
 			}else{
-				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Objetivos en Común: Ingeniería en Informática</h1>".utf8_decode($datos))."</body></html>");
+				$dompdf->load_html($estilo."<body>".utf8_encode("<img src='../images/pdf/logo_uv.png'><img src='../images/pdf/header_decom.png'  style='position: absolute; right: 420px;'><h1 align='center'>Objetivos en Común: Ingeniería en Informática<br>Realizado el ".date("d/m/Y").' - '.date("H:i:s")."</h1>".utf8_decode($datos)).utf8_encode("<br><h1>OBJETIVO</h1><p>Esta aplicación tiene por objetivo mostrar como las asignaturas se relacionan y refuerzan entre si a medida que el alumno va adquiriendo sus conocimientos y aprobando sus objetivos</p><h1>INDICACIONES</h1><p>Los colores representan lo siguiente:</p><ul><li><strong>SIN PINTAR:</strong> Son las asignaturas no consideradas en el ejemplo</li><li><strong>NARANJA:</strong> Es la asigntura a la cual se desea saber sus relaciones y fortelezas</li><li><strong>VERDES:</strong> Son las asignaturas que se ven fortalecidas al adquirir los objetivos de la asignatura pintada en naranja</li><li><strong>CELESTE:</strong> Son las asignaturas que se verán beneficiadas al adquirir los objetivos aprendidos en la asignatura en naranjo.</li></ul>")."</body></html>");
 			}
 		break;
 		case 'IEJ':
 			$dompdf->set_paper("a3","landscape");
 			if($var[1]=="SIM"){
-				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Simulador de Avance Académico: Ingeniería en Ejecución en Informática</h1>".utf8_decode($datos))."</body></html>");
+				$dompdf->load_html($estilo."<body>".utf8_encode("<img src='../images/pdf/logo_uv.png'><img src='../images/pdf/header_decom.png'  style='position: absolute; right: 420px;'><h1 align='center'>Simulador de Avance Académico: Ingeniería en Ejecución en Informática<br>Realizado el ".date("d/m/Y").' - '.date("H:i:s")."</h1>".utf8_decode($datos)).utf8_encode("<br><h1>OBJETIVO</h1><p>Esta aplicación tiene por objetivo simular el avance académico de un alumno para que pueda visualizar su estado actual y futuro.</p><h1>INDICACIONES</h1><p>Los colores representan lo siguiente:</p><ul><li><strong>SIN PINTAR:</strong> Son las asignaturas no consideradas en la simulación</li><li><strong>NARANJA:</strong> Son las asignaturas que son objeto de simulación</li><li><strong>VERDES:</strong> Son las asignaturas necesarias para poder cursar las asignaturas pintadas en naranjo</li><li><strong>CELESTE:</strong> Son las asignaturas que se pueden inscribir si es que se han aprobado las asignaturas en naranjo</li></ul>")."</body></html>");
 			}else{
-				$dompdf->load_html($estilo."<body>".utf8_encode("<h1 align='center'>Objetivos en Común: Ingeniería en Ejecución en Informática</h1>".utf8_decode($datos))."</body></html>");
+				$dompdf->load_html($estilo."<body>".utf8_encode("<img src='../images/pdf/logo_uv.png'><img src='../images/pdf/header_decom.png'  style='position: absolute; right: 420px;'><h1 align='center'>Objetivos en Común: Ingeniería en Ejecución en Informática<br>Realizado el ".date("d/m/Y").' - '.date("H:i:s")."</h1>".utf8_decode($datos)).utf8_encode("<br><h1>OBJETIVO</h1><p>Esta aplicación tiene por objetivo mostrar como las asignaturas se relacionan y refuerzan entre si a medida que el alumno va adquiriendo sus conocimientos y aprobando sus objetivos</p><h1>INDICACIONES</h1><p>Los colores representan lo siguiente:</p><ul><li><strong>SIN PINTAR:</strong> Son las asignaturas no consideradas en el ejemplo</li><li><strong>NARANJA:</strong> Es la asigntura a la cual se desea saber sus relaciones y fortelezas</li><li><strong>VERDES:</strong> Son las asignaturas que se ven fortalecidas al adquirir los objetivos de la asignatura pintada en naranja</li><li><strong>CELESTE:</strong> Son las asignaturas que se verán beneficiadas al adquirir los objetivos aprendidos en la asignatura en naranjo.</li></ul>")."</body></html>");
 			}
 		break;
 	}
 	$dompdf->render();
 	$pdf = $dompdf->output();
-	$filename = 'malla'.$var[0].'-'.date("Y-m-d").'-'.date("H-i-s").'.pdf';
+	if($var[1]=="SIM"){
+		$filename = 'malla'.$var[0].'-'.date("Y-m-d").'-'.date("H-i-s").'.pdf';
+	}else{
+		$filename = 'malla'.$var[0].'-OB-'.date("Y-m-d").'-'.date("H-i-s").'.pdf';
+	}
 	/*if($var[1]=="SIM"){
 		file_put_contents("../static/simulacion/".$filename, $pdf);
 	}*/

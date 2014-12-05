@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1><span class="glyphicon glyphicon-th"></span> Malla Ingenieria en Informatica</h1>
+                    <h2><span class="glyphicon glyphicon-th"></span> Malla Ingenieria en Informatica</h2>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
@@ -52,7 +52,7 @@
             </form>
             <div class="col-sm-4 center"><a class="btn btn-lg btn-block btn-warning" id="boton_ayuda_malla_ac"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></div>
             <div class="col-sm-4 center"><a class="btn btn-lg btn-block btn-danger" id="boton_reiniciar_simulacion"><span class="glyphicon glyphicon-refresh"></span> Reiniciar Simulación</a></div>
-        </div>>
+        </div>
 	    <div class="row">
 	        <div class="col-sm-12" style="overflow-x:scroll;" id="mallaIIN">
 			</div>

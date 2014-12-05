@@ -28,7 +28,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1><span class="glyphicon glyphicon-tasks"></span> Simulador de Avance Academico</h1>
+                    <h2><span class="glyphicon glyphicon-tasks"></span> Simulador de Avance Academico</h2>
                     <p>Simula tu avance academico segun tu situacion actual</p>
                 </div>
                 <div class="col-sm-6">
@@ -43,7 +43,7 @@
 
     <section id="about-us" class="container">
         <div class='center gap'>
-                <h2><span class="glyphicon glyphicon-eye-open"></span> Selecciona la malla que deseas ver</h2>
+                <h2><span class="glyphicon glyphicon-eye-open"></span> Selecciona la malla que deseas simular</h2>
         </div>
         <div class="row">
             <div class="col-sm-4">

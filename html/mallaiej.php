@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1><span class="glyphicon glyphicon-th"></span> Malla Ingenieria de Ejecucion en Informatica</h1>
+                    <h3><span class="glyphicon glyphicon-th"></span> Malla Ingenieria de Ejecucion en Informatica</h3>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
@@ -41,7 +41,7 @@
     </section><!--/#title-->
     <section class="container">
         <div class="center gap">
-                <h2><span class="glyphicon glyphicon-flag"></span> Marca las asignaturas que deseas probar</h2>
+                <h3><span class="glyphicon glyphicon-flag"></span> Marca las asignaturas que deseas probar</h2>
                 <p>Si quieres marcar todo un periodo academico, haz click en el semestre (o viceversa)</p>
         </div>
         <div class="row" style='margin-bottom:2%;'>
