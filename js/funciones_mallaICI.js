@@ -168,12 +168,12 @@ $( document ).ready(function() {
 
 					if(extract3[1] == "601"){
 						if($(this).hasClass("caja_no_pintada") == false){
-							$(".caja_celda").each(function(){
+							/*$(".caja_celda").each(function(){
 								$(this).removeClass("caja_pintada");
 								$(this).removeClass("caja_avance");
 								$(this).removeClass("caja_click");
 								$(this).addClass("caja_no_pintada");
-							});
+							});*/
 						}else{
 							$(this).removeClass("caja_no_pintada");
 							$(this).addClass("caja_click");
@@ -184,10 +184,14 @@ $( document ).ready(function() {
 								var tmp5 = tmp4[0].split("celdaSem");
 								if(parseInt(tmp5[1])<11){
 									$(this).removeClass("caja_no_pintada");
+									$(this).removeClass("caja_avance");
+									$(this).removeClass("caja_click");
 									$(this).addClass("caja_pintada");
 								}
 								if(parseInt(tmp5[1])>=11){
 									if(parseInt(tmp6[1])!=601){
+										$(this).removeClass("caja_avance");
+										$(this).removeClass("caja_click");
 										$(this).removeClass("caja_no_pintada");
 										$(this).addClass("caja_avance");
 									}
@@ -196,12 +200,12 @@ $( document ).ready(function() {
 						}
 					}else if(extract3[1] == "611"){
 						if($(this).hasClass("caja_no_pintada") == false){
-							$(".caja_celda").each(function(){
+							/*$(".caja_celda").each(function(){
 								$(this).removeClass("caja_pintada");
 								$(this).removeClass("caja_avance");
 								$(this).removeClass("caja_click");
 								$(this).addClass("caja_no_pintada");
-							});
+							});*/
 						}else{
 							$(this).removeClass("caja_no_pintada");
 							$(this).addClass("caja_click");
@@ -211,11 +215,15 @@ $( document ).ready(function() {
 								var tmp6 = tmp4[1].split("INC");
 								var tmp5 = tmp4[0].split("celdaSem");
 								if(parseInt(tmp5[1])<12){
+									$(this).removeClass("caja_avance");
+									$(this).removeClass("caja_click");
 									$(this).removeClass("caja_no_pintada");
 									$(this).addClass("caja_pintada");
 								}
 								if(parseInt(tmp5[1])==12){
 									if(parseInt(tmp6[1])!=611){
+										$(this).removeClass("caja_avance");
+										$(this).removeClass("caja_click");
 										$(this).removeClass("caja_no_pintada");
 										$(this).addClass("caja_avance");
 									}
@@ -230,12 +238,12 @@ $( document ).ready(function() {
 						}else{
 							var isClick = $(this).hasClass("caja_click");
 							if(isClick == true){
-								noPintarAvance(extract3[1]);
+								/*noPintarAvance(extract3[1]);
 								noPintarRamo(idCaja);
 								$(this).removeClass("caja_click");
-								$(this).addClass("caja_no_pintada");
+								$(this).addClass("caja_no_pintada");*/
 							}else{
-								$(".caja_celda").each(function(){
+								/*$(".caja_celda").each(function(){
 									var tmp2 = $(this).hasClass("caja_pintada");
 									var tmp3 = $(this).hasClass("caja_click");
 									var tmp4 = $(this).hasClass("caja_avance");
@@ -251,10 +259,12 @@ $( document ).ready(function() {
 										$(this).removeClass("caja_avance");
 										$(this).addClass("caja_no_pintada");
 									}
-								});
+								});*/
 								pintarAvance(extract3[1]);
 								pintarRamo(idCaja);
 								$(this).removeClass("caja_no_pintada");
+								$(this).removeClass("caja_avance");
+								$(this).removeClass("caja_pintada");
 								$(this).addClass("caja_click");
 							}
 						}

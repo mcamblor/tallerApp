@@ -1,25 +1,55 @@
 $( document ).ready(function() {
 	
+    $.ajax({
+        url: '../../logica/getUsuarios.php',
+        type: 'POST',
+        async: true,
+        success: function(datos_recibidos) {
+            usuarios_recibidos = datos_recibidos.split("||");
+            for (var i = 0; i<usuarios_recibidos.length - 1; i++) {
+                datos_persona = usuarios_recibidos[i].split("++");
+                $("#usuarios_tabla_cuerpo").append("<tr><td id='campo1_"+i+"'>"+datos_persona[1]+"</td><td id='campo2_"+i+"'>"+datos_persona[2]+"</td><td id='campo3_"+i+"'>"+datos_persona[0]+"</td><td id='campo4_"+i+"'>"+datos_persona[3]+"</td><td id='campo5_"+i+"'>"+datos_persona[4]+"</td><td id='campo6_"+i+"'>"+datos_persona[5]+"</td><td align='center'><button type='button' class='btn btn-primary modificar' id='modUser_"+i+"_"+datos_persona[0]+"'><span class='glyphicon glyphicon-pencil'></span></button></td><td align='center'><button type='button' class='btn btn-primary btn-danger eliminar' id='deleteUser_"+datos_persona[0]+"'><span class='glyphicon glyphicon-remove'></span></button></td></tr>");
+            }
+
+            $(".modificar").click(function(){
+                var data = $(this).attr("id").split("_");
+                $(".modal-title").html("Modificar Usuario: "+$("#campo1_"+data[1]).text()+" "+$("#campo2_"+data[1]).text()+" - "+$("#campo3_"+data[1]).text());
+                $(".modal-footer").html("<button type='button' class='btn btn-success' id='boton_aprobar_cierre'><span class='glyphicon glyphicon-ok'></span> Aprobar</button><button type='button' class='btn btn-primary' data-dismiss='modal'>Cerrar</button>")
+                $(".modal-body").html("<div class='row'><div class='col-lg-12'><div class='alert alert-dismissible' role='alert' id='validar_mod'></div></div></div><div class='row'><div class='col-lg-12'><form class='form-horizontal' id='formulario_mod_user'><fieldset><div class='form-group'><label class='col-md-3 control-label' for='nombre_usuario_mod'>Nombre</label><div class='col-md-5'><input id='nombre_usuario_mod' name='nombre_usuario_mod' type='text' class='form-control input-md' value='"+$("#campo1_"+data[1]).text()+"'></div></div><div class='form-group'><label class='col-md-3 control-label' for='apellido_usuario_mod'>Apellido</label><div class='col-md-5'><input id='apellido_usuario_mod' name='apellido_usuario_mod' type='text' class='form-control input-md' value='"+$("#campo2_"+data[1]).text()+"'></div></div><div class='form-group'><label class='col-md-3 control-label' for='rut_usuario_mod'>RUT</label><div class='col-md-5'><input id='rut_usuario_mod' name='rut_usuario_mod' type='text' class='form-control input-md' value='"+$("#campo3_"+data[1]).text()+"'></div></div><div class='form-group'><label class='col-md-3 control-label' for='email_usuario_mod'>Correo</label><div class='col-md-5'><input id='email_usuario_mod' name='email_usuario_mod' type='text' class='form-control input-md' value='"+$("#campo4_"+data[1]).text()+"'></div></div><div class='form-group'><label class='col-md-3 control-label' for='nickname_usuario_mod'>Nickname</label><div class='col-md-5'><input id='nickname_usuario_mod' name='nickname_usuario_mod' type='text' class='form-control input-md' value='"+$("#campo5_"+data[1]).text()+"'></div></div><div class='form-group'><label class='col-md-3 control-label' for='boton_usuario_mod'></label><div class='col-md-5'><a id='boton_usuario_mod' name='boton_usuario_mod' class='btn btn-success' style='margin-right:4%;'><span class='glyphicon glyphicon-ok'></span> Modificar</a><a id='boton_usuario_reset_mod' name='boton_usuario_reset_mod' class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span> Reset</a></div></div></fieldset></form></div></div>");
+                $("#validar_mod").hide();
+                $('#myModal').modal({show:true});
+
+                $("#boton_usuario_reset_mod").click(function(){
+                    $("#nombre_usuario_mod").val($("#campo1_"+data[1]).text());
+                    $("#apellido_usuario_mod").val($("#campo2_"+data[1]).text());
+                    $("#rut_usuario_mod").val($("#campo3_"+data[1]).text());
+                    $("#email_usuario_mod").val($("#campo4_"+data[1]).text());
+                    $("#nickname_usuario_mod").val($("#campo5_"+data[1]).text());
+                });        
+            });
+
+
+            $('#usuarios_tabla').dataTable({
+                "scrollCollapse": true,
+                "searching": false,
+                "info": false,
+                "paging": false
+            });
+        }
+    });
+
+
     $("#validar_descarga").hide();
 
        $("#boton_salir_admin").click(function(){
         $(".modal-title").html("Cierre de Sesion");
+        $(".modal-footer").html("<button type='button' class='btn btn-success' id='boton_aprobar_cierre'><span class='glyphicon glyphicon-ok'></span> Aprobar</button><button type='button' class='btn btn-primary' data-dismiss='modal'>Cerrar</button>")
         $(".modal-body").html("Esta seguro de que desea cerrar la sesion");
         $('#myModal').modal({show:true});
         $("#boton_aprobar_cierre").click(function(){
             $(location).attr('href','../../logica/cierra_sesion.php');
         });
     });
-
-    
-    $("#nombre_usuario").keyup(function(){
-        if($(this).val() != nombre){
-            $("#link_modifica_nombre_usuario").removeAttr("disabled");
-        }else{
-            $("#link_modifica_nombre_usuario").attr("disabled","disabled");
-        }
-    });
-
     
    $("#boton_agregar_usuario_reset").click(function(){
         document.getElementById('formulario_add_user').reset();

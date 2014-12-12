@@ -45,6 +45,26 @@ function mallaICI(){
 			$requisitos = $requisitos."|+|";
 		}
 
+		/*$requisitos = $requisitos."|+||+||+||+||+|";
+		$requisitos_op = $consulta->consultar("SELECT * FROM `asignatura_has_requisito` WHERE `asignatura_id` between '5' and '62'");
+		$control = 0;
+		while($record_req = $requisitos_op->fetch(PDO::FETCH_ASSOC)){
+			$tmp = $record_req['asignatura_id'];
+			if($control == 0){
+				$control = $tmp;
+				$requisitos = $requisitos.substr($record_req['requisito_cod_malla'], 3)."++";
+			}else{
+				if($control == $tmp){
+					$requisitos = $requisitos.substr($record_req['requisito_cod_malla'], 3)."++";
+				}else{
+					$requisitos = $requisitos."|+|";
+					$requisitos = $requisitos.substr($record_req['requisito_cod_malla'], 3)."++";
+					$control = $tmp;
+				}
+			}
+
+		}*/
+
 		$res_final = $info_asig."|-|".$requisitos;
 		
 		$consulta = null;

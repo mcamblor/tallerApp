@@ -39,6 +39,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link href="../../js/DataTables-1.10.3/media/css/jquery.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -72,7 +73,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Agregar Usuarios</a>
+                        <a href="perfil.php"><span class="glyphicon glyphicon-user"></span> Administrar Usuarios</a>
                     </li>
                 </ul>
             </div>
@@ -87,7 +88,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Agregar Usuarios: <small>Ingresa nuevos usuarios administradores de contenido al sistema</small>
+                            Administrar Usuarios: <small>Administra las cuentas de los usuarios del sistema.</small>
                         </h1>
                     </div>
                 </div>
@@ -98,50 +99,69 @@
                     </div>
                 </div>            
                 <div class="row">
-                    <div class="col-lg-12">
-                        <br>
+                    <div class="col-lg-4">
                         <form class="form-horizontal" id="formulario_add_user">
                             <fieldset>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nombre_usuario">Nombre</label>  
-                                  <div class="col-md-3">
+                                  <label class="col-md-3 control-label" for="nombre_usuario">Nombre</label>  
+                                  <div class="col-md-8">
                                     <input id="nombre_usuario" name="nombre_usuario" type="text" class="form-control input-md" placeholder="Nombre nuevo usuario">
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="apellido_usuario">Apellido</label>  
-                                  <div class="col-md-3">
+                                  <label class="col-md-3 control-label" for="apellido_usuario">Apellido</label>  
+                                  <div class="col-md-8">
                                   <input id="apellido_usuario" name="apellido_usuario" type="text" class="form-control input-md" placeholder="Apellido nuevo usuario"> 
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="rut_usuario">RUT</label>  
-                                  <div class="col-md-3">
+                                  <label class="col-md-3 control-label" for="rut_usuario">RUT</label>  
+                                  <div class="col-md-8">
                                     <input id="rut_usuario" name="rut_usuario" type="text" class="form-control input-md" placeholder="12345678-9">
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="email_usuario">E-mail</label>  
-                                  <div class="col-md-3">
+                                  <label class="col-md-3 control-label" for="email_usuario">Correo</label>  
+                                  <div class="col-md-8">
                                   <input id="email_usuario" name="email_usuario" type="text" class="form-control input-md" placeholder="@uv.cl | @alumnos.uv.cl"> 
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="nickname_usuario">Nickname</label>  
-                                  <div class="col-md-3">
+                                  <label class="col-md-3 control-label" for="nickname_usuario">Nickname</label>  
+                                  <div class="col-md-8">
                                   <input id="nickname_usuario" name="nickname_usuario" type="text" class="form-control input-md" placeholder="Apodo"> 
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-md-4 control-label" for="boton_agregar_usuario"></label>
+                                  <label class="col-md-3 control-label" for="boton_agregar_usuario"></label>
                                   <div class="col-md-8">
-                                    <a id="boton_agregar_usuario" name="boton_agregar_usuario" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Agregar Usuario</a>
+                                    <a id="boton_agregar_usuario" name="boton_agregar_usuario" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Agregar</a>
                                     <a id="boton_agregar_usuario_reset" name="boton_agregar_usuario_reset" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Reset</a>
                                   </div>
                                 </div>
                             </fieldset>
                         </form>
                     </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-lg-12">
+                          <table id="usuarios_tabla" class="display" cellspacing="0" width="100%">
+                                    <tbody id='usuarios_tabla_cuerpo'>
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Apellido</th>
+                                                <th>RUT</th>
+                                                <th>Correo</th>
+                                                <th>Nickname</th>
+                                                <th>Tipo</th>
+                                                <th>Modificar</th>
+                                                <th>Eliminar</th>
+                                            </tr>
+                                        </thead>
+                                    </tbody>
+                           </table>
+                        </div>
                 </div>
 
             </div>
@@ -157,7 +177,6 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <h3 class="modal-title" id="myModalLabel"></h3>
           </div>
           <div class="modal-body" id="cuerpoModal" style="text-align : justify;">
@@ -172,6 +191,7 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
+    <script src="../../js/DataTables-1.10.3/media/js/jquery.dataTables.min.js"></script>
     <script src="js/funcion_admin_admin.js"></script>
     <script src="js/valida_rut/jquery.Rut.js"></script>
     <!-- Bootstrap Core JavaScript -->
